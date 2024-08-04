@@ -10,6 +10,7 @@ website:
         text: Home
       - about.qmd
       - research.qmd
+      - posts.qmd
   page-footer: 
      background: dark
      right: Copyright 2024, Damie Pak
