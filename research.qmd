@@ -1,3 +1,222 @@
 ---
 title: "Research"
 ---
+Here are the ghosts of past, present, and future research!
+
+
+## Temperature and insect outbreak
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/moth_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+
+
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+## Trees, trees, trees
+
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/plant_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+
+
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+
+
+
+## A community perspective of vectors
+
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/tick_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/triatomine_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+## Within-host modelig
+
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/malaria_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+
+
+
+## Ecological management
+
+
+<div class="side-by-side">
+
+<div class="image">
+![](media/syringe_pic.jpg)
+</div>
+
+<div class="text">
+For my doctoral work with Dr. Ottar Bjornstad, I 
+</div>
+
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>
+
+
+
+</div>
+
+<style>
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.figure, .image {
+  flex: 0.5;
+  margin: 10px;
+}
+.figure img {
+  width: 59%; /* Ensures the image fills the container */
+  height: auto;
+}
+</style>

@@ -8,8 +8,10 @@ website:
     right:
       - href: index.qmd
         text: Home
+      - about.qmd
       - research.qmd
-      - posts.qmd
+      - text: Blog
+        href: posts.qmd
   page-footer: 
      background: dark
      right: Copyright 2024, Damie Pak

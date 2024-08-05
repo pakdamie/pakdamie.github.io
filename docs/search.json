@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Damie Pak",
+    "title": "Damie Pak, PhD",
     "section": "",
-    "text": "Hello! I am an all-purpose quantitative and theoretical ecologist. Currently, a postdoctoral fellow at the University of South Carolina with the Tad Dallas lab. My background is generally involved with agricultural insects. My first love is parasitoid wasps and my doctoral work is understanding how temperature influences the outbreaks of tortricid moths! However, I also love disease ecology and understanding the different scales of disease. You can look at the projects I worked in my research tab. I also am trying to write more so I made this blog!\n\nOutside of my research, I am an avid theater fan and I have an obsession with opera and musicals. I also love video games (Dragon Age and Mass Effect). I’m also into cooking and constantly thinking about my fantasy cookbook project (My pitch: It’s Korean diaspora food and fused with other immigrant culture of the USA)."
+    "text": "Hello, I am Damie (Dah-mie) Pak and I am an all-purpose quantitative/theoretical ecologist. I did my PhD at Penn State University with Dr. Ottar Bjornstad. Due to Covid, I then did a short six month postdoc with Dr. Kat Shea before moving to Cornell to work with Dr. Megan Greischar. I am now a postdoctoral fellow at the University of South Carolina with Tad Dallas. I consider myself a generalist but my main tools of the trade is creating mathematical models with simple ODEs. With each projet, I try to pick up a new tool (wavelet analysis, phylogenetic regression, network analysis, etc.) to put into my toolbox. My passion is insects, my first love (and research project) was on parasitoid wasps and my doctoral work was on agricultural pests! However, I also love disease ecology. I think the most interesting question in ecology is in the intersection of theory and application. Check out the research tab to see more of my research.\n\nOutside of my research, I am an avid theater fan and I have an unhealthy obsession with opera. I also love video games (I want to brag that I have a PhD level love of Dragon Age and Mass Effect)."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,89 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Here are the ghosts of past, present, and future research!"
+  },
+  {
+    "objectID": "research.html#side-by-side-layout",
+    "href": "research.html#side-by-side-layout",
+    "title": "Research",
+    "section": "",
+    "text": "Here is some text that you want to place next to a figure. You can write any content here."
+  },
+  {
+    "objectID": "research.html#temperature-and-insect-outbreak",
+    "href": "research.html#temperature-and-insect-outbreak",
+    "title": "Research",
+    "section": "Temperature and insect outbreak",
+    "text": "Temperature and insect outbreak\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#tick-community",
+    "href": "research.html#tick-community",
+    "title": "Research",
+    "section": "Tick community",
+    "text": "Tick community\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#the-vector-community-community",
+    "href": "research.html#the-vector-community-community",
+    "title": "Research",
+    "section": "The vector community community",
+    "text": "The vector community community\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I\n\n\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#a-community-perspective-of-vectors",
+    "href": "research.html#a-community-perspective-of-vectors",
+    "title": "Research",
+    "section": "A community perspective of vectors",
+    "text": "A community perspective of vectors\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I\n\n\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#trees-trees-trees",
+    "href": "research.html#trees-trees-trees",
+    "title": "Research",
+    "section": "Trees, trees, trees",
+    "text": "Trees, trees, trees\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#ecological-management",
+    "href": "research.html#ecological-management",
+    "title": "Research",
+    "section": "Ecological management",
+    "text": "Ecological management\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#within-host-modelig",
+    "href": "research.html#within-host-modelig",
+    "title": "Research",
+    "section": "Within-host modelig",
+    "text": "Within-host modelig\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#ecological-management-1",
+    "href": "research.html#ecological-management-1",
+    "title": "Research",
+    "section": "Ecological management",
+    "text": "Ecological management"
+  },
+  {
+    "objectID": "posts/helloworld.html",
+    "href": "posts/helloworld.html",
+    "title": "Damie Pak",
+    "section": "",
+    "text": "Hello this is a blog post"
   }
 ]

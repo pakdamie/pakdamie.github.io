@@ -1,0 +1,6 @@
+---
+title: "Curriculum vitae"
+toc: false
+---
+
+## Education
