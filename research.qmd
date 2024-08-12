@@ -1,222 +1,98 @@
 ---
 title: "Research"
 ---
-Here are the ghosts of past, present, and future research!
 
+Here are the ghosts of research past, present, and future. Theory allows me to jump around different systems which makes me very happy because I am a jack-of-all trades. But my favorite stomping grounds are in agriculture and disease. The questions that I have are:
 
-## Temperature and insect outbreak
+1.  Why be climate?
+2.  How can
 
-<div class="side-by-side">
+## Climate and tortricid moth pests
 
-<div class="image">
+::: columns
+::: {.column width="18%"}
 ![](media/moth_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: {.column width="2%"}
+:::
 
+::: {.column width="80%"}
+For my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding the dynamics of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. The spring emergence of the adult stages, for example, is influenced both by local temperatures and large scale-climate oscillations such as the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Each tortricid species, because of their unique life-histories, are sensitive to these cues at different temporal windows. Additionally, I also use mathematical modeling to understand how diapause, a state of suspended development, can be incorporated for long-term forecasting (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest)
+:::
+:::
 
+## Reproductive phenology of neotropical trees
 
-
-</div>
-
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-## Trees, trees, trees
-
-
-<div class="side-by-side">
-
-<div class="image">
+::: columns
+::: {.column width="18%"}
 ![](media/plant_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: {.column width="2%"}
+:::
 
-
-
-
-</div>
-
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-
-
+::: {.column width="80%"}
+Due to my interest in phenologyI was interested in looking at phenology in another system (Multiscale phenological niches of seed fall in diverse Amazonian plant communities). Using wavelet analysis, we analyzed these beautiful long-term time series for multiple plant species in Peru and Equador.
+:::
+:::
 
 ## A community perspective of vectors
 
-
-<div class="side-by-side">
-
-<div class="image">
+::: columns
+::: {.column width="18%"}
 ![](media/tick_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: {.column width="2%"}
+:::
 
+::: {.column width="80%"}
+I'm fascinated with vector communities. Generally, when we investigate vector-borne diseases, we focus on one species at a time. Yet, there are multiple vector species with their own unique ecologies. In collaborative work with Dr. Joyce Sakamoto (A 117-year retrospective analysis of Pennsylvania tick community dynamics), I helped to showcase just the cool differentiation.
+:::
+:::
 
-
-</div>
-
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-
-<div class="side-by-side">
-
-<div class="image">
+::: columns
+::: {.column width="18%"}
 ![](media/triatomine_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: {.column width="2%"}
+:::
 
+::: {.column width="80%"}
+Currently with my postdoctoral work with Tad Dallas, a project I'm hoping works out is understanding species shift. The dominant species in a community can change over time. Chagas disease is a great system because it is very interesting that the primary vector has shifted over time.
+:::
+:::
 
-</div>
+## Within-host modeling of malaria
 
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-## Within-host modelig
-
-
-<div class="side-by-side">
-
-<div class="image">
+::: columns
+::: {.column width="18%"}
 ![](media/malaria_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: {.column width="2%"}
+:::
 
-</div>
-
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-
-
+::: {.column width="80%"}
+My friends would rib on me all the time for saying "Moth is kinda like malaria if you squint really hard". With my postdoctoral work with Dr. Megan Greischar, I kind of got that going.
+:::
+:::
 
 ## Ecological management
 
-
-<div class="side-by-side">
-
-<div class="image">
+::: side-by-side
+::: image
 ![](media/syringe_pic.jpg)
-</div>
+:::
 
-<div class="text">
-For my doctoral work with Dr. Ottar Bjornstad, I 
-</div>
+::: text
+I 
+For my short six-month postdoc with Dr. Katriona Shea, I spent the Covid-19 lockdown working on Covid-19. 
+:::
 
+```{=html}
+```
+:::
 
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>
-
-
-
-</div>
-
-<style>
-.side-by-side {
-  display: flex;
-  justify-content: space-between;
-}
-
-.figure, .image {
-  flex: 0.5;
-  margin: 10px;
-}
-.figure img {
-  width: 59%; /* Ensures the image fills the container */
-  height: auto;
-}
-</style>

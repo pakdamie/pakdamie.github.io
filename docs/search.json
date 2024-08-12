@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Damie Pak, PhD",
     "section": "",
-    "text": "Hello, I am Damie (Dah-mie) Pak and I am an all-purpose quantitative/theoretical ecologist. I did my PhD at Penn State University with Dr. Ottar Bjornstad. Due to Covid, I then did a short six month postdoc with Dr. Kat Shea before moving to Cornell to work with Dr. Megan Greischar. I am now a postdoctoral fellow at the University of South Carolina with Tad Dallas. I consider myself a generalist but my main tools of the trade is creating mathematical models with simple ODEs. With each projet, I try to pick up a new tool (wavelet analysis, phylogenetic regression, network analysis, etc.) to put into my toolbox. My passion is insects, my first love (and research project) was on parasitoid wasps and my doctoral work was on agricultural pests! However, I also love disease ecology. I think the most interesting question in ecology is in the intersection of theory and application. Check out the research tab to see more of my research.\n\nOutside of my research, I am an avid theater fan and I have an unhealthy obsession with opera. I also love video games (I want to brag that I have a PhD level love of Dragon Age and Mass Effect)."
+    "text": "Hello, I am Damie (Dah-mie) Pak and I am an all-purpose quantitative/theoretical ecologist. I did my PhD at Penn State University with Dr. Ottar Bjornstad. Due to Covid, I then did a short six month postdoc with Dr. Kat Shea before moving to Cornell to work with Dr. Megan Greischar. I am now a postdoctoral fellow at the University of South Carolina with Tad Dallas. I consider myself a generalist but my main tools of the trade is creating mathematical models with simple ODEs. With each projet, I try to pick up a new tool (wavelet analysis, phylogenetic regression, network analysis, etc.) to put into my toolbox. My passion is insects, my first love (and research project) was on parasitoid wasps and my doctoral work was on agricultural pests! However, I also love disease ecology. I think the most interesting question in ecology is in the intersection of theory and application. Check out the research tab to see more of my research.\n\nOutside of my research, I am an avid theater fan and I have an unhealthy obsession with opera. I also love video games (I want to brag that I have a PhD level love of Dragon Age and Mass Effect). Please also marvel at this pumpkin I accidentally grew in my photo."
   },
   {
     "objectID": "about.html",
@@ -18,14 +18,14 @@
     "href": "posts.html",
     "title": "My Blog",
     "section": "",
-    "text": "No matching items"
+    "text": "A proof of concept: a coin-toss game\n\n\n\nCoding\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Here are the ghosts of past, present, and future research!"
+    "text": "Here are the ghosts of research past, present, and future. Theory allows me to jump around different systems which makes me very happy because I am a jack-of-all trades. But my favorite stomping grounds are in agriculture and disease. The questions that I have are:"
   },
   {
     "objectID": "research.html#side-by-side-layout",
@@ -39,7 +39,7 @@
     "href": "research.html#temperature-and-insect-outbreak",
     "title": "Research",
     "section": "Temperature and insect outbreak",
-    "text": "Temperature and insect outbreak\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+    "text": "Temperature and insect outbreak\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding the dynamics of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. The spring emergence of the adult stages, for example, is influenced both by local temperatures and large scale-climate oscillations such as the North Atlantic Oscillation and the Arctic Oscillation and Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Each tortricid species, because of their unique life-histories, are sensitive to these cues at different temporal windows. For example, species with multiple generations"
   },
   {
     "objectID": "research.html#tick-community",
@@ -60,7 +60,7 @@
     "href": "research.html#a-community-perspective-of-vectors",
     "title": "Research",
     "section": "A community perspective of vectors",
-    "text": "A community perspective of vectors\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I\n\n\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+    "text": "A community perspective of vectors\n\n\n\n\n\n\nI’m fascinated with vector communities. Generally, when we investigate vector-borne diseases, we focus on one species at a time. Yet, there are multiple vector species with their own unique ecologies. In collaborative work with Dr. Joyce Sakamoto (A 117-year retrospective analysis of Pennsylvania tick community dynamics), I helped to showcase just the cool differentiation.\n\n\n\n\n\n\n\n\nCurrently with my postdoctoral work with Tad Dallas, a project I’m hoping works out is understanding species shift. The dominant species in a community can change over time. Chagas disease is a great system because it is very interesting that the primary vector has shifted over time."
   },
   {
     "objectID": "research.html#trees-trees-trees",
@@ -74,7 +74,7 @@
     "href": "research.html#ecological-management",
     "title": "Research",
     "section": "Ecological management",
-    "text": "Ecological management\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+    "text": "Ecological management\n\n\n\n\n\nI For my short six-month postdoc with Dr. Katriona Shea, I spent the Covid-19 lockdown working on Covid-19."
   },
   {
     "objectID": "research.html#within-host-modelig",
@@ -96,5 +96,89 @@
     "title": "Damie Pak",
     "section": "",
     "text": "Hello this is a blog post"
+  },
+  {
+    "objectID": "research.html#reproductive-phenology",
+    "href": "research.html#reproductive-phenology",
+    "title": "Research",
+    "section": "Reproductive phenology",
+    "text": "Reproductive phenology\n\n\n\n\n\n\nCollaborating with Dr. Jesse Lasky, I was interested in looking at phenology in another system (Multiscale phenological niches of seed fall in diverse Amazonian plant communities)."
+  },
+  {
+    "objectID": "research.html#tortricid-moth-pests",
+    "href": "research.html#tortricid-moth-pests",
+    "title": "Research",
+    "section": "Tortricid moth pests",
+    "text": "Tortricid moth pests\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding the dynamics of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. The spring emergence of the adult stages, for example, is influenced both by local temperatures and large scale-climate oscillations such as the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Each tortricid species, because of their unique life-histories, are sensitive to these cues at different temporal windows. Additionally, I also use mathematical modeling to understand how diapause, a state of suspended development, can be incorporated for long-term forecasting (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest)"
+  },
+  {
+    "objectID": "research.html#reproductive-phenology-of-neotropical-trees",
+    "href": "research.html#reproductive-phenology-of-neotropical-trees",
+    "title": "Research",
+    "section": "Reproductive phenology of neotropical trees",
+    "text": "Reproductive phenology of neotropical trees\n\n\n\n\n\n\nDue to my interest in phenologyI was interested in looking at phenology in another system (Multiscale phenological niches of seed fall in diverse Amazonian plant communities). Using wavelet analysis, we analyzed these beautiful long-term time series for multiple plant species in Peru and Equador."
+  },
+  {
+    "objectID": "research.html#within-host-modeling",
+    "href": "research.html#within-host-modeling",
+    "title": "Research",
+    "section": "Within-host modeling",
+    "text": "Within-host modeling\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I"
+  },
+  {
+    "objectID": "research.html#climate-and-tortricid-moth-pests",
+    "href": "research.html#climate-and-tortricid-moth-pests",
+    "title": "Research",
+    "section": "Climate and tortricid moth pests",
+    "text": "Climate and tortricid moth pests\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding the dynamics of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. The spring emergence of the adult stages, for example, is influenced both by local temperatures and large scale-climate oscillations such as the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Each tortricid species, because of their unique life-histories, are sensitive to these cues at different temporal windows. Additionally, I also use mathematical modeling to understand how diapause, a state of suspended development, can be incorporated for long-term forecasting (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest)"
+  },
+  {
+    "objectID": "research.html#within-host-modeling-of-malaria",
+    "href": "research.html#within-host-modeling-of-malaria",
+    "title": "Research",
+    "section": "Within-host modeling of malaria",
+    "text": "Within-host modeling of malaria\n\n\n\n\n\n\nMy friends would rib on me all the time for saying “Moth is kinda like malaria if you squint really hard”. With my postdoctoral work with Dr. Megan Greischar, I kind of got that going."
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html",
+    "href": "posts/coin_flipping/coin_flip.html",
+    "title": "A proof of concept: a coin-toss game",
+    "section": "",
+    "text": "This is a proof-of-concept for a research project I’m developing. Therefore, this is written more for me than for a general audience (sorry!). I can’t give it all away now, but hopefully it’s a taste of what I’m doing. Instead of an ecological question, let’s imagine you are hosting a BBQ and you somehow got a large group of your friends to play a lawn game. Everyone is given a coin and told to flip. If you get heads, you proceed one step. If you get tails, you die (specifically, you just lay down and stay in place). You ‘win’ if you can make it 10 paces away. Here is a schematic below:\n\nBut let’s make it more interesting! Let’s assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let’s assume that I introduce some variability. Some friends can only take a small step and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can very large steps.\nMy question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (do take small steps or big steps) and what is the timing? How does this differ depending on what kind of coin I give them and what kind of steps I allow them to take?"
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html#a-more-realistic-math-ier-one",
+    "href": "posts/coin_flipping/coin_flip.html#a-more-realistic-math-ier-one",
+    "title": "A proof of concept: coin-toss game",
+    "section": "A more realistic math-ier one",
+    "text": "A more realistic math-ier one"
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html#putting-it-all-together",
+    "href": "posts/coin_flipping/coin_flip.html#putting-it-all-together",
+    "title": "A proof of concept: coin-toss game",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\ndeath_function &lt;- function(size, mort_prob){\n  sampled &lt;- sample(c(0,1), size,replace = TRUE, prob =c(mort_prob, 1- mort_prop))\n  return(sampled)\n}\n\n\ndevelopment_function &lt;- function(size, prob, id){\n  \n  if(id ==1){\n  sampled &lt;- runif(seq(0,1), size, replace = TRUE,)\n  }\n  else if (id ==2){\n  sampled &lt;- runif(seq(1,2), size, replace = TRUE,)\n  }\n  else if (id ==3){\n  sampled &lt;- runif(seq(2,3), size, replace = TRUE,)\n  }\n  return(sampled)\n}"
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html#an-introduction",
+    "href": "posts/coin_flipping/coin_flip.html#an-introduction",
+    "title": "A proof of concept: a coin-toss game",
+    "section": "",
+    "text": "This is a proof-of-concept for a research project I’m developing. Therefore, this is written more for me than for a general audience (sorry!). I can’t give it all away now, but hopefully it’s a taste of what I’m doing. Instead of an ecological question, let’s imagine you are hosting a BBQ and you somehow got a large group of your friends to play a lawn game. Everyone is given a coin and told to flip. If you get heads, you proceed one step. If you get tails, you die (specifically, you just lay down and stay in place). You ‘win’ if you can make it 10 paces away. Here is a schematic below:\n\nBut let’s make it more interesting! Let’s assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let’s assume that I introduce some variability. Some friends can only take a small step and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can very large steps.\nMy question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (do take small steps or big steps) and what is the timing? How does this differ depending on what kind of coin I give them and what kind of steps I allow them to take?"
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html#the-simplest-code",
+    "href": "posts/coin_flipping/coin_flip.html#the-simplest-code",
+    "title": "A proof of concept: a coin-toss game",
+    "section": "The simplest code",
+    "text": "The simplest code\nFor the death function, I’m going to use sample until I think a bit more about the gritty mathematics. There is a binary outcome: you survived in this timestep or you perished in this timestep. But we can directly manipulate the probability of mortality.\n\ndeath_function &lt;- function(size, mort_prob){\n  sampled &lt;- sample(c(0,1), size,replace = TRUE, prob =c(mort_prob, 1- mort_prob))\n  return(sampled)\n}\n\nNow, how do our friends progress through the lawn game. We can give everyone a number (1,2,3) and depending on your number, you can take large steps or very small. You can see that if you are in Group 1, you take smaller steps than individuals in Group 3.\n\nprogress_function &lt;- function(id){\n  \n  if(id ==1){\n  sampled &lt;- runif(1,min =0, max =3)\n  }\n  else if (id ==2){\n  sampled &lt;- runif(1,min = 2,max=5)\n  }\n  else if (id ==3){\n  sampled &lt;- runif(1,min = 5, max =10)\n  }\n  return(sampled)\n}\n\nNow here is the most convoluted code of how the race can begin. A gist of it is that for anyone who has not died, I make them flip the coin. If it’s 0, they stay in place and I record at what time they ‘died’. If it’s a 1, they are still alive where they can make progress to winning. If they accumulate 10 steps, then they won and they wait while everyone finishes (by either ‘dying’ or ‘winning’).\n\n\nCode\nlawn_race_function &lt;- function(size, mort_prob, progress_time,time_step) {\n  full_df &lt;- data.frame(\n      current_time = rep(0, size),\n      time_event = rep(0, size),\n      status = rep(1, size),\n      progress = rep(0, size),\n       id = rep(c(1, 2, 3), length = size),\n       friend_number = seq(1, size))\n\n  survived_subsetted &lt;- full_df [full_df $status == 1 ,]\n  \n  i = 0\n  \n  while (nrow(full_df [full_df $status == 1 ,]) != 0) {\n    \n    i = i + 1\n    dead_developed_already_subsetted &lt;- full_df[full_df$status %in% c(0,2),]\n    survived_subsetted &lt;- full_df [full_df $status == 1 ,]\n    survived_individuals &lt;- nrow(survived_subsetted)\n ###If there are surviving individuals\n      \n      survived_subsetted$current_time &lt;- i\n\n      ### Did they die in this time-step?\n      survived_subsetted$status &lt;- death_function(survived_individuals, mort_prob)\n      \n      if(nrow(  survived_subsetted[survived_subsetted$status == 0, ])!=0){\n      \n      survived_subsetted[survived_subsetted$status == 0, ]$time_event &lt;- i\n\n      }\n      ### Progressed\n      growing_indviduals &lt;- survived_subsetted[survived_subsetted$status == 1, ]\n\n      ###If there are those that will grow\n      if(nrow(growing_indviduals) !=0){\n      \n      growing_indviduals$progress &lt;- round(growing_indviduals $progress + \n                                            time_step*sapply(X = growing_indviduals $id, FUN = progress_function ), 3)\n\n      developed &lt;- growing_indviduals[growing_indviduals$progress &gt;= progress_time, ]\n\n      ###If there are those developed \n      if(nrow(developed) != 0){\n      growing_indviduals[growing_indviduals$progress &gt;= progress_time, ]$status &lt;- 2\n      growing_indviduals[growing_indviduals$status == 2, ]$time_event &lt;- i\n      }\n      }\n      \n      full_df &lt;- rbind(dead_developed_already_subsetted ,\n        survived_subsetted[survived_subsetted$status == 0, ],\n       growing_indviduals\n      )\n  \n  \n  }\n  return(full_df)\n}"
+  },
+  {
+    "objectID": "posts/coin_flipping/coin_flip.html#the-result",
+    "href": "posts/coin_flipping/coin_flip.html#the-result",
+    "title": "A proof of concept: a coin-toss game",
+    "section": "The result",
+    "text": "The result\nSo I set two matches with 100,000 of my friends. The first match, the probability of dying at each time step is 0.001 and you must make 10 steps to win. The second match, the probability of dying at each time step is 0.10 and still you must take 10 steps to win. What does it look like between the two races?\n\ndf_lawn_race1&lt;- lawn_race_function(1e5,0.01,10,time_step = 1/5)\ndf_lawn_race2&lt;- lawn_race_function(1e5,0.40,10,time_step = 1/5)\n\n\nfirst_panel / second_panel +   plot_layout(guides = 'collect')\n\n\n\n\n\n\n\n\nSo it may be intuitive, but I like having this simulation and figure. When you’re in a race where the chance of mortality is very small, all groups are able to effectively ‘win’. The slower group (Group 3 with the star symbol!) may take a lot longer but eventually they will reach the finish line. However, in the second situation (the bottom graph), with greater chance for mortality, the one who are able to finish the race faster (Group 1) are more likely to win. With each time step.\nLet’s take a new perspective\nSo everyone who won in the game, what does it look as a cumulative proportion over time. The first race (dark green) and second race (blue) are quite different!\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nggplot(df_full, aes(x = time_event, y= prop, color = as.factor(facet), group = as.factor(facet)))+\n geom_line(size =1.2)+\n  xlab(\"Time\")+\n  ylab(\"Cumulative proportion winning\")+\n  scale_color_manual(name = \"Race\",values = c(`1` = 'darkgreen', `2` = 'blue'))+\n  theme_classic()+\n theme(axis.text = element_text(size = 14),\n        axis.title = element_text(size = 14))+xlim(0,60)\n\n\n\n\n\n\n\n\nHuh… Could there be more variability of individuals winning in the first race?"
   }
 ]
