@@ -4,8 +4,9 @@ title: "Research"
 
 Here are the ghosts of research past, present, and future. Theory allows me to jump around different systems which makes me very happy because I am a jack-of-all trades. But my favorite stomping grounds are in agriculture and disease. The questions that I have are:
 
-1.  Why be climate?
-2.  How can
+1.  What is the role of climate (specifically, changes in temperature) and its effect on insect or disease outbreaks?
+2.  How can a broad community overview provide insight into processes such as phenology or disease?
+3.  How can theoretical ecology inform for ecological management? Specifically, what are questions that are super interesting for both theory and applied people?
 
 ## Climate and tortricid moth pests
 
@@ -88,11 +89,9 @@ My friends would rib on me all the time for saying "Moth is kinda like malaria i
 :::
 
 ::: text
-I 
-For my short six-month postdoc with Dr. Katriona Shea, I spent the Covid-19 lockdown working on Covid-19. 
+I For my short six-month postdoc with Dr. Katriona Shea, I spent the Covid-19 lockdown working on Covid-19.
 :::
 
 ```{=html}
 ```
 :::
-
