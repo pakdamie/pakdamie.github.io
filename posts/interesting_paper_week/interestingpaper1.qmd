@@ -1,0 +1,24 @@
+---
+title: "Interesting stuff I read (August 12)"
+subtitle: "Literacy is hard"
+author: "Damie Pak"
+image: "lady.jpg"
+categories: ["Reading"]
+toc: true
+draft: false
+cache: true
+---
+
+Here is stuff that I read around this week and last week. Most of the readings are related to science and my job (ew), but some are just related to more of my hobbies and interests.
+
+## Simplicity and complexity in ecological data analysis
+
+Paul A. Martaugh (2007)
+
+I really liked this paper because it takes a lot of balls to go back to your old papers and criticize your own statistical analyses. The author explains what he did for his original statistics then shows how simpler tests are better for explanation. Though, I'm still unsure about the second casestudy where he originally used a mixed-effect model to investigate the slope parameter between some body measurement and temperature for 53 fishes. His alternative is to run regression for each of the fishes and then average the slope parameter. I actually find the first test to be easier to understand. Hm.
+
+## How development and survival combine to determine the thermal sensitivity of insects
+
+Abarca et al. 2024
+
+I really loved this paper because it's something I've been thinking about for a project I'm trying to start. Basically, the premise is that looking at thermal performance curves for mortality and development by themselves say nothing about their performance. For example, in colder areas, development rate can be more of the limiting factor than survivorship. However, in warmer areas, survivorship can be more of the limiting factor. This can be an interesting look at Schmaulhausen law...

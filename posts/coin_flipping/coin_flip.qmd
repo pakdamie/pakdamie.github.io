@@ -17,19 +17,17 @@ library(patchwork)
 
 ## An introduction
 
-This is a proof-of-concept for a research project I'm developing. Therefore, this is written more for me than for a general audience (sorry!).  I can't give it all away now, but hopefully it's a taste of what I'm doing. Instead of an ecological question, let's imagine you are hosting a BBQ and you somehow got a large group of your friends to play a lawn game. Everyone is given a coin and told to flip. If you get heads, you proceed one step. If you get tails, you die (specifically, you just lay down and stay in place). You 'win' if you can make it 10 paces away. Here is a schematic below: 
+This is a proof-of-concept for a research project I'm developing. Therefore, this is written more for me than for a general audience (sorry!). I can't give it all away now, but hopefully it's a taste of what I'm doing. Instead of an ecological question, let's imagine you are hosting a BBQ and you somehow got a large group of your friends to play a lawn game. Everyone is given a coin and told to flip. If you get heads, you proceed one step. If you get tails, you die (specifically, you just lay down and stay in place). You 'win' if you can make it 10 paces away. Here is a schematic below:
 
 ![](coin_flipping_schematicpdf.jpg)
 
-But let's make it more interesting! Let's assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let's assume that I introduce some variability. Some friends can only take a small step and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can very large steps. 
+But let's make it more interesting! Let's assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let's assume that I introduce some variability. Some friends can only take very small steps and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can take very large steps.
 
-My question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (do take small steps or big steps) and what is the timing? How does this differ depending on what kind of coin I give them and what kind of steps I allow them to take?
+My question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (i.e do they take small steps or big steps?) and what is the timing? How does this differ depending on what kind of mortality coin I give them and what kind of steps I allow them to take?
 
 ## The simplest code
 
 For the death function, I'm going to use sample until I think a bit more about the gritty mathematics. There is a binary outcome: you survived in this timestep or you perished in this timestep. But we can directly manipulate the probability of mortality.
-
-
 
 ```{r}
 death_function <- function(size, mort_prob){
@@ -56,7 +54,7 @@ progress_function <- function(id){
 }
 ```
 
-Now here is the most convoluted code of how the race can begin. A gist of it is that for anyone who has not died, I make them flip the coin. If it's 0, they stay in place and I record at what time they 'died'. If it's a 1, they are still alive where they can make progress to winning. If they accumulate 10 steps, then they won and they wait while everyone finishes (by either 'dying' or 'winning'). 
+Now here is the most convoluted code of how the race can begin. A gist of it is that for anyone who has not died, I make them flip the coin. If it's 0, they stay in place and I record at what time they 'died'. If it's a 1, they are still alive where they can make progress to winning. If they accumulate 10 steps, they won and wait while everyone finishes (by either 'dying' or 'winning').
 
 ```{r}
 #| code-fold: true
@@ -121,15 +119,14 @@ lawn_race_function <- function(size, mort_prob, progress_time,time_step) {
 
 ```
 
-
 ## The result
 
 So I set two matches with 100,000 of my friends. The first match, the probability of dying at each time step is 0.001 and you must make 10 steps to win. The second match, the probability of dying at each time step is 0.10 and still you must take 10 steps to win. What does it look like between the two races?
+
 ```{r}
 df_lawn_race1<- lawn_race_function(1e5,0.01,10,time_step = 1/5)
 df_lawn_race2<- lawn_race_function(1e5,0.40,10,time_step = 1/5)
 ```
-
 
 ```{r}
 #| echo: false
@@ -144,7 +141,6 @@ first_panel <- ggplot(df_lawn_race1,aes(x = time_event, y = friend_number))+
         xlab("Time") + ylab("Friends") + xlim(0,60)
 
 ```
-
 
 ```{r}
 #| echo: false
@@ -201,7 +197,6 @@ return(success_df_2)
 ```
 
 Let's take a new perspective
-
 
 ```{r}
 #| echo: false
