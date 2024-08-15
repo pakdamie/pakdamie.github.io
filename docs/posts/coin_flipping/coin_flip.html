@@ -197,8 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="an-introduction">An introduction</h2>
 <p>This is a proof-of-concept for a research project I’m developing. Therefore, this is written more for me than for a general audience (sorry!). I can’t give it all away now, but hopefully it’s a taste of what I’m doing. Instead of an ecological question, let’s imagine you are hosting a BBQ and you somehow got a large group of your friends to play a lawn game. Everyone is given a coin and told to flip. If you get heads, you proceed one step. If you get tails, you die (specifically, you just lay down and stay in place). You ‘win’ if you can make it 10 paces away. Here is a schematic below:</p>
 <p><img src="coin_flipping_schematicpdf.jpg" class="img-fluid"></p>
-<p>But let’s make it more interesting! Let’s assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let’s assume that I introduce some variability. Some friends can only take a small step and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can very large steps.</p>
-<p>My question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (do take small steps or big steps) and what is the timing? How does this differ depending on what kind of coin I give them and what kind of steps I allow them to take?</p>
+<p>But let’s make it more interesting! Let’s assume that the coin can be super biased. Instead of a 50% chance of dying, I manipulate it so that the chance of getting tails can vary from 1% to 100%. Also let’s assume that I introduce some variability. Some friends can only take very small steps and other friends can take larger steps. They somehow need to cumulatively take 10 paces to win, but you can see that there are advantages to those who can take very large steps.</p>
+<p>My question is what does it look like at the end of the finish line. Specifically, what are the group of individuals that are able to finish (i.e do they take small steps or big steps?) and what is the timing? How does this differ depending on what kind of mortality coin I give them and what kind of steps I allow them to take?</p>
 </section>
 <section id="the-simplest-code" class="level2">
 <h2 class="anchored" data-anchor-id="the-simplest-code">The simplest code</h2>
@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sampled)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now here is the most convoluted code of how the race can begin. A gist of it is that for anyone who has not died, I make them flip the coin. If it’s 0, they stay in place and I record at what time they ‘died’. If it’s a 1, they are still alive where they can make progress to winning. If they accumulate 10 steps, then they won and they wait while everyone finishes (by either ‘dying’ or ‘winning’).</p>
+<p>Now here is the most convoluted code of how the race can begin. A gist of it is that for anyone who has not died, I make them flip the coin. If it’s 0, they stay in place and I record at what time they ‘died’. If it’s a 1, they are still alive where they can make progress to winning. If they accumulate 10 steps, they won and wait while everyone finishes (by either ‘dying’ or ‘winning’).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>

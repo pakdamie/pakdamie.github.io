@@ -21,4 +21,19 @@ I really liked this paper because it takes a lot of balls to go back to your old
 
 Abarca et al. 2024
 
-I really loved this paper because it's something I've been thinking about for a project I'm trying to start. Basically, the premise is that looking at thermal performance curves for mortality and development by themselves say nothing about their performance. For example, in colder areas, development rate can be more of the limiting factor than survivorship. However, in warmer areas, survivorship can be more of the limiting factor. This can be an interesting look at Schmaulhausen law...
+I really loved this paper because it's something I've been thinking about for a project I'm trying to start. Basically, the premise is that looking at thermal performance curves for mortality and development by themselves say nothing about their performance. For example, in colder areas, development rate can be more of the limiting factor than survivorship. However, in warmer areas, survivorship can be more of the limiting factor. This can be an interesting look at Schmaulhausen law...					
+
+## Diptera vectors of avian Haemosporidian parasites: untangling parasite life cycles and their taxonomy 
+
+Alarcon et al. 2012
+
+Really interesting paper (though I skipped a lot of just to read the Plasmodium part). Shows that a lot of malaria knowledge can be beliefs instead of facts
+
+## Thermal biology of mosquito-borne disease 
+
+Mordecai et al. 2019
+
+Trying to work on a paper about thermal performance curves and trying to figure out what's been done! Great paper, but makes me want to pull my hair out- what hasn't been done?		
+		
+
+	
