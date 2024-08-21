@@ -1,0 +1,246 @@
+---
+title: "Simulating a scale-free network"
+subtitle: "Varying connectance..."
+author: "Damie Pak"
+image: "euler.jpg"
+categories: ["Code","Tutorial"]
+toc: true
+draft: false
+cache: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo=T, results='hide'}
+library(igraph)
+library(ggplot2)
+library(reshape2)
+set.seed(24601)
+```
+
+## An introduction
+
+The goal is to create a spatial network that is scale-free with the user having the ability to vary the connectance. Assuming that $n$ is the number of patches and $l$ is the number of edges,the connectance ($C$) is then: $\frac{l}{n^2}$.
+
+## Size of the network and connectance
+
+The number of patches then determines the minimum and maximum number of edges possible. In an undirected graph, the minimum number of edges we can have is $n-1$ . For the maximum number of edges: $n \frac{(n-1)}{2}$. With both the number of patches and edges, we can then calculate the minimum and maximum value of connectance.
+
+For example, if we have 20 patches ($n = 20$):
+
+```{r}
+n = 20
+min_edge = n - 1 # 19
+max_edge = n * (n-1)/2 # 190 
+```
+
+With the minimum and maximum number of edges being 19 and 190 respectfully, the minimum and maximum connectances are:
+
+```{r}
+c(min_edge/(n^2), max_edge/(n^2))
+```
+
+Here is a short function to calculate connectivity when given a network:
+
+```{r}
+###Put an igraph network 
+calculate_connectivity <- function(network){
+  
+  nodes =  vcount(network) #Code the number of vertex/patch/node
+  edges = ecount(network) #Count the number of edges
+  return(edges/(nodes^2)) #Return the connectance
+  
+}
+```
+
+Therefore, with a given number of patches, I can calculate the number of edges needed to get the specific value of connectance. 
+
+## Simulating creating spatial coordinates
+
+First, we create a spatial network. We sample the coordinates from a uniform distribution with a maximum distance:
+
+```{r}
+x.coordinates <- runif(n,0,10)
+y.coordinates <- runif(n,0,10)
+points <- cbind(x.coordinates,y.coordinates)
+```
+
+```{r, echo=FALSE}
+ggplot(points, aes(x = x.coordinates, y = y.coordinates))+
+  geom_point(size = 4) + 
+  theme_classic()+
+  xlab("X") + 
+  ylab("Y")
+```
+
+I'm, however, more interested in getting the distances between points.
+
+```{r}
+distance_matrix <- as.matrix(dist(points))
+```
+
+This gives us a matrix that has the distances between points.
+
+## For each connectance value, calculate the number of edges
+
+This is a function to calculate the number of edges. I want to get connectance values of 0.05, 0.10, 0.20, 0.30, and 0.40. Then the total number of edges needed based on the patch number is: $C n^2$
+
+```{r}
+calculate_edge <- function(n){
+  connectance  = c(0.05,0.10,0.20,0.30,0.40) #good ranges?
+  
+   return(connectance * n^2)
+}
+```
+
+Therefore, if I want to create a network with this connectance value, here are the number of edges that I need:
+
+```{r}
+cbind.data.frame(connectance = c(0.05,0.10, 0.20, 0.30,0.40),
+                 edges = calculate_edge(20))
+```
+
+## Using Barabási–Albert for preferential attachment
+
+I'm assuming that the spatial network is scale-free (Need to find more references to verify this). I don't think this is a bad assumption. In igraph, to create a scale-free network with preferential attachment, we uses sample_pa. In this stochastic algorithm, you add new nodes and edges with each time step. 
+
+The only way to manipulate the total number of edges you want is by using the "out_seq" argment which states: Numeric vector giving the number of edges to add in each time step. Its first element is ignored as no edges are added in the first time step". Therefore, you can ensure that you have the right number of edges added by summing the vector. 
+
+Here, is a function that lets me generate a number of edges to be added with each time step (I took code from this stackoverflow post) (Source: [Generate Random network models with specified number of edges](https://stackoverflow.com/questions/37178286/generate-random-network-models-with-specified-number-of-edges-in-r)).
+
+```{r}
+genOutSeq <- function(n, m) {
+  n <- n-1 # Shift it along
+  rem <- m %% n
+  c(0, rep(m%/%n + 1, rem), rep(m%/%n, n - rem))
+  
+}
+
+```
+
+```{r}
+### The out_seq to be put into the network.
+edges_list <-  lapply(calculate_edge (20),  function(x) genOutSeq(n,x))
+
+```
+
+```{r}
+adjacency_matrix_list <- list()
+
+for (k in seq(1,length(edges_list))){
+
+net <- sample_pa(
+  n, #Number of patches
+  power = 1,
+  out.seq = edges_list[[k]], #This is the vector list
+  zero.appeal = 1,
+  directed = FALSE, #undirected
+  algorithm = c("psumtree"), #Prevents multiedges
+  start.graph = NULL)
+
+
+###It is possible that I don't have the right number of edges
+###so I must randomly add edges if there are some missing
+nMulti <- sum(edges_list[[k]]) - gsize(net)
+
+
+### We basically run this until we have the correct number of edges AND
+### there are no mutliedges
+while(is_simple(net) == FALSE){
+for (i in 1:nMulti) {
+  vPair <- sample(1:n, size = 2)
+  net <- add_edges(net, vPair)
+  
+  net <- simplify(net,
+  remove.multiple = TRUE,
+  remove.loops = TRUE)
+}
+}
+
+###Convert graph to adjacency matrix
+adj_matrix <- as_adjacency_matrix(
+  net,
+  type = c("both"),
+sparse = "false")
+
+### Save adjacency matrix ot a list
+adjacency_matrix_list[[k]] <- as.matrix(adj_matrix)
+}
+
+```
+
+## Combining the spatial distances and the scale-free network
+
+I realized that I should simulate the same network with various distances between the patches.
+
+```{r}
+###This generates the distance matrices between patches
+generate_distance_matrix <- function(n, max_distance){
+  x.coordinates <- runif(n,0,max_distance)
+  y.coordinates <- runif(n,0,max_distance)
+  points <- cbind(x.coordinates,y.coordinates)
+  distance_matrix <- as.matrix(dist(points))
+  
+  return(distance_matrix)
+  
+}
+generate_distance_matrix(20,16)
+```
+
+```{r}
+### Generate 5 distance matrix - ideally i should have a large number of simulated distance matrices (n = 1000)
+distance_matrices<- replicate(5,generate_distance_matrix(20,16),simplify=FALSE)
+```
+
+
+This code is to basically take the adjacency matrix that we created earlier with varying connectance and multiply it by the distance matrix.
+```{r}
+spatial_scale_free_network <- NULL
+
+for (i in seq(1, length(adjacency_matrix_list))) {
+  adjacency_matrix_list_Interest <- adjacency_matrix_list[[i]]
+
+  spatial_scale_free_network[[i]] <- lapply(distance_matrices, function(x) x * adjacency_matrix_list_Interest)
+}
+
+```
+
+Let's plot it out. Here we are looking at the adjaceny matrix associated with low connectance.
+
+```{r}
+graph_low_connectance<-   lapply(
+spatial_scale_free_network[[1]],function(x)
+graph_from_adjacency_matrix(x, mode = 
+                            "undirected", 
+                            weighted= "TRUE"))
+
+```
+
+Ok, you should be able to see different distances between patches.
+
+```{r, fig.width=10, fig.height=8}
+par(mfrow=c(3,2))
+for (i in seq(1,5)){
+  plot(graph_low_connectance[[i]],layout=layout.auto)
+}
+```
+
+Here is a high connectance one:
+
+```{r}
+graph_high_connectance<-   lapply(
+spatial_scale_free_network[[5]],function(x)
+graph_from_adjacency_matrix(x, mode = 
+                            "undirected", weighted= "TRUE"))
+
+```
+  
+  
+```{r, fig.width=10, fig.height=8}
+par(mfrow=c(3,2))
+
+for (i in seq(1,5)){
+  plot(graph_high_connectance[[i]],layout=layout.auto)
+}
+```
+

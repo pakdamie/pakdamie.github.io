@@ -1,0 +1,12 @@
+---
+title: "Simulating ecology models: A series of tutorial"
+subtitle: "Numerically solving differential equations"
+author: "Damie Pak"
+image: "rabbithead.jpg"
+categories: ["Code","Tutorial"]
+toc: true
+draft: false
+cache: true
+---
+
+So in the previous section, we talked about the simplest differential equation which is population growth.

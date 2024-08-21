@@ -13,27 +13,30 @@ Here is stuff that I read around this week and last week. Most of the readings a
 
 ## Simplicity and complexity in ecological data analysis
 
-Paul A. Martaugh (2007)
+Paul A. Martaugh 2007
 
-I really liked this paper because it takes a lot of balls to go back to your old papers and criticize your own statistical analyses. The author explains what he did for his original statistics then shows how simpler tests are better for explanation. Though, I'm still unsure about the second casestudy where he originally used a mixed-effect model to investigate the slope parameter between some body measurement and temperature for 53 fishes. His alternative is to run regression for each of the fishes and then average the slope parameter. I actually find the first test to be easier to understand. Hm.
+I really liked this paper because it takes a lot of balls to go back to your old papers and criticize your own statistical analyses. The author explains what he did for his original statistics then shows how simpler tests are better for explanation. Though, I'm still unsure about the second case study where he originally used a mixed-effect model to investigate the slope parameter between some body measurement and temperature for 53 fishes. His alternative is to run regression for each of the fishes and then average the slope parameter. I actually find the first test to be easier to understand. Hm.
 
 ## How development and survival combine to determine the thermal sensitivity of insects
 
 Abarca et al. 2024
 
-I really loved this paper because it's something I've been thinking about for a project I'm trying to start. Basically, the premise is that looking at thermal performance curves for mortality and development by themselves say nothing about their performance. For example, in colder areas, development rate can be more of the limiting factor than survivorship. However, in warmer areas, survivorship can be more of the limiting factor. This can be an interesting look at Schmaulhausen law...					
+I really loved this paper because it's something I've been thinking about for a project I'm trying to start. Basically, the premise is that looking at thermal performance curves for mortality and development by themselves say nothing about their performance. For example, in colder areas, development rate can be more of the limiting factor than survivorship. However, in warmer areas, survivorship can be more of the limiting factor. This can be an interesting look at Schmaulhausen law...
 
-## Diptera vectors of avian Haemosporidian parasites: untangling parasite life cycles and their taxonomy 
+## Diptera vectors of avian Haemosporidian parasites: untangling parasite life cycles and their taxonomy
 
 Alarcon et al. 2012
 
-Really interesting paper (though I skipped a lot of just to read the Plasmodium part). Shows that a lot of malaria knowledge can be beliefs instead of facts
+Really interesting paper (though I skipped a lot of just to read the Plasmodium part). Shows that a lot of malaria knowledge can be beliefs instead of facts. A plea for more network analysis in parasite/vectors.
 
-## Thermal biology of mosquito-borne disease 
+## Thermal biology of mosquito-borne disease
 
 Mordecai et al. 2019
 
-Trying to work on a paper about thermal performance curves and trying to figure out what's been done! Great paper, but makes me want to pull my hair out- what hasn't been done?		
-		
+Trying to work on a paper about thermal performance curves and trying to figure out what's been done! Great paper, but makes me want to pull my hair out- what hasn't been done?
 
-	
+## Evolution of geographic variation in thermal performance curves in the face of climate change and implications for biotic interactions
+
+Tuzun and Stoks 2018
+
+Hm, wild finding is that thermal performance curves do not vary across geography for a species with wide geographic distribution. The difference in TPC's seem to be mostly 'vertical'.
