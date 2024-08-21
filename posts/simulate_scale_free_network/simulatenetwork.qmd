@@ -53,7 +53,7 @@ calculate_connectivity <- function(network){
 }
 ```
 
-Therefore, with a given number of patches, I can calculate the number of edges needed to get the specific value of connectance. 
+Therefore, with a given number of patches, I can calculate the number of edges needed to get the specific value of connectance.
 
 ## Simulating creating spatial coordinates
 
@@ -102,9 +102,9 @@ cbind.data.frame(connectance = c(0.05,0.10, 0.20, 0.30,0.40),
 
 ## Using Barabási–Albert for preferential attachment
 
-I'm assuming that the spatial network is scale-free (Need to find more references to verify this). I don't think this is a bad assumption. In igraph, to create a scale-free network with preferential attachment, we uses sample_pa. In this stochastic algorithm, you add new nodes and edges with each time step. 
+I'm assuming that the spatial network is scale-free (Need to find more references to verify this). I don't think this is a bad assumption. In igraph, to create a scale-free network with preferential attachment, we uses sample_pa. In this stochastic algorithm, you add new nodes and edges with each time step.
 
-The only way to manipulate the total number of edges you want is by using the "out_seq" argment which states: Numeric vector giving the number of edges to add in each time step. Its first element is ignored as no edges are added in the first time step". Therefore, you can ensure that you have the right number of edges added by summing the vector. 
+The only way to manipulate the total number of edges you want is by using the "out_seq" argment which states: Numeric vector giving the number of edges to add in each time step. Its first element is ignored as no edges are added in the first time step". Therefore, you can ensure that you have the right number of edges added by summing the vector.
 
 Here, is a function that lets me generate a number of edges to be added with each time step (I took code from this stackoverflow post) (Source: [Generate Random network models with specified number of edges](https://stackoverflow.com/questions/37178286/generate-random-network-models-with-specified-number-of-edges-in-r)).
 
@@ -192,8 +192,8 @@ generate_distance_matrix(20,16)
 distance_matrices<- replicate(5,generate_distance_matrix(20,16),simplify=FALSE)
 ```
 
-
 This code is to basically take the adjacency matrix that we created earlier with varying connectance and multiply it by the distance matrix.
+
 ```{r}
 spatial_scale_free_network <- NULL
 
@@ -234,8 +234,7 @@ graph_from_adjacency_matrix(x, mode =
                             "undirected", weighted= "TRUE"))
 
 ```
-  
-  
+
 ```{r, fig.width=10, fig.height=8}
 par(mfrow=c(3,2))
 
@@ -243,4 +242,3 @@ for (i in seq(1,5)){
   plot(graph_high_connectance[[i]],layout=layout.auto)
 }
 ```
-

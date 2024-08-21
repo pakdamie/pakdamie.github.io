@@ -1,8 +1,8 @@
 ---
-title: "Simulating ecology models: A series of tutorial"
+title: "Simulating ecology models: A series of tutorial (Part 2)"
 subtitle: "Numerically solving differential equations"
 author: "Damie Pak"
-image: "rabbithead.jpg"
+image: "euler.png"
 categories: ["Code","Tutorial"]
 toc: true
 draft: false

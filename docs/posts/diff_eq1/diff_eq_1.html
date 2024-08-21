@@ -228,16 +228,10 @@ window.Quarto = {
 </header>
 
 
+<p>WORK In PROGRESS</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: viridisLite</code></pre>
-</div>
-</div>
-<p>This is a simple series for those new to R and modeling ecological models. These series go through the mathematics and the code necessary to simulate some models. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.</p>
+<p>This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.</p>
 </section>
 <section id="lets-start-at-the-very-beginning" class="level2">
 <h2 class="anchored" data-anchor-id="lets-start-at-the-very-beginning">Let’s start at the very beginning</h2>
@@ -279,28 +273,28 @@ N_t = N_0(1+b)^t
 <p>Let’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.</p>
 <p>So how do you design a function for doing simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (<span class="math inline">\(N_0\)</span>) can also vary as well as the birth rate! So for the input of the function, you should include the parameters that you’re interested in varying.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Insert model here</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Insert model here</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So I have a function called “rabbit_growth” and I wrote in a function that includes time, initial value, and the birth rate as input. Ideally, we should be able to feed different values and get different outputs out.</p>
 <p>Now what do we want for the output? For simulation output, we want something that has the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation where initial describes <span class="math inline">\(N_0\)</span>, the birth rate (b), and we can raise it to the power of the timesteps. So <span class="math inline">\(N_0 * (1+b)\)</span> will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply <span class="math inline">\(N_0 *(1+b)\)</span> to each element of the vector. For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>timesteps <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(timesteps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>timesteps <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(timesteps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Single number:"</span>, <span class="dv">5</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span><span class="dv">5</span>))) <span class="co"># single numeric number #vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Single number:"</span>, <span class="dv">5</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span><span class="dv">5</span>))) <span class="co"># single numeric number #vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Single number: 30"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span><span class="dv">5</span>)<span class="sc">^</span>(timesteps) <span class="co"># a vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span><span class="dv">5</span>)<span class="sc">^</span>(timesteps) <span class="co"># a vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 5.000000e+00 3.000000e+01 1.800000e+02 1.080000e+03 6.480000e+03
  [6] 3.888000e+04 2.332800e+05 1.399680e+06 8.398080e+06 5.038848e+07
@@ -310,24 +304,24 @@ N_t = N_0(1+b)^t
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  timesteps <span class="ot">=</span>  <span class="fu">seq</span>(<span class="dv">0</span>,time)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  abundance  <span class="ot">=</span> initial <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span>b)<span class="sc">^</span>(timesteps)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Try to keep the parameter that you are varying as a column for easier analysis </span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  rabbit_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time =</span> timesteps, <span class="at">abundance =</span> abundance,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">initial =</span> initial, <span class="at">b =</span> b)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rabbit_df)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  timesteps <span class="ot">=</span>  <span class="fu">seq</span>(<span class="dv">0</span>,time)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  abundance  <span class="ot">=</span> initial <span class="sc">*</span> (<span class="dv">1</span><span class="sc">+</span>b)<span class="sc">^</span>(timesteps)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Try to keep the parameter that you are varying as a column for easier analysis </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  rabbit_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time =</span> timesteps, <span class="at">abundance =</span> abundance,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">initial =</span> initial, <span class="at">b =</span> b)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rabbit_df)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, I solve the equation and put it in a data.frame with the time, abundance, initial value, and birth rate.</p>
 <p>There are many, many ways to solve this. Some people do for-loops!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(standard_rabbit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(standard_rabbit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   time abundance initial b
 1     0         5       5 1
@@ -345,8 +339,8 @@ N_t = N_0(1+b)^t
 </div>
 <p>IF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it. I’m a ggplot lover, so we’re going to use ggplot2 (for tutorial on ggplot2, check):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> abundance))<span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>) <span class="sc">+</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> abundance))<span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>) <span class="sc">+</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -357,18 +351,18 @@ N_t = N_0(1+b)^t
 </div>
 <p>Now what if we want to create a lot of different plots? So there will be a much faster way that I will show you in another part, but let’s do this for right now. Keeping everything else the same, let’s change <span class="math inline">\(b\)</span> (the third input in the function “rabbit_growth”) and create a full data.frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit1 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>standard_rabbit2 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">2</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>standard_rabbit3 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">3</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>standard_rabbit_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(standard_rabbit1,standard_rabbit2, </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                             standard_rabbit3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit1 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>standard_rabbit2 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>standard_rabbit3 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>standard_rabbit_all <span class="ot">&lt;-</span> <span class="fu">rbind</span>(standard_rabbit1,standard_rabbit2, </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                             standard_rabbit3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit_all, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y=</span> abundance, <span class="at">color =</span> <span class="fu">as.factor</span>(b), <span class="at">group =</span> <span class="fu">as.factor</span>(b))) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>)<span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">name =</span> <span class="st">"b"</span>,<span class="at">option =</span> <span class="st">'turbo'</span>)<span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit_all, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y=</span> abundance, <span class="at">color =</span> <span class="fu">as.factor</span>(b), <span class="at">group =</span> <span class="fu">as.factor</span>(b))) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>)<span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">name =</span> <span class="st">"b"</span>,<span class="at">option =</span> <span class="st">'turbo'</span>)<span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

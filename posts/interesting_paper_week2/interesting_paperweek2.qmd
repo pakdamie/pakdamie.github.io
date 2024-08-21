@@ -1,0 +1,16 @@
+---
+title: "Interesting stuff I read (August 19th)"
+subtitle: "Literacy is still hard"
+author: "Damie Pak"
+image: "lady.jpg"
+categories: ["Reading"]
+toc: true
+draft: false
+cache: true
+---
+
+### **Thermal performance curves** reveal variation in the seasonal niche of a short-lived annual
+
+Hereford 2017
+
+Interesting paper where I learned about MSDM (mechanical species distribution modeling). Mostly experimental, but the paper explores the thermal performance curves (TPCs) of differing genotype in *Mollugo verticillata* in California. Interestingly, they found that thermal breadth is negatively correlated with optimum temperature. Being more fit in warmer temperature comes at a cost of breadth. A question that I am curious about : is variation in TPC adaptive?

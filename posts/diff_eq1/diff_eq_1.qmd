@@ -9,14 +9,16 @@ draft: false
 cache: true
 ---
 
-## Introduction
+WORK In PROGRESS
 
-```{r}
+## Introduction 
+
+```{r echo = FALSE}
 library(ggplot2)
 library(viridis)
 ```
 
-This is a simple series for those new to R and modeling ecological models. These series go through the mathematics and the code necessary to simulate some models. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.
+This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.
 
 ## Let's start at the very beginning
 
@@ -30,12 +32,11 @@ $$
 N_{1} = N_0 + bN_0.
 $$
 
-For example, if there was originally 5 adults ($N_0 = 5$) and each produces 5 rabbits ($b = 5$), then we will have 25 new adults.  Adding both parents and children, we have  $N_1 = 5 + (25) = 30$ Here, we assume that the offspring are adults pretty much instantly. What does this look like for $t = 2$? 
+For example, if there was originally 5 adults ($N_0 = 5$) and each produces 5 rabbits ($b = 5$), then we will have 25 new adults. Adding both parents and children, we have $N_1 = 5 + (25) = 30$ Here, we assume that the offspring are adults pretty much instantly. What does this look like for $t = 2$?
 
 $$
 N_{2} = N(1) + 5N(1)
-$$
-If we substitute $N(1) = 30$, then we have $N_2 = 30 + 150 = 180$. It is extremely tedious of having to write each time-step seperately (imagine having to do this for a 100 timesteps!) 
+$$ If we substitute $N(1) = 30$, then we have $N_2 = 30 + 150 = 180$. It is extremely tedious of having to write each time-step seperately (imagine having to do this for a 100 timesteps!)
 
 By rearranging the equation, we can see (try it out first!)
 
@@ -67,10 +68,7 @@ $$
 
 That's interesting! We basically just need to know the initial starting value ($N_0$) and we can raise the (1+b) to the power of the time! Here's a visual cue if you need a bit more help:
 
-
-
-But to predict the number of rabbits at time $t$, we simply need to know the initial abundance ($N_0$) and the birth rate ($b$) 
-$$
+But to predict the number of rabbits at time $t$, we simply need to know the initial abundance ($N_0$) and the birth rate ($b$) $$
 N_t = N_0(1+b)^t
 $$
 
@@ -97,7 +95,6 @@ Now what do we want for the output? For simulation output, we want something tha
 timesteps = seq(0,20)
 print(timesteps)
 ```
-
 
 ```{r}
 print(paste("Single number:", 5 * (1+5))) # single numeric number #vector
@@ -161,9 +158,9 @@ Wow you can see how drastically the population can grow depending on b!
 
 Congratulations, you made your first simulation using one of the oldest model of growth!
 
-## Discrete to Continuous 
+## Discrete to Continuous
 
-Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Why not  nothing about this model that's stopping me from stopping of thinking of growth every... hour, minute, second, and nanosecond.
+Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Why not nothing about this model that's stopping me from stopping of thinking of growth every... hour, minute, second, and nanosecond.
 
 ## Discrete to continuous
 
