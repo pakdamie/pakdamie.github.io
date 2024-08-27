@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -122,6 +151,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#thermal-performance-curves-reveal-variation-in-the-seasonal-niche-of-a-short-lived-annual" id="toc-thermal-performance-curves-reveal-variation-in-the-seasonal-niche-of-a-short-lived-annual" class="nav-link active" data-scroll-target="#thermal-performance-curves-reveal-variation-in-the-seasonal-niche-of-a-short-lived-annual"><strong>Thermal performance curves</strong> reveal variation in the seasonal niche of a short-lived annual</a></li>
+  <li><a href="#climate-sensitivity-across-latitude-scaling-physiology-to-communities" id="toc-climate-sensitivity-across-latitude-scaling-physiology-to-communities" class="nav-link" data-scroll-target="#climate-sensitivity-across-latitude-scaling-physiology-to-communities">Climate sensitivity across latitude: scaling physiology to communities</a></li>
+  <li><a href="#the-failure-of-r_0" id="toc-the-failure-of-r_0" class="nav-link" data-scroll-target="#the-failure-of-r_0">The Failure of <span class="math inline">\(R_0\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -161,6 +192,16 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="thermal-performance-curves-reveal-variation-in-the-seasonal-niche-of-a-short-lived-annual"><strong>Thermal performance curves</strong> reveal variation in the seasonal niche of a short-lived annual</h3>
 <p>Hereford 2017</p>
 <p>Interesting paper where I learned about MSDM (mechanical species distribution modeling). Mostly experimental, but the paper explores the thermal performance curves (TPCs) of differing genotype in <em>Mollugo verticillata</em> in California. Interestingly, they found that thermal breadth is negatively correlated with optimum temperature. Being more fit in warmer temperature comes at a cost of breadth. A question that I am curious about : is variation in TPC adaptive?</p>
+</section>
+<section id="climate-sensitivity-across-latitude-scaling-physiology-to-communities" class="level2">
+<h2 class="anchored" data-anchor-id="climate-sensitivity-across-latitude-scaling-physiology-to-communities">Climate sensitivity across latitude: scaling physiology to communities</h2>
+<p>Louthan et al.&nbsp;2021</p>
+<p>A nice review paper that I really love. It talks about TPCs and how they affect individuals and communities. For example, shapes of TPCs can vary across latitudes due to trade-offs. This can then scale up to affect the community and influence stability. Don’t let the short paragraph deter you, I really recommend.</p>
+</section>
+<section id="the-failure-of-r_0" class="level2">
+<h2 class="anchored" data-anchor-id="the-failure-of-r_0">The Failure of <span class="math inline">\(R_0\)</span></h2>
+<p>Li et al.&nbsp;2001</p>
+<p>A bit of a concerning and eye-opening paper about how <span class="math inline">\(R_0\)</span> is kinda nebulous and that different methods of calculating <span class="math inline">\(R_0\)</span> lead to varying answers (Wild to me!). Talks about how <span class="math inline">\(R_0\)</span> is flawed, but is the best we got. Interesting paper, points out some of the critical failures in the next generation method and such.</p>
 
 
 </section>

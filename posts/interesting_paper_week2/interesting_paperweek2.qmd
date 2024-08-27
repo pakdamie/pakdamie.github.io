@@ -14,3 +14,15 @@ cache: true
 Hereford 2017
 
 Interesting paper where I learned about MSDM (mechanical species distribution modeling). Mostly experimental, but the paper explores the thermal performance curves (TPCs) of differing genotype in *Mollugo verticillata* in California. Interestingly, they found that thermal breadth is negatively correlated with optimum temperature. Being more fit in warmer temperature comes at a cost of breadth. A question that I am curious about : is variation in TPC adaptive?
+
+## Climate sensitivity across latitude: scaling physiology to communities
+
+Louthan et al. 2021
+
+A nice review paper that I really love. It talks about TPCs and how they affect individuals and communities. For example, shapes of TPCs can vary across latitudes due to trade-offs. This can then scale up to affect the community and influence stability. Don't let the short paragraph deter you, I really recommend.
+
+## The Failure of $R_0$
+
+Li et al. 2001
+
+A bit of a concerning and eye-opening paper about how $R_0$ is kinda nebulous and that different methods of calculating $R_0$ lead to varying answers (Wild to me!). Talks about how $R_0$ is flawed, but is the best we got. Interesting paper, points out some of the critical failures in the next generation method and such.

@@ -18,7 +18,7 @@
     "href": "posts.html",
     "title": "Blog posts",
     "section": "",
-    "text": "Interesting stuff I read (August 12)\n\n\n\nReading\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating ecology models: A series of tutorial (Part 2)\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteresting stuff I read (August 19th)\n\n\n\nReading\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating a scale-free network\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\nQuick how to: Simulating different thermal performance curves\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating ecology models: A series of tutorial\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA proof of concept: a coin-toss game\n\n\n\nCoding\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Interesting things I learned this week (August 19th)\n\n\n\nList\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteresting stuff I read (August 12)\n\n\n\nReading\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating ecology models: A series of tutorial (Part 2)\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteresting stuff I read (August 19th)\n\n\n\nReading\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating a scale-free network\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\nQuick how to: Simulating different thermal performance curves\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulating ecology models: A series of tutorial\n\n\n\nCode\n\n\nTutorial\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA proof of concept: a coin-toss game\n\n\n\nCoding\n\n\n\n\n\n\n\nDamie Pak\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "research.html",
@@ -242,14 +242,14 @@
     "href": "posts/diff_eq1/diff_eq_1.html#lets-start-at-the-very-beginning",
     "title": "Simulating ecology models: A series of tutorial",
     "section": "Let’s start at the very beginning",
-    "text": "Let’s start at the very beginning\nA very good place to start is with population growth. Ecologists are fascinated by the rise and fall in the organism’s numbers. The simplest question an ecologist may start with: “If I have these initial number of organisms, and each produce this number of offspring, what should the total population be some time later?”\nDifferential equation models are in continuous time which means that the change in the population happens in the small time units. Think of a second, now think of a nanosecond, and think the smallest proportion of that time- the population is changing even within that tiny little time-frame. That may seem far-fetched and for species that reproduce once per season, we should be resorting to discrete time. Generally, people are better about thinking of population growth in discrete time where with each discrete time-step (a day, a week, a month) there is an increase in the population.\nLet us say that our organisms of interest are female rabbits and we describe their population size at time \\(t\\) as \\(N_t\\). Assume that every with each time step, each rabbit births the same number of new rabbits! This parameter is the birth rate \\(b\\). If we have the initial founding number as \\(N_0\\) then we can write that the next time step as:\n\\[\nN_{1} = N_0 + bN_0.\n\\]\nFor example, if there was originally 5 adults (\\(N_0 = 5\\)) and each produces 5 rabbits (\\(b = 5\\)), then we will have 25 new adults. Adding both parents and children, we have \\(N_1 = 5 + (25) = 30\\) Here, we assume that the offspring are adults pretty much instantly. What does this look like for \\(t = 2\\)?\n\\[\nN_{2} = N(1) + 5N(1)\n\\] If we substitute \\(N(1) = 30\\), then we have \\(N_2 = 30 + 150 = 180\\). It is extremely tedious of having to write each time-step seperately (imagine having to do this for a 100 timesteps!)\nBy rearranging the equation, we can see (try it out first!)\n\\[\nN_{1} = N_0(1 + b)\n\\]\n\\[\nN_{2} = N_{1}(1 + b)\n\\]\nThis suggests that:\n\\[\nN_{2} = N_0(1+b)(1+b)\n\\]\nSo how about \\(N_{3}\\) ?\n\\[\nN_{3} = N_{2} (1+b)\n\\]\nWhich then is equivalent to:\n\\[\nN_{3} = N_0(1+b)(1+b)(1+b).\n\\]\nThat’s interesting! We basically just need to know the initial starting value (\\(N_0\\)) and we can raise the (1+b) to the power of the time! Here’s a visual cue if you need a bit more help:\nBut to predict the number of rabbits at time \\(t\\), we simply need to know the initial abundance (\\(N_0\\)) and the birth rate (\\(b\\)) \\[\nN_t = N_0(1+b)^t\n\\]\n\nCoding\nLet’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.\nSo how do you design a function for doing simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (\\(N_0\\)) can also vary as well as the birth rate! So for the input of the function, you should include the parameters that you’re interested in varying.\n\nrabbit_growth &lt;- function(time, initial, b){\n  \n  ###Insert model here\n}\n\nSo I have a function called “rabbit_growth” and I wrote in a function that includes time, initial value, and the birth rate as input. Ideally, we should be able to feed different values and get different outputs out.\nNow what do we want for the output? For simulation output, we want something that has the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation where initial describes \\(N_0\\), the birth rate (b), and we can raise it to the power of the timesteps. So \\(N_0 * (1+b)\\) will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply \\(N_0 *(1+b)\\) to each element of the vector. For example:\n\ntimesteps = seq(0,20)\nprint(timesteps)\n\n [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\n\n\nprint(paste(\"Single number:\", 5 * (1+5))) # single numeric number #vector\n\n[1] \"Single number: 30\"\n\n\n\n5 * (1+5)^(timesteps) # a vector\n\n [1] 5.000000e+00 3.000000e+01 1.800000e+02 1.080000e+03 6.480000e+03\n [6] 3.888000e+04 2.332800e+05 1.399680e+06 8.398080e+06 5.038848e+07\n[11] 3.023309e+08 1.813985e+09 1.088391e+10 6.530347e+10 3.918208e+11\n[16] 2.350925e+12 1.410555e+13 8.463330e+13 5.077998e+14 3.046799e+15\n[21] 1.828079e+16\n\n\n\nrabbit_growth &lt;- function(time, initial, b){\n\n  timesteps =  seq(0,time)\n  \n  abundance  = initial * (1+b)^(timesteps)\n    \n  ###Try to keep the parameter that you are varying as a column for easier analysis \n  rabbit_df &lt;- data.frame(time = timesteps, abundance = abundance,\n                          initial = initial, b = b)\n    \n  return(rabbit_df)\n  }\n\nHere, I solve the equation and put it in a data.frame with the time, abundance, initial value, and birth rate.\nThere are many, many ways to solve this. Some people do for-loops!\n\nstandard_rabbit &lt;- rabbit_growth(10,5, 1)\nprint(standard_rabbit)\n\n   time abundance initial b\n1     0         5       5 1\n2     1        10       5 1\n3     2        20       5 1\n4     3        40       5 1\n5     4        80       5 1\n6     5       160       5 1\n7     6       320       5 1\n8     7       640       5 1\n9     8      1280       5 1\n10    9      2560       5 1\n11   10      5120       5 1\n\n\nIF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it. I’m a ggplot lover, so we’re going to use ggplot2 (for tutorial on ggplot2, check):\n\nggplot(standard_rabbit, aes(x = time, y = abundance))+ geom_point() + geom_line() + xlab(\"Time\") + ylab(\"Abundance\") + \n  theme_minimal()\n\n\n\n\n\n\n\n\nNow what if we want to create a lot of different plots? So there will be a much faster way that I will show you in another part, but let’s do this for right now. Keeping everything else the same, let’s change \\(b\\) (the third input in the function “rabbit_growth”) and create a full data.frame.\n\nstandard_rabbit1 &lt;- rabbit_growth(10,5, 1)\nstandard_rabbit2 &lt;- rabbit_growth(10,5, 2)\nstandard_rabbit3 &lt;- rabbit_growth(10,5, 3)\n\nstandard_rabbit_all &lt;- rbind(standard_rabbit1,standard_rabbit2, \n                             standard_rabbit3)\n\n\nggplot(standard_rabbit_all, aes(x = time, y= abundance, color = as.factor(b), group = as.factor(b))) + geom_point() + geom_line() +\n  xlab(\"Time\") + ylab(\"Abundance\")+\n  scale_color_viridis(discrete = TRUE, name = \"b\",option = 'turbo')+\n  theme_minimal()\n\n\n\n\n\n\n\n\nWow you can see how drastically the population can grow depending on b!\nCongratulations, you made your first simulation using one of the oldest model of growth!"
+    "text": "Let’s start at the very beginning\nA very good place to start is with population growth. Ecologists are fascinated by the rise and fall in the organism’s numbers. The simplest question an ecologist may start with: “If I have these initial number of organisms, and each produce this number of offspring, what should the total population be some time later?”\nDifferential equation models are in continuous time which means that the change in the population happens in the small time units. Think of a second, now think of a nanosecond, and think the smallest proportion of that time- the population is changing even within that tiny little time-frame. That may seem far-fetched and for species that reproduce once per season, we should be resorting to discrete time. Generally, people are better about thinking of population growth in discrete time where with each discrete time-step (a day, a week, a month) there is an increase in the population.\nLet us say that our organisms of interest are female rabbits and we describe their population size at time \\(t\\) as \\(N_t\\). Assume that every with each time step, each rabbit births the same number of new rabbits! This parameter is the birth rate \\(b\\). If we have the initial founding number as \\(N_0\\) then we can write that the next time step as:\n\\[\nN_{1} = N_0 + bN_0.\n\\]\nFor example, if there was originally 5 adults (\\(N_0 = 5\\)) and each produces 5 rabbits (\\(b = 5\\)), then we will have 25 new adults. Adding both parents and children, we have \\(N_1 = 5 + (25) = 30\\) Here, we assume that the offspring are adults pretty much instantly. What does this look like for \\(t = 2\\)?\n\\[\nN_{2} = N(1) + 5N(1)\n\\] If we substitute \\(N(1) = 30\\), then we have \\(N_2 = 30 + 150 = 180\\). It is extremely tedious of having to write each time-step seperately (imagine having to do this for a 100 timesteps!)\nBy rearranging the equation, we can see (try it out first!)\n\\[\nN_{1} = N_0(1 + b)\n\\]\n\\[\nN_{2} = N_{1}(1 + b)\n\\]\nThis suggests that:\n\\[\nN_{2} = N_0(1+b)(1+b)\n\\]\nSo how about \\(N_{3}\\) ?\n\\[\nN_{3} = N_{2} (1+b)\n\\]\nWhich is equivalent to:\n\\[\nN_{3} = N_0(1+b)(1+b)(1+b).\n\\]\nThat’s interesting! We basically just need to know the initial starting value (\\(N_0\\)) and we can raise the (1+b) to the power of the time! Here’s a visual cue if you need a bit more help:\nBut to predict the number of rabbits at time \\(t\\), we simply need to know the initial abundance (\\(N_0\\)) and the birth rate (\\(b\\)): \\(N_t = N_0(1+b)^t\\)"
   },
   {
     "objectID": "posts/diff_eq1/diff_eq_1.html#discrete-to-continuous",
     "href": "posts/diff_eq1/diff_eq_1.html#discrete-to-continuous",
     "title": "Simulating ecology models: A series of tutorial",
     "section": "Discrete to Continuous",
-    "text": "Discrete to Continuous\nNow how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Why not nothing about this model that’s stopping me from stopping of thinking of growth every… hour, minute, second, and nanosecond."
+    "text": "Discrete to Continuous\nNow how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Nothing about this model is stopping me from thinking of growth every… hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{2}\\). If it’s every hour, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{24}\\). So ultimately, we multiply \\(b\\) by some time step which we call: \\(\\Delta T\\).\nNow how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 \\[\nN_{t+1} = N_{t} + bN_{t} \\Delta t.\n\\] \\[\nN_{t+1} - N_t =  b N_t \\Delta t\n\\] \\[\n\\frac{N_{t+1} - N_t}{\\Delta t} = {bN_t}\n\\] As you let \\(\\delta T\\) approach infinity, this discrete equation can then be described as a differential.\n\\[ \\frac{dN}{dt} = {bN_t} \\] Solving it, we get:\n\\[\nN(t) = N_0exp(b(t))\n\\]"
   },
   {
     "objectID": "posts/diff_eq1/diff_eq_1.html#the-exponential-model",
@@ -361,6 +361,125 @@
     "href": "posts/interesting_paper_week2/interesting_paperweek2.html",
     "title": "Interesting stuff I read (August 19th)",
     "section": "",
-    "text": "Thermal performance curves reveal variation in the seasonal niche of a short-lived annual\nHereford 2017\nInteresting paper where I learned about MSDM (mechanical species distribution modeling). Mostly experimental, but the paper explores the thermal performance curves (TPCs) of differing genotype in Mollugo verticillata in California. Interestingly, they found that thermal breadth is negatively correlated with optimum temperature. Being more fit in warmer temperature comes at a cost of breadth. A question that I am curious about : is variation in TPC adaptive?"
+    "text": "Hereford 2017\nInteresting paper where I learned about MSDM (mechanical species distribution modeling). Mostly experimental, but the paper explores the thermal performance curves (TPCs) of differing genotype in Mollugo verticillata in California. Interestingly, they found that thermal breadth is negatively correlated with optimum temperature. Being more fit in warmer temperature comes at a cost of breadth. A question that I am curious about : is variation in TPC adaptive?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "",
+    "text": "This is a list of things I learned. Generally involves my research, but you might see a weird aside."
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#i-learned-that-its-michelle-pfeiffer-who-played-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#i-learned-that-its-michelle-pfeiffer-who-played-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "I learned that it’s Michelle Pfeiffer who played Amber’s mom in the movie adaptation of Hairspray (2007)",
+    "text": "I learned that it’s Michelle Pfeiffer who played Amber’s mom in the movie adaptation of Hairspray (2007)\nAnd not Hannah Waddingham? I do not feel bad about this mistake- look it up!"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#profvis-is-a-cool-package-that-helps-you-visualize-profiling-your-code",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#profvis-is-a-cool-package-that-helps-you-visualize-profiling-your-code",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "profvis is a cool package that helps you visualize profiling your code",
+    "text": "profvis is a cool package that helps you visualize profiling your code\nAnd figure out where the slowdowns. I learned that the slowdowns are not exactly where I thought they would be?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#you-can-save-some-miliseconds-using-rep_length-instead-of-rep",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#you-can-save-some-miliseconds-using-rep_length-instead-of-rep",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "You can save some miliseconds using rep_length instead of rep",
+    "text": "You can save some miliseconds using rep_length instead of rep"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#apply-can-be-slow",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#apply-can-be-slow",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Apply can be slow",
+    "text": "Apply can be slow\nI’m still trying to figure this out."
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#save-some-miliseconds-using-rep_length-instead-of-rep",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#save-some-miliseconds-using-rep_length-instead-of-rep",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Save some miliseconds using rep_length instead of rep",
+    "text": "Save some miliseconds using rep_length instead of rep\nSame function, but somehow it saves you a few seconds?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#you-can-create-sparse-matrix-using-the-package-matrix",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#you-can-create-sparse-matrix-using-the-package-matrix",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "You can create sparse Matrix using the package Matrix",
+    "text": "You can create sparse Matrix using the package Matrix\nI didn’t realize how much a dense matrix that is only 20 x 20 can still be slow?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/Untitled.html#michelle-pfeiffer-plays-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "href": "posts/interesting_stuff_I_learned/Untitled.html#michelle-pfeiffer-plays-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Michelle Pfeiffer plays Amber’s mom in the movie adaptation of Hairspray (2007)",
+    "text": "Michelle Pfeiffer plays Amber’s mom in the movie adaptation of Hairspray (2007)\nAnd not Hannah Waddingham. I do not feel bad about this mistake- look it up!"
+  },
+  {
+    "objectID": "posts/interesting_paper_week2/interesting_paperweek2.html#climate-sensitivity-across-latitude-scaling-physiology-to-communities",
+    "href": "posts/interesting_paper_week2/interesting_paperweek2.html#climate-sensitivity-across-latitude-scaling-physiology-to-communities",
+    "title": "Interesting stuff I read (August 19th)",
+    "section": "Climate sensitivity across latitude: scaling physiology to communities",
+    "text": "Climate sensitivity across latitude: scaling physiology to communities\nLouthan et al. 2021\nA nice review paper that I really love. It talks about TPCs and how they affect individuals and communities. For example, shapes of TPCs can vary across latitudes due to trade-offs. This can then scale up to affect the community and influence stability. Don’t let the short paragraph deter you, I really recommend."
+  },
+  {
+    "objectID": "posts/interesting_paper_week2/interesting_paperweek2.html#the-failure-of-r_0",
+    "href": "posts/interesting_paper_week2/interesting_paperweek2.html#the-failure-of-r_0",
+    "title": "Interesting stuff I read (August 19th)",
+    "section": "The Failure of \\(R_0\\)",
+    "text": "The Failure of \\(R_0\\)\nLi et al. 2001\nA bit of a concerning and eye-opening paper about how \\(R_0\\) is kinda nebulous and that different methods of calculating \\(R_0\\) lead to varying answers (Wild to me!). Talks about how \\(R_0\\) is flawed, but is the best we got. Interesting paper, points out some of the critical failures in the next generation method and such."
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "",
+    "text": "This is a list of things I learned. Generally involves my research, but you might see a weird aside."
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#profvis-is-a-cool-package-that-helps-you-visualize-profiling-your-code",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#profvis-is-a-cool-package-that-helps-you-visualize-profiling-your-code",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "profvis is a cool package that helps you visualize profiling your code",
+    "text": "profvis is a cool package that helps you visualize profiling your code\nAnd figure out where the slowdowns. I learned that the slowdowns are not exactly where I thought they would be?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#save-some-miliseconds-using-rep_length-instead-of-rep",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#save-some-miliseconds-using-rep_length-instead-of-rep",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Save some miliseconds using rep_length instead of rep",
+    "text": "Save some miliseconds using rep_length instead of rep\nSame function, but somehow it saves you a few seconds?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#apply-can-be-slow",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#apply-can-be-slow",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Apply can be slow",
+    "text": "Apply can be slow\nI’m still trying to figure this out."
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#you-can-create-sparse-matrix-using-the-package-matrix",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#you-can-create-sparse-matrix-using-the-package-matrix",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "You can create sparse Matrix using the package Matrix",
+    "text": "You can create sparse Matrix using the package Matrix\nI didn’t realize how much a dense matrix that is only 20 x 20 can still be slow?"
+  },
+  {
+    "objectID": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#michelle-pfeiffer-plays-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "href": "posts/interesting_stuff_I_learned/stuffilearnedpart1.html#michelle-pfeiffer-plays-ambers-mom-in-the-movie-adaptation-of-hairspray-2007",
+    "title": "Interesting things I learned this week (August 19th)",
+    "section": "Michelle Pfeiffer plays Amber’s mom in the movie adaptation of Hairspray (2007)",
+    "text": "Michelle Pfeiffer plays Amber’s mom in the movie adaptation of Hairspray (2007)\nAnd not Hannah Waddingham. I do not feel bad about this mistake- look it up!"
+  },
+  {
+    "objectID": "posts/diff_eq1/diff_eq_1.html#coding-it-up",
+    "href": "posts/diff_eq1/diff_eq_1.html#coding-it-up",
+    "title": "Simulating ecology models: A series of tutorial",
+    "section": "Coding it up",
+    "text": "Coding it up\nLet’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.\nSo how do you design a function for doing mathematical simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (\\(N_0\\)) can also vary as well as the birth rate \\(b\\)! So for the input of the function, you should include the parameters that you’re interested in varying.\n\nrabbit_growth &lt;- function(time, initial, b){\n  \n  ###Insert model here\n}\n\nSo I have a function called “rabbit_growth” and for input, it takes that time, initial value, and the birth rate. By feeding different values in, we should be getting different values out!\nNow what do we want for the output? For simulation outputs, we want both the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting the model out to. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation with the initial value and the birth rate (\\(b\\)). We can raise it to the power of the timesteps. So \\(N_0 * (1+b)^t\\) will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply \\(N_0 *(1+b)\\) to each element of the vector. For example:\n\ntimesteps = seq(0,20)\nprint(timesteps)\n\n [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20\n\n\n\nprint(paste(\"Single number:\", 5 * (1+5))) # single numeric number #vector\n\n[1] \"Single number: 30\"\n\n\n\n5 * (1+5)^(timesteps) # a vector\n\n [1] 5.000000e+00 3.000000e+01 1.800000e+02 1.080000e+03 6.480000e+03\n [6] 3.888000e+04 2.332800e+05 1.399680e+06 8.398080e+06 5.038848e+07\n[11] 3.023309e+08 1.813985e+09 1.088391e+10 6.530347e+10 3.918208e+11\n[16] 2.350925e+12 1.410555e+13 8.463330e+13 5.077998e+14 3.046799e+15\n[21] 1.828079e+16\n\n\nPutting it all together, here is the completed functino.\n\nrabbit_growth &lt;- function(time, initial, b){\n\n  timesteps =  seq(0,time)\n  \n  abundance  = initial * (1+b)^(timesteps)\n    \n  ###Try to keep the parameter that you are varying as a column for easier analysis \n  rabbit_df &lt;- data.frame(time = timesteps, abundance = abundance,\n                          initial = initial, b = b)\n    \n  return(rabbit_df)\n  }\n\nMy output is now a data.frame with the time, abundance, initial value, and birth rate.\nThere are many, many ways to solve this. Some people do for-loops! IF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it.\n\nstandard_rabbit &lt;- rabbit_growth(10,5, 1)\nprint(standard_rabbit)\n\n   time abundance initial b\n1     0         5       5 1\n2     1        10       5 1\n3     2        20       5 1\n4     3        40       5 1\n5     4        80       5 1\n6     5       160       5 1\n7     6       320       5 1\n8     7       640       5 1\n9     8      1280       5 1\n10    9      2560       5 1\n11   10      5120       5 1\n\n\nI’m a ggplot lover, so we’re going to use ggplot2:\n\nggplot(standard_rabbit, aes(x = time, y = abundance))+ geom_point() + geom_line() + xlab(\"Time\") + ylab(\"Abundance\") + \n  theme_minimal()\n\n\n\n\n\n\n\n\nNow what if we want to create a lot of different plots? So there is a faster way, but let’s do this for right now. Keeping everything else the same, let’s change \\(b\\) (the third input in the function “rabbit_growth”) and combine these outputs to create one big data frame.\n\nstandard_rabbit1 &lt;- rabbit_growth(10,5, 1)\nstandard_rabbit2 &lt;- rabbit_growth(10,5, 2)\nstandard_rabbit3 &lt;- rabbit_growth(10,5, 3)\n\nstandard_rabbit_all &lt;- rbind(standard_rabbit1,standard_rabbit2, \n                             standard_rabbit3)\n\n\nggplot(standard_rabbit_all, aes(x = time, y= abundance, color = as.factor(b), group = as.factor(b))) + geom_point() + geom_line() +\n  xlab(\"Time\") + ylab(\"Abundance\")+\n  scale_color_viridis(discrete = TRUE, name = \"b\",option = 'turbo')+\n  theme_minimal()\n\n\n\n\n\n\n\n\nWow you can see how drastically the population can grow depending on b!\nCongratulations, you made your first simulation using one of the oldest model of discrete growth!"
   }
 ]

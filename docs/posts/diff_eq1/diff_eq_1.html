@@ -185,13 +185,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#lets-start-at-the-very-beginning" id="toc-lets-start-at-the-very-beginning" class="nav-link" data-scroll-target="#lets-start-at-the-very-beginning">Let’s start at the very beginning</a>
-  <ul class="collapse">
-  <li><a href="#coding" id="toc-coding" class="nav-link" data-scroll-target="#coding">Coding</a></li>
-  </ul></li>
+  <li><a href="#lets-start-at-the-very-beginning" id="toc-lets-start-at-the-very-beginning" class="nav-link" data-scroll-target="#lets-start-at-the-very-beginning">Let’s start at the very beginning</a></li>
+  <li><a href="#coding-it-up" id="toc-coding-it-up" class="nav-link" data-scroll-target="#coding-it-up">Coding it up</a></li>
   <li><a href="#discrete-to-continuous" id="toc-discrete-to-continuous" class="nav-link" data-scroll-target="#discrete-to-continuous">Discrete to Continuous</a></li>
-  <li><a href="#discrete-to-continuous-1" id="toc-discrete-to-continuous-1" class="nav-link" data-scroll-target="#discrete-to-continuous-1">Discrete to continuous</a></li>
-  <li><a href="#the-exponential-model" id="toc-the-exponential-model" class="nav-link" data-scroll-target="#the-exponential-model">The exponential model</a></li>
   </ul>
 </nav>
     </div>
@@ -260,26 +256,25 @@ N_{2} = N_0(1+b)(1+b)
 <p><span class="math display">\[
 N_{3} = N_{2} (1+b)
 \]</span></p>
-<p>Which then is equivalent to:</p>
+<p>Which is equivalent to:</p>
 <p><span class="math display">\[
 N_{3} = N_0(1+b)(1+b)(1+b).
 \]</span></p>
 <p>That’s interesting! We basically just need to know the initial starting value (<span class="math inline">\(N_0\)</span>) and we can raise the (1+b) to the power of the time! Here’s a visual cue if you need a bit more help:</p>
-<p>But to predict the number of rabbits at time <span class="math inline">\(t\)</span>, we simply need to know the initial abundance (<span class="math inline">\(N_0\)</span>) and the birth rate (<span class="math inline">\(b\)</span>) <span class="math display">\[
-N_t = N_0(1+b)^t
-\]</span></p>
-<section id="coding" class="level3">
-<h3 class="anchored" data-anchor-id="coding">Coding</h3>
-<p>Let’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.</p>
-<p>So how do you design a function for doing simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (<span class="math inline">\(N_0\)</span>) can also vary as well as the birth rate! So for the input of the function, you should include the parameters that you’re interested in varying.</p>
+<p>But to predict the number of rabbits at time <span class="math inline">\(t\)</span>, we simply need to know the initial abundance (<span class="math inline">\(N_0\)</span>) and the birth rate (<span class="math inline">\(b\)</span>): <span class="math inline">\(N_t = N_0(1+b)^t\)</span></p>
+</section>
+<section id="coding-it-up" class="level2">
+<h2 class="anchored" data-anchor-id="coding-it-up">Coding it up</h2>
+<p>Let’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.</p>
+<p>So how do you design a function for doing mathematical simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (<span class="math inline">\(N_0\)</span>) can also vary as well as the birth rate <span class="math inline">\(b\)</span>! So for the input of the function, you should include the parameters that you’re interested in varying.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Insert model here</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So I have a function called “rabbit_growth” and I wrote in a function that includes time, initial value, and the birth rate as input. Ideally, we should be able to feed different values and get different outputs out.</p>
-<p>Now what do we want for the output? For simulation output, we want something that has the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation where initial describes <span class="math inline">\(N_0\)</span>, the birth rate (b), and we can raise it to the power of the timesteps. So <span class="math inline">\(N_0 * (1+b)\)</span> will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply <span class="math inline">\(N_0 *(1+b)\)</span> to each element of the vector. For example:</p>
+<p>So I have a function called “rabbit_growth” and for input, it takes that time, initial value, and the birth rate. By feeding different values in, we should be getting different values out!</p>
+<p>Now what do we want for the output? For simulation outputs, we want both the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting the model out to. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation with the initial value and the birth rate (<span class="math inline">\(b\)</span>). We can raise it to the power of the timesteps. So <span class="math inline">\(N_0 * (1+b)^t\)</span> will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply <span class="math inline">\(N_0 *(1+b)\)</span> to each element of the vector. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>timesteps <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(timesteps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -303,6 +298,7 @@ N_t = N_0(1+b)^t
 [21] 1.828079e+16</code></pre>
 </div>
 </div>
+<p>Putting it all together, here is the completed functino.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -317,8 +313,8 @@ N_t = N_0(1+b)^t
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rabbit_df)</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, I solve the equation and put it in a data.frame with the time, abundance, initial value, and birth rate.</p>
-<p>There are many, many ways to solve this. Some people do for-loops!</p>
+<p>My output is now a data.frame with the time, abundance, initial value, and birth rate.</p>
+<p>There are many, many ways to solve this. Some people do for-loops! IF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(standard_rabbit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -337,7 +333,7 @@ N_t = N_0(1+b)^t
 11   10      5120       5 1</code></pre>
 </div>
 </div>
-<p>IF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it. I’m a ggplot lover, so we’re going to use ggplot2 (for tutorial on ggplot2, check):</p>
+<p>I’m a ggplot lover, so we’re going to use ggplot2:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> abundance))<span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>) <span class="sc">+</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -349,7 +345,7 @@ N_t = N_0(1+b)^t
 </div>
 </div>
 </div>
-<p>Now what if we want to create a lot of different plots? So there will be a much faster way that I will show you in another part, but let’s do this for right now. Keeping everything else the same, let’s change <span class="math inline">\(b\)</span> (the third input in the function “rabbit_growth”) and create a full data.frame.</p>
+<p>Now what if we want to create a lot of different plots? So there is a faster way, but let’s do this for right now. Keeping everything else the same, let’s change <span class="math inline">\(b\)</span> (the third input in the function “rabbit_growth”) and combine these outputs to create one big data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit1 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>standard_rabbit2 <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">2</span>)</span>
@@ -372,38 +368,22 @@ N_t = N_0(1+b)^t
 </div>
 </div>
 <p>Wow you can see how drastically the population can grow depending on b!</p>
-<p>Congratulations, you made your first simulation using one of the oldest model of growth!</p>
-</section>
+<p>Congratulations, you made your first simulation using one of the oldest model of discrete growth!</p>
 </section>
 <section id="discrete-to-continuous" class="level2">
 <h2 class="anchored" data-anchor-id="discrete-to-continuous">Discrete to Continuous</h2>
-<p>Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Why not nothing about this model that’s stopping me from stopping of thinking of growth every… hour, minute, second, and nanosecond.</p>
-</section>
-<section id="discrete-to-continuous-1" class="level2">
-<h2 class="anchored" data-anchor-id="discrete-to-continuous-1">Discrete to continuous</h2>
-<p>So how does the step to discrete to continuous happen?</p>
-<p><span class="math display">\[ N\_{t+1} - N_t = \Delta T \space b \space N_t \]</span></p>
-<p><span class="math display">\[
+<p>Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Nothing about this model is stopping me from thinking of growth every… hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust <span class="math inline">\(b\)</span> by multiplying it by <span class="math inline">\(\frac{1}{2}\)</span>. If it’s every hour, we need to adjust <span class="math inline">\(b\)</span> by multiplying it by <span class="math inline">\(\frac{1}{24}\)</span>. So ultimately, we multiply <span class="math inline">\(b\)</span> by some time step which we call: <span class="math inline">\(\Delta T\)</span>.</p>
+<p>Now how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 <span class="math display">\[
+N_{t+1} = N_{t} + bN_{t} \Delta t.
+\]</span> <span class="math display">\[
+N_{t+1} - N_t =  b N_t \Delta t
+\]</span> <span class="math display">\[
 \frac{N_{t+1} - N_t}{\Delta t} = {bN_t}
-\]</span></p>
-<p><span class="math display">\[\frac{dN}{dt} = {bN_t} \]</span></p>
-</section>
-<section id="the-exponential-model" class="level2">
-<h2 class="anchored" data-anchor-id="the-exponential-model">The exponential model</h2>
-<p>Here, the exponential model returns. Wildly popular, wildly unrealistic, and appears in many aspects. It is the intro ecology student’s first introduction to population growth models.</p>
-<p>Let’s say we have a per-capita growth rate of 5 new rabbits per rabbit per time. In other words:</p>
-<p>$$</p>
-<p>$$</p>
-<p>That means that <span class="math inline">\(r = 5\)</span></p>
-<p>So what does that mean? We know that</p>
+\]</span> As you let <span class="math inline">\(\delta T\)</span> approach infinity, this discrete equation can then be described as a differential.</p>
+<p><span class="math display">\[ \frac{dN}{dt} = {bN_t} \]</span> Solving it, we get:</p>
 <p><span class="math display">\[
-\frac{dN}{dt} =
+N(t) = N_0exp(b(t))
 \]</span></p>
-<p>How to solve it? So there’s an entire textbook of solving differential equations:</p>
-<p><span class="math display">\[
-N(t) = N_0 e^{r(t)}
-\]</span> So aha, we found the analytical solution (which honestly would many models especailly as they become more and more complicated are less likely to have a clean solution).</p>
-<p>Most of the time we have to numerically solve it! Which would be the next section!</p>
 
 
 </section>

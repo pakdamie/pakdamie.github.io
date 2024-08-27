@@ -60,7 +60,7 @@ $$
 N_{3} = N_{2} (1+b)
 $$
 
-Which then is equivalent to:
+Which is equivalent to:
 
 $$
 N_{3} = N_0(1+b)(1+b)(1+b).
@@ -68,15 +68,14 @@ $$
 
 That's interesting! We basically just need to know the initial starting value ($N_0$) and we can raise the (1+b) to the power of the time! Here's a visual cue if you need a bit more help:
 
-But to predict the number of rabbits at time $t$, we simply need to know the initial abundance ($N_0$) and the birth rate ($b$) $$
-N_t = N_0(1+b)^t
-$$
+But to predict the number of rabbits at time $t$, we simply need to know the initial abundance ($N_0$) and the birth rate ($b$): $N_t = N_0(1+b)^t$
 
-### Coding
 
-Let's write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.
+## Coding it up
 
-So how do you design a function for doing simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I'm interested in seeing what happens in a week... or a thousand years later. The initial rabbit population ($N_0$) can also vary as well as the birth rate! So for the input of the function, you should include the parameters that you're interested in varying.
+Let's write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.
+
+So how do you design a function for doing mathematical simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I'm interested in seeing what happens in a week... or a thousand years later. The initial rabbit population ($N_0$) can also vary as well as the birth rate $b$! So for the input of the function, you should include the parameters that you're interested in varying.
 
 ```{r}
 rabbit_growth <- function(time, initial, b){
@@ -86,15 +85,15 @@ rabbit_growth <- function(time, initial, b){
 
 ```
 
-So I have a function called "rabbit_growth" and I wrote in a function that includes time, initial value, and the birth rate as input. Ideally, we should be able to feed different values and get different outputs out.
+So I have a function called "rabbit_growth" and for input, it takes that time, initial value, and the birth rate. By feeding different values in, we should be getting different values out!
 
-Now what do we want for the output? For simulation output, we want something that has the time and the abundance at that time. So 'time' is the number of days we are interested in projecting. Let's say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation where initial describes $N_0$, the birth rate (b), and we can raise it to the power of the timesteps. So $N_0 * (1+b)$ will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply $N_0 *(1+b)$ to each element of the vector. For example:
+Now what do we want for the output? For simulation outputs, we want both the time and the abundance at that time. So 'time' is the number of days we are interested in projecting the model out to. Let's say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation with the initial value and the birth rate ($b$). We can raise it to the power of the timesteps. So $N_0 * (1+b)^t$ will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply $N_0 *(1+b)$ to each element of the vector. For example:
 
 ```{r}
-
 timesteps = seq(0,20)
 print(timesteps)
 ```
+
 
 ```{r}
 print(paste("Single number:", 5 * (1+5))) # single numeric number #vector
@@ -104,6 +103,8 @@ print(paste("Single number:", 5 * (1+5))) # single numeric number #vector
 5 * (1+5)^(timesteps) # a vector
 ```
 
+
+Putting it all together, here is the completed functino.
 ```{r}
 rabbit_growth <- function(time, initial, b){
 
@@ -120,23 +121,23 @@ rabbit_growth <- function(time, initial, b){
   
 ```
 
-Here, I solve the equation and put it in a data.frame with the time, abundance, initial value, and birth rate.
+My output is now a data.frame with the time, abundance, initial value, and birth rate.
 
-There are many, many ways to solve this. Some people do for-loops!
+There are many, many ways to solve this. Some people do for-loops! IF you want to do it using for-loop, this is a perfect exercise for it! Now let's plot it.
 
 ```{r}
 standard_rabbit <- rabbit_growth(10,5, 1)
 print(standard_rabbit)
 ```
 
-IF you want to do it using for-loop, this is a perfect exercise for it! Now let's plot it. I'm a ggplot lover, so we're going to use ggplot2 (for tutorial on ggplot2, check):
+I'm a ggplot lover, so we're going to use ggplot2:
 
 ```{r}
 ggplot(standard_rabbit, aes(x = time, y = abundance))+ geom_point() + geom_line() + xlab("Time") + ylab("Abundance") + 
   theme_minimal()
 ```
 
-Now what if we want to create a lot of different plots? So there will be a much faster way that I will show you in another part, but let's do this for right now. Keeping everything else the same, let's change $b$ (the third input in the function "rabbit_growth") and create a full data.frame.
+Now what if we want to create a lot of different plots? So there is a faster way, but let's do this for right now. Keeping everything else the same, let's change $b$ (the third input in the function "rabbit_growth") and combine these outputs to create one big data frame.
 
 ```{r}
 standard_rabbit1 <- rabbit_growth(10,5, 1)
@@ -156,46 +157,29 @@ ggplot(standard_rabbit_all, aes(x = time, y= abundance, color = as.factor(b), gr
 
 Wow you can see how drastically the population can grow depending on b!
 
-Congratulations, you made your first simulation using one of the oldest model of growth!
+Congratulations, you made your first simulation using one of the oldest model of discrete growth!
 
 ## Discrete to Continuous
 
-Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Why not nothing about this model that's stopping me from stopping of thinking of growth every... hour, minute, second, and nanosecond.
+Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Nothing about this model is  stopping me from thinking of growth every... hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust $b$ by multiplying it by $\frac{1}{2}$. If it's every hour, we need to adjust $b$ by multiplying it by $\frac{1}{24}$. So ultimately, we multiply $b$ by some time step which we call: $\Delta T$.
 
-## Discrete to continuous
-
-So how does the step to discrete to continuous happen?
-
-$$ N\_{t+1} - N_t = \Delta T \space b \space N_t $$
-
+Now how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 
+$$
+N_{t+1} = N_{t} + bN_{t} \Delta t.
+$$
+$$
+N_{t+1} - N_t =  b N_t \Delta t
+$$
 $$
 \frac{N_{t+1} - N_t}{\Delta t} = {bN_t} 
 $$
+As you let $\delta T$ approach infinity, this discrete equation can then be described as a differential. 
 
-$$\frac{dN}{dt} = {bN_t} $$
-
-## The exponential model
-
-Here, the exponential model returns. Wildly popular, wildly unrealistic, and appears in many aspects. It is the intro ecology student's first introduction to population growth models.
-
-Let's say we have a per-capita growth rate of 5 new rabbits per rabbit per time. In other words:
-
-\$\$
-
-\$\$
-
-That means that $r = 5$
-
-So what does that mean? We know that
+$$ \frac{dN}{dt} = {bN_t} $$
+Solving it, we get:
 
 $$
-\frac{dN}{dt} = 
+N(t) = N_0exp(b(t))
 $$
 
-How to solve it? So there's an entire textbook of solving differential equations:
 
-$$
-N(t) = N_0 e^{r(t)}
-$$ So aha, we found the analytical solution (which honestly would many models especailly as they become more and more complicated are less likely to have a clean solution).
-
-Most of the time we have to numerically solve it! Which would be the next section!
