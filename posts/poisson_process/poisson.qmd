@@ -1,0 +1,81 @@
+---
+title: "Poisson process"
+subtitle: "Learning for me"
+author: "Damie Pak"
+image: "fish.jpg"
+categories: ["Tutorial"]
+toc: true
+draft: false
+cache: true
+editor_options: 
+  chunk_output_type: console
+---
+
+WIP
+
+```{r}
+library(ggplot2)
+library(gganimate)
+```
+
+So I'm trying to be better about learning the Poisson process, so here's me forcing myself to learn.
+
+## Definition
+
+The Poisson process is for situations where we want to model a bunch of sequential events. We have a rate parameter that can tell us the average number of events that happen within a time-frame, but the timing of these events is random. Some important assumptions are that (1) the events are independent of each other, (2) the average rate is constant, and (3) events cannot happen simultaneously.
+
+Let us say that the number of events at time $t$ is $N(t)$. First rule, in the beginning ($t=0$), we have no events ($N(0)=0$). Second rule, each time there are events, they are independent of each other. Third rule, the number of events in the interval length of $\tau$ is described with the Poisson distribution with the mean being $\lambda \tau$ where $\lambda$ is the average number of events to occur within a timeframe.
+
+Following from my favorite textbook site [ProbabilityCourse](https://www.probabilitycourse.com/chapter11/11_1_2_basic_concepts_of_the_poisson_process.php). I'm going to code up the explanation for the third rule above.
+
+## Poisson Process as the Limit of a Bernoulli Process
+
+So the Poisson process can be thought of as the continuous version of the Bernoulli Process. For example, imagine that you have some time interval with the length ($t$) split up into 20 smaller intervals ($\Delta$) as below.
+
+```{r echo = FALSE}
+the_template_GG <- ggplot(data= NULL,aes(x = seq(0,10), y = 0))+
+  geom_line()+
+  geom_segment(aes(x = seq(0,10,0.5), 
+                   xend = seq(0,10,0.5),
+                   y = - 0.01, yend = 0.01 )) + 
+  ylim(-0.1,0.15) + 
+  annotate("text", x = seq(0.25,9.75,0.5), 
+           y = 0.01 + 0.01, 
+           label =   expression(Delta))+
+  theme_void(); 
+the_template_GG
+```
+
+Now imagine that at each interval, you flip a coin. Everytime it's head, you record at which interval it happened!
+
+```{r}
+test_1 <- cbind.data.frame(time= seq(1,20),
+                           coin = sample(c("H","T"),20, 
+                                         replace = TRUE, 
+                                         prob =c (0.5,0.5)),
+                            x = seq(0.25,9.75,0.5),
+                            y = 0)
+```
+
+```{r}
+ ggplot(data= NULL,aes(x = seq(0,10), y = 0))+
+  geom_line()+
+  geom_segment(aes(x = seq(0,10,0.5), 
+                   xend = seq(0,10,0.5),
+                   y = - 0.01, yend = 0.01 )) + 
+  ylim(-0.1,0.15)+ theme_void()+
+  geom_point(data = test_1, aes(x=x, y= y, color = coin), size = 4)+
+
+  scale_color_manual(values = c("H" = "red", "T" = 'grey' ))+
+  transition_states(time)
+
+
+```
+
+How many heads did we get?
+
+```{r}
+table(test_1$coin)
+```
+
+Hm, what if we decrease the size of $\Delta$

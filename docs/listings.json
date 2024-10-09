@@ -3,13 +3,23 @@
     "listing": "/posts.html",
     "items": [
       "/posts/interesting_stuff_I_learned/stuffilearnedpart1.html",
+      "/posts/agent_based_model/Untitled.html",
+      "/posts/stochastic_sis/stochastic_sis.html",
       "/posts/interesting_paper_week/interestingpaper1.html",
+      "/posts/malthus/malthus.html",
+      "/posts/finite/finite.html",
+      "/posts/grfp/grfp.html",
       "/posts/diff_eq2/diff_eq_2.html",
+      "/posts/poisson_process/poisson.html",
+      "/posts/interesting_paper_week3/interesting_paperweek3.html",
       "/posts/interesting_paper_week2/interesting_paperweek2.html",
+      "/posts/interesting_stuff_I_learned_part2/interestingstuffilearned2.html",
       "/posts/simulate_scale_free_network/simulatenetwork.html",
       "/posts/briere/simulating_tpc.html",
+      "/posts/waiting_time/waitingqmd.html",
       "/posts/diff_eq1/diff_eq_1.html",
-      "/posts/coin_flipping/coin_flip.html"
+      "/posts/coin_flipping/coin_flip.html",
+      "/posts/spatial_network/spatialnetwork.html"
     ]
   }
 ]

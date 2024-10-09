@@ -1,0 +1,12 @@
+---
+title: "An agent based model of within-host malaria"
+subtitle: "An example"
+author: "Damie Pak"
+image: "malara.jpg"
+categories: ["Material"]
+toc: TRUE
+---
+
+A little introduction to agent based model that I made out of boredom.
+
+{{< pdf agentbaedppt.pdf >}}

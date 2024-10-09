@@ -2,8 +2,8 @@
 title: "A proof of concept: a coin-toss game"
 subtitle: "The most toy model"
 author: "Damie Pak"
-image: "coin_flipping_schematicpdf.jpg"
-categories: ["Coding"]
+image: "coin.jpg"
+categories: ["Code"]
 toc: true
 draft: false
 cache: true

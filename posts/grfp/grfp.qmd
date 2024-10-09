@@ -1,0 +1,18 @@
+---
+title: "GRFP Statements"
+subtitle: "An example"
+author: "Damie Pak"
+image: "book.jpg"
+categories: ["Material"]
+toc: TRUE
+---
+
+These are my GRFP material for 2015-2016.
+
+## Research proposal
+
+{{< pdf PAK.RESEARCHPROPOSAL.pdf >}}
+
+## Personal statement
+
+{{< pdf PAK.PERSONALSTATEMENT.pdf >}}

@@ -1,0 +1,16 @@
+---
+title: "Interesting stuff I read (September 3rd)"
+subtitle: "Literacy is still hard"
+author: "Damie Pak"
+image: "lady.jpg"
+categories: ["Reading"]
+toc: true
+draft: false
+cache: true
+---
+
+## HOW VIRULENT SHOULD A PARASITE BE TO ITS VECTOR?
+
+Elliot et al. 2003
+
+An old paper but I really enjoy the writing style. I know some people don't like it but I love papers that have series of rhetorical questions. Simple model about how parasite virulence can decrease with the more mobile of the hosts (which is generally the vector). Though the authors point out that this is only true with two assumptions: (1) interpatch movement of free parasites are weak and (2) competitive displacement among patches are weak. I guess the first assumption is that vectors matter less if free parasites are able to disperse (keeping the vectors alive become less important).

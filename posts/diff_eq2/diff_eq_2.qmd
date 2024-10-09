@@ -9,4 +9,8 @@ draft: false
 cache: true
 ---
 
-So in the previous section, we talked about the simplest differential equation which is population growth.
+WORK IN PROGRESS
+
+So in the previous section, we talked about the simplest differential equation which is population growth: both continuous and discrete. We found the analytically solutions but unfortunately most equations are not easy to solve by hand! We need to use numerical methods.
+
+The easiest method is by our favorite mathematician man: Leonard Euler. His method of calculating the
