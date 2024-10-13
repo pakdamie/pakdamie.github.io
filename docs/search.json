@@ -25,7 +25,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "In the particular is contained the universal. - James Joyce\nBeing more on the theory side of ecology allows me to explore different systems. While there are shared commonalities between all ecology systems, I love to dive deep into each system and learn their idiosyncrasies. My favorite stomping grounds, however, are in agricultural pests and infectious disease (especially vectorborne!) . Here are the questions I am interested in:\nBelow are some projects I have pursued:"
+    "text": "In the particular is contained the universal. - James Joyce\nBeing more on the theory side of ecology allows me to explore different systems. While there are shared commonalities between all ecology systems, I love to dive deep into each system and learn their idiosyncrasies. My favorite stomping grounds, however, are in agricultural pests and infectious disease (especially vectorborne!) . Here are the very general questions I am interested in:\nBelow are some projects I have pursued:"
   },
   {
     "objectID": "research.html#side-by-side-layout",
@@ -60,7 +60,7 @@
     "href": "research.html#a-community-perspective-of-vectors",
     "title": "Research",
     "section": "A community perspective of vectors",
-    "text": "A community perspective of vectors\n\n\n\n\n\n\nI’m fascinated with communities of vector species! When we investigate vector-borne diseases, we tend to focus on one species at a time but there can be multiple vectors with their own unique ecologies! Collaborating with Dr. Joyce Sakamoto, we analyzed a century worth of ticks that (A 117-year retrospective analysis of Pennsylvania tick community dynamics), I helped to showcase just the cool differentiation.\n\n\n\n\n\n\n\n\nCurrently with my postdoctoral work with Tad Dallas, a project I’m hoping works out is understanding species shift. The dominant species in a community can change over time. Chagas disease is a great system because it is very interesting that the primary vector has shifted over time."
+    "text": "A community perspective of vectors\n\n\n\n\n\n\nI’m fascinated by communities of vector species! When investigating vector-borne diseases, we tend to focus on one species at a time, but there can be multiple vectors, each with its own unique ecology. In collaboration with Dr. Joyce Sakamoto, we analyzed a century’s worth of tick data (A 117-year retrospective analysis of Pennsylvania tick community dynamics). We showcased how the dominant vector species have changed over the century, as well as the spatial partitioning between vector species.\n\n\n\n\n\n\n\n\nCurrently with my postdoctoral work with Tad Dallas, a project I’m working on is how disturbance can structure the relative abundance of different vectors."
   },
   {
     "objectID": "research.html#trees-trees-trees",
@@ -74,7 +74,7 @@
     "href": "research.html#ecological-management",
     "title": "Research",
     "section": "Ecological management",
-    "text": "Ecological management\n\n\n\n\n\n\nFor my short six-month postdoc with Dr. Katriona Shea (because moving doing COVID times is difficult), I spent the Covid-19 lockdown working on COVID-19. I got first-hand"
+    "text": "Ecological management\n\n\n\n\n\n\nFor my short six-month postdoc with Dr. Katriona Shea (because moving doing COVID times is difficult), I learned about decision theory and how to apply it for vaccine allocation. Specifically, under significant uncertainty- what is the best course of action? Is there always going to be an optimal choice?"
   },
   {
     "objectID": "research.html#within-host-modelig",
@@ -116,7 +116,7 @@
     "href": "research.html#reproductive-phenology-of-neotropical-trees",
     "title": "Research",
     "section": "Reproductive phenology of neotropical trees",
-    "text": "Reproductive phenology of neotropical trees\n\n\n\n\n\n\nI was interested in looking at community phenology in another system in my collaboration with Dr. Jesse Laskey (Multiscale phenological niches of seed fall in diverse Amazonian plant communities). Using wavelet analysis, we analyzed these beautiful long-term time series for multiple plant species in Peru and Equador."
+    "text": "Reproductive phenology of neotropical trees\n\n\n\n\n\n\nIn my collaboration with Dr. Jesse Lasky (Multiscale phenological niches of seed fall in diverse Amazonian plant communities), we applied wavelet analysis to long-term time series data from two hyperdiverse plant communities in Peru and Ecuador. We analyzed the temporal patterns of synchrony and compensatory dynamics in seed dispersal. Our findings show that there is community-wide reproductive synchrony due to shared environmental responses and positive interactions. Additionally, there is evidence of temporal niche partitioning!"
   },
   {
     "objectID": "research.html#within-host-modeling",
@@ -130,14 +130,14 @@
     "href": "research.html#climate-and-tortricid-moth-pests",
     "title": "Research",
     "section": "Climate and tortricid moth pests",
-    "text": "Climate and tortricid moth pests\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding how climate influences the timing of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. In Pennsylvania, I found that the spring emergence of five species is influenced by two large scale-climate oscillations: the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Additionally, I also use mathematical modeling to understand how diapause, a state of suspended development, can be incorporated for long-term forecasting (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest)"
+    "text": "Climate and tortricid moth pests\n\n\n\n\n\n\nFor my doctoral work with Dr. Ottar Bjornstad, I investigated how the environment (local temperature) influences the phenology of insect pests. For example, by using a mathematical model, I demonstrated how temperature can predict the phenology of the codling moth (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest). Additionally, by analyzing the time series of five pest species in Pennsylvania, I showed how their phenology is driven by two large scale-climate oscillations: the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study)."
   },
   {
     "objectID": "research.html#within-host-modeling-of-malaria",
     "href": "research.html#within-host-modeling-of-malaria",
     "title": "Research",
     "section": "Within-host modeling of malaria",
-    "text": "Within-host modeling of malaria\n\n\n\n\n\n\nWith my postdoctoral work with Dr. Megan Greischar, I applied a similar type of modeling"
+    "text": "Within-host modeling of malaria\n\n\n\n\n\n\nIn my postdoctoral work with Dr. Megan Greischar, I investigated an understudied trait: the burst size of malaria parasites. The burst size determines the number of daughter cells that emerge from each infected RBC. Because a larger burst size allows the parasite to proliferate faster, an interesting question arises: why is it not higher? (Proliferation in malaria parasites: how resource limitation can prevent the evolution of greater virulence). I am also finishing a manuscript that investigates the role of burst size across all parasite species."
   },
   {
     "objectID": "posts/coin_flipping/coin_flip.html",
