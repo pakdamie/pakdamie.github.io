@@ -3,4 +3,6 @@ title: "Curriculum vitae"
 toc: false
 ---
 
-## Education
+<object data="damiepak_CV.pdf" width="1000" height="1000" type='application/pdf'/>
+
+\[Download CV\](damiepak_CV.pdf)

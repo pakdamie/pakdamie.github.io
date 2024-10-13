@@ -9,8 +9,7 @@ draft: false
 cache: true
 ---
 
-
-When you read some modeling papers, they may talk about the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn't really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some  ordinary differential equation classes! Let's figure this out together and let's imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate $k$ and the amount of individuals in A. So the easiest way to write this is:
+When you read some modeling papers, they may talk about the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn't really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let's figure this out together and let's imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate $k$ and the amount of individuals in A. So the easiest way to write this is:
 
 $$\frac{dA}{dt} = -kA $$
 
@@ -18,15 +17,13 @@ Which means that that the change in A over time is equal to k times A. This diff
 
 This is fairly simple to solve and let me show you the steps (honestly, I really recommend doing this yourself as practice!)
 
-
 ![](http://damiepak.com/wp-content/uploads/2020/12/Equations-1024x492.png){alt=""}
 
 ![](http://damiepak.com/wp-content/uploads/2020/12/Exponential-1024x500.png){alt=""}
 
+Imagine you have a stage A and there are individuals leaving it (note the hats and briefcases) and on the left, that is the solution of our differential equations. This is an exponential decay!
 
-Imagine you have a stage A and there are individuals leaving it  (note the hats and briefcases) and on the left, that is the solution of our differential equations. This is an exponential decay!
-
-So now okay let's look closer at the solution $A= A0 exp(-kt)$. First, we're interested in how the proportion of individuals that stay in stage A change over time. To do this, we can divide the equation by A0 and get this:  
+So now okay let's look closer at the solution $A= A0 exp(-kt)$. First, we're interested in how the proportion of individuals that stay in stage A change over time. To do this, we can divide the equation by A0 and get this:
 
 $$\frac{A}{A0} = exp(-kt)$$
 
@@ -38,14 +35,13 @@ Hm, that's interesting! That looks exactly like the cumulative distribution func
 
 $$\frac{d}{dt} (1- \frac{A}{A0}) = \frac{d}{dt}(1 -exp(-kt)) $$
 
-
 Which means that the PDF is $k exp(-kt)$
 
-And if you remembered the mean of the exponential PDF is $1/k$ (We could have found the mean of the CDF, but I just thought it was easier).
+And if you remembered the mean of the exponential PDF is $\frac{1}{k}$ (We could have found the mean of the CDF, but I just thought it was easier).
 
-That means that the mean time that individuals dwell in A is $1/k$.
+That means that the mean time that individuals dwell in A is $\frac{1}{k}$.
 
-Therefore, for example if k = 1/2 per day, then the mean time that an individual stay in A is 1/(1/2) is 2 days.
+Therefore, for example if $k = \frac{1}{2}$ per day, then the mean time that an individual stay in A is $\frac{1}{(1/2)}$ is 2 days.
 
 Hopefully, I hope this makes it clear using differential equations that there is an exponential distribution. The exponentially distributed waiting time is an assumption! It can be biologically unrealistic because it says that most individuals leave the compartment in a very short time almost instantaneously .
 

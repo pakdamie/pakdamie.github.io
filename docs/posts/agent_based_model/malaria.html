@@ -8,7 +8,7 @@
 
 <meta name="author" content="Damie Pak">
 
-<title>Finite versus instantaneous rate – Damie Pak</title>
+<title>An agent based model of within-host malaria – Damie Pak</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -153,10 +124,10 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Finite versus instantaneous rate</h1>
-<p class="subtitle lead">Why you gotta convert</p>
+<h1 class="title">An agent based model of within-host malaria</h1>
+<p class="subtitle lead">An example</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Tutorial</div>
+    <div class="quarto-category">Material</div>
   </div>
   </div>
 
@@ -180,34 +151,8 @@ window.Quarto = {
 </header>
 
 
-<p>REFormating in progress</p>
-<p>Okay this is embarrassing, but I was always confused about finite and instantaneous rate (to be fair it’s not overly intuitive!)</p>
-<p>So, let’s say you’re writing a model (let’s say insects because it gets really depressing talking about people) and you gotta parameterize the daily mortality rate. You scour through some literature and voila, you find one from an experiment that says they found 10% of the individuals died in a day. Haha, the key parameterization!</p>
-<p>For simplicity sake, the daily mortality parameter is called <span class="math inline">\(\mu\)</span> and the insect population is <span class="math inline">\(N(t)\)</span> and we’re going to use differential equations show below:</p>
-<p><span class="math display">\[\frac{dN(t)}{dt} = -\mu N(t) \]</span></p>
-<p>And aha we’re like okay let’s plug in 0.10 for <span class="math inline">\(\mu\)</span> but the problem is that this is a finite rate, we have to convert it first!</p>
-<p>Huh.</p>
-<p>Let’s think about it, when we talk about differential equations we have to realize that they’re continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (like, it’s10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.</p>
-<p>Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You’re not assuming insects are dying continuously throughout that one day. In fact, it’s like they’re waiting to die at the end of each day! Aka this figure below.</p>
-<p><img src="https://damiepak.com/wp-content/uploads/2021/01/Capture.png" class="img-fluid"></p>
-<p>So what does that mean?&nbsp;</p>
-<p>It means you have to take your finite rate and convert it to an instantaneous rate. How do you do that?</p>
-<p>Well let’s look at the differential equation here again:</p>
-<p><span class="math display">\[ \frac{dN}{dt} = -\mu N(t)\]</span></p>
-<p>If we solve it then it becomes</p>
-<p><span class="math display">\[N(t) = N_0 * exp(-\mu t)\]</span></p>
-<p>Okay so let’s say we have an initial conditions of 100, so $N_0 = 100$. I want to solve for <span class="math inline">\(\mu\)</span>. So let’s divide both parts of the equation with <span class="math inline">\(N_0\)</span> and that means it would <span class="math inline">\(\frac{N(t)}{N_0}\)</span>. Okay so if we see that 10% have died in one day that means <span class="math inline">\(N(1) = 90\)</span> <span class="math inline">\((100- (100 * 0.10) = 90)\)</span></p>
-<p>So substitute the new numbers in, also t = 1 since we’re looking at one day only, and we get:&nbsp;<br>
-</p>
-<p><span class="math display">\[frac{90}{100} = exp(-\mu t) = exp(- \mu)\]</span></p>
-<p>We can take the natural log to get: <span class="math display">\[ ln frac{90}{100} = -\mu \]</span></p>
-<p>When we calculate it we get $ = 0.10536051565 $</p>
-<p>Aha, close to 0.10 but not exactly .10?</p>
-<p>You might be sitting there, being like ’what’s the point of all that?”</p>
-<p>Well try it when you have a data that says 70% of individuals die in a day. So okay, rerun the above. $= -ln(30/100) = 1.20 $</p>
-<p>That’s a lot bigger than 0.70.</p>
-<p>Aha remember that RATES allow for a value greater than 1. So remember the general equation for instantaneous mortality is using the above- remember that <span class="math inline">\(\frac{N(t)}{N_0}\)</span> is also another way of expressing survivorship.&nbsp;</p>
-<p>If you want more information check: https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm</p>
+<p>This is a simple introduction to an agent based model that I made out of boredom. So imagine you’re a malaria parasite inside the bloodstream of your host. You must invade a red blood cell or you must perish! I think this shows how much daughter parasites you make is dependent on how long you can live.</p>
+<p><object data="agentbaedppt.pdf" type="application/pdf"><a href="agentbaedppt.pdf" download="">Download PDF file.</a></object></p>
 
 
 

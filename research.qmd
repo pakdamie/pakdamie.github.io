@@ -5,16 +5,18 @@ lang: "en"
 
 > <q>**In the particular is contained the universal.**</q> - James Joyce
 
-Here are the ghosts of my research past, present, and future. Being on the quantitative and theory side allows me to jump around different systems. While there are shared commonalities between all ecology topics (everything exist within a context), I love to dive deep into each system and learn their own uniqueness. But my favorite stomping grounds are in agricultural pests and vector-borne disease. The driving questions I have are:
+Being more on the theory side of ecology allows me to explore different systems. While there are shared commonalities between all ecology systems, I love to dive deep into each system and learn their idiosyncrasies. My favorite stomping grounds, however, are in agricultural pests and infectious disease (especially vectorborne!) . Here are the very general questions I am interested in:
 
-1.  What is the role of timing in ecology?
-2.  How does the climate influence the phenology or timing of the species? How can this change the stage-structure across the season? What does
-3.  How can a broad community overview provide insight into processes such as phenology or disease?
-4.  How can we combine theoretical ecology inform for management? Specifically, what are questions that are super interesting for both theory and applied people?
+1.  How does the interaction between individuals and the environment determine the species' population dynamics as well as its "timing"?
+2.  How do the interactions between species influence disease dynamics?
+3.  What are the ecological insights we could gather from taking a more holistic community approach instead of focusing on a single species?
+4.  How can we use theoretical ecology to inform the management of outbreaks, both pest and disease?
+
+Below are some projects I have pursued:
 
 ## Climate and tortricid moth pests
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/moth_pic.jpg)
 :::
@@ -23,13 +25,13 @@ Here are the ghosts of my research past, present, and future. Being on the quant
 :::
 
 ::: {.column width="80%"}
-For my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on understanding how climate drives the timing of insect outbreaks. Specifically, I am interested in the role of climate on driving the phenology of tortricid moth pests. The spring emergence of the adult stages, for example, is influenced both by local temperatures and large scale-climate oscillations such as the North Atlantic Oscillation and the Arctic Oscillation (Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study). Each tortricid species, because of their unique life-histories, are sensitive to these cues at different temporal windows. Additionally, I also use mathematical modeling to understand how diapause, a state of suspended development, can be incorporated for long-term forecasting (Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest)
+For my doctoral work with Dr. Ottar Bjornstad, I investigated how the environment (local temperature) influences the phenology of insect pests. For example, by using a mathematical model, I demonstrated how temperature can predict the phenology of the codling moth (**Incorporating Diapause to Predict the Interannual Dynamics of an Important Agricultural Pest**). Additionally, by analyzing the time series of five pest species in Pennsylvania, I showed how their phenology is driven by two large scale-climate oscillations: the North Atlantic Oscillation and the Arctic Oscillation (**Local and Regional Climate Variables Driving Spring Phenology of Tortricid Pests: A 36-Year Study**).
 :::
-:::
+::::::
 
 ## Reproductive phenology of neotropical trees
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/plant_pic.jpg)
 :::
@@ -38,13 +40,13 @@ For my doctoral work with Dr. Ottar Bjornstad at Penn State, I worked on underst
 :::
 
 ::: {.column width="80%"}
-Due to my interest in phenologyI was interested in looking at phenology in another system (Multiscale phenological niches of seed fall in diverse Amazonian plant communities). Using wavelet analysis, we analyzed these beautiful long-term time series for multiple plant species in Peru and Equador.
+In my collaboration with Dr. Jesse Lasky (**Multiscale phenological niches of seed fall in diverse Amazonian plant communities**), we applied wavelet analysis to long-term time series data from two hyperdiverse plant communities in Peru and Ecuador. We analyzed the temporal patterns of synchrony and compensatory dynamics in seed dispersal. Our findings show that there is community-wide reproductive synchrony due to shared environmental responses and positive interactions. Additionally, there is evidence of temporal niche partitioning!
 :::
-:::
+::::::
 
 ## A community perspective of vectors
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/tick_pic.jpg)
 :::
@@ -53,11 +55,11 @@ Due to my interest in phenologyI was interested in looking at phenology in anoth
 :::
 
 ::: {.column width="80%"}
-I'm fascinated with vector communities. Generally, when we investigate vector-borne diseases, we focus on one species at a time. Yet, there are multiple vector species with their own unique ecologies. In collaborative work with Dr. Joyce Sakamoto (A 117-year retrospective analysis of Pennsylvania tick community dynamics), I helped to showcase just the cool differentiation.
+I'm fascinated by communities of vector species! When investigating vector-borne diseases, we tend to focus on one species at a time, but there can be multiple vectors, each with its own unique ecology. In collaboration with Dr. Joyce Sakamoto, we analyzed a century's worth of tick data (**A 117-year retrospective analysis of Pennsylvania tick community dynamics**). We showcased how the dominant vector species have changed over the century, as well as the spatial partitioning between vector species.
 :::
-:::
+::::::
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/triatomine_pic.jpg)
 :::
@@ -66,13 +68,13 @@ I'm fascinated with vector communities. Generally, when we investigate vector-bo
 :::
 
 ::: {.column width="80%"}
-Currently with my postdoctoral work with Tad Dallas, a project I'm hoping works out is understanding species shift. The dominant species in a community can change over time. Chagas disease is a great system because it is very interesting that the primary vector has shifted over time.
+Currently with my postdoctoral work with Tad Dallas, a project I'm working on is how disturbance can structure the relative abundance of different vectors.
 :::
-:::
+::::::
 
 ## Within-host modeling of malaria
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/malaria_pic.jpg)
 :::
@@ -81,13 +83,13 @@ Currently with my postdoctoral work with Tad Dallas, a project I'm hoping works 
 :::
 
 ::: {.column width="80%"}
-With my postdoctoral work with Dr. Megan Greischar, I kind of got that going.
+In my postdoctoral work with Dr. Megan Greischar, I investigated an understudied trait: the burst size of malaria parasites. The burst size determines the number of daughter cells that emerge from each infected RBC. Because a larger burst size allows the parasite to proliferate faster, an interesting question arises: why is it not higher? (**Proliferation in malaria parasites: how resource limitation can prevent the evolution of greater virulence**). I am also finishing a manuscript that investigates the role of burst size across all parasite species.
 :::
-:::
+::::::
 
 ## Ecological management
 
-::: columns
+:::::: columns
 ::: {.column width="18%"}
 ![](media/syringe_pic.jpg)
 :::
@@ -96,6 +98,6 @@ With my postdoctoral work with Dr. Megan Greischar, I kind of got that going.
 :::
 
 ::: {.column width="80%"}
-My undergraduate research  For my short six-month postdoc with Dr. Katriona Shea, I spent the Covid-19 lockdown working on COVID-19. I got first-hand 
+For my short six-month postdoc with Dr. Katriona Shea (because moving doing COVID times is difficult), I learned about decision theory and how to apply it for vaccine allocation. Specifically, under significant uncertainty- what is the best course of action? Is there always going to be an optimal choice?
 :::
-:::
+::::::

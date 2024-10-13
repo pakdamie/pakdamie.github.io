@@ -27,7 +27,7 @@ Let's think about it, when we talk about differential equations we have to reali
 
 Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You're not assuming insects are dying continuously throughout that one day. In fact, it's like they're waiting to die at the end of each day! Aka this figure below.
 
-![Think of finite rate as individuals lining up to die - remember in ODE's, death is continuous.](https://damiepak.com/wp-content/uploads/2021/01/Capture.png){alt=""}
+![](https://damiepak.com/wp-content/uploads/2021/01/Capture.png)
 
 So what does that mean? 
 
@@ -41,28 +41,24 @@ If we solve it then it becomes
 
 $$N(t) = N_0 * exp(-\mu t)$$
 
-Okay so let's say we have an initial conditions of 100, so \$N_0 = 100\$. I want to solve for $\mu$.
-So let's divide both parts of the equation with $N_0$ and that means it would $\frac{N(t)}{N_0}$. Okay so if we see that 10% have died in one day that means $N(1) = 90$ $(100- (100 * 0.10) = 90) $
+Okay so let's say we have an initial conditions of 100, so \$N_0 = 100\$. I want to solve for $\mu$. So let's divide both parts of the equation with $N_0$ and that means it would $\frac{N(t)}{N_0}$. Okay so if we see that 10% have died in one day that means $N(1) = 90$ $(100- (100 * 0.10) = 90)$
 
 So substitute the new numbers in, also t = 1 since we're looking at one day only, and we get: \
 
 $$frac{90}{100} = exp(-\mu t) = exp(- \mu)$$
 
-We can take the natural log to get:
-$$ ln frac{90}{100} = -\mu $$
+We can take the natural log to get: $$ ln frac{90}{100} = -\mu $$
 
-When we calculate it we get $ \mu = 0.10536051565 $
+When we calculate it we get \$ \mu = 0.10536051565 \$
 
 Aha, close to 0.10 but not exactly .10?
 
 You might be sitting there, being like 'what's the point of all that?"
 
-Well try it when you have a data that says 70% of individuals die in a day. So okay, rerun the above.
-$\mu = -ln(30/100) = 1.20 $
+Well try it when you have a data that says 70% of individuals die in a day. So okay, rerun the above. \$\mu = -ln(30/100) = 1.20 \$
 
 That's a lot bigger than 0.70.
 
-Aha remember that RATES allow for a value greater than 1.
-So remember the general equation for instantaneous mortality is using the above- remember that $\frac{N(t)}{N_0}$ is also another way of expressing survivorship. 
+Aha remember that RATES allow for a value greater than 1. So remember the general equation for instantaneous mortality is using the above- remember that $\frac{N(t)}{N_0}$ is also another way of expressing survivorship. 
 
 If you want more information check: https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm

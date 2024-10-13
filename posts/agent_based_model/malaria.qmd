@@ -1,0 +1,12 @@
+---
+title: "An agent based model of within-host malaria"
+subtitle: "An example"
+author: "Damie Pak"
+image: "malara.jpg"
+categories: ["Material"]
+toc: TRUE
+---
+
+This is a simple introduction to an agent based model that I made out of boredom. So imagine you're a malaria parasite inside the bloodstream of your host. You must invade a red blood cell or you must perish! I think this shows how much daughter parasites you make is dependent on how long you can live.
+
+{{< pdf agentbaedppt.pdf >}}

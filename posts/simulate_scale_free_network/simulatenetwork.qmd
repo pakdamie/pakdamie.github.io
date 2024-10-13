@@ -20,6 +20,8 @@ set.seed(24601)
 
 ## An introduction
 
+Note: I have done a much better way (but I have left this up as a historical relic)
+
 The goal is to create a spatial network that is scale-free with the user having the ability to vary the connectance. Assuming that $n$ is the number of patches and $l$ is the number of edges,the connectance ($C$) is then: $\frac{l}{n^2}$.
 
 ## Size of the network and connectance
