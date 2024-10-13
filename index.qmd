@@ -18,6 +18,3 @@ about:
 Hello, I am Damie (Dah-mie) Pak, and I am an all-purpose quantitative/theoretical ecologist. I completed my PhD at Penn State University with Dr. Ottar Bjornstad. Due to COVID-19, I then did a short six-month postdoc with Dr. Kat Shea before moving to Cornell to work with Dr. Megan Greischar. I am now a postdoctoral fellow at the University of South Carolina with Tad Dallas.
 
 I consider myself a generalist, but my main tools of the trade involve creating mathematical models using simple ODEs. With each project, I try to learn a new analytical tool (wavelet analysis, phylogenetic regression, network analysis, etc.) to add to my toolbox. My passion is insects; my first love (and research project) was on parasitoid wasps, and my doctoral work focused on agricultural pests. However, I also have a keen interest in disease ecology. I believe the most interesting questions in ecology lie at the intersection of theory and application. Check out the research tab to see more of my work!
-
-\
-Outside of my research, I am an avid theater fan and I have an unhealthy obsession with opera. I also love video games (Dragon Age fans unite)!
