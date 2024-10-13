@@ -79,7 +79,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -177,7 +178,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Code">Code <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Essay">Essay <span class="quarto-category-count">(1)</span></div><div class="category" data-category="List">List <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Material">Material <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Reading">Reading <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Tutorial">Tutorial <span class="quarto-category-count">(8)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(19)</span></div><div class="category" data-category="Code">Code <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Essay">Essay <span class="quarto-category-count">(1)</span></div><div class="category" data-category="List">List <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Material">Material <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Reading">Reading <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Slides">Slides <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tutorial">Tutorial <span class="quarto-category-count">(8)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -452,7 +453,37 @@ A short tutorial on understanding the poisson process
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-categories="Reading" data-listing-file-modified-sort="1728855604016" data-listing-reading-time-sort="1" data-listing-word-count-sort="103">
+<div class="g-col-1" data-index="9" data-categories="Slides,Material" data-listing-file-modified-sort="1728856488212" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<a href="./posts/predator_prey/predator-prey.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/predator_prey/lynx.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Guest lecture slides for teaching the Lotka-Volterra Predator/Prey dynamics
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Slides'); return false;">
+Slides
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Material'); return false;">
+Material
+</div>
+</div>
+<div class="card-text listing-description">
+Guest lecture slides for teaching
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="Reading" data-listing-file-modified-sort="1728855604016" data-listing-reading-time-sort="1" data-listing-word-count-sort="103">
 <a href="./posts/interesting_paper_week3/interesting_paperweek3.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -479,7 +510,7 @@ One paper is still a paper!
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="10" data-categories="Reading" data-listing-file-modified-sort="1728855626785" data-listing-reading-time-sort="1" data-listing-word-count-sort="193">
+<div class="g-col-1" data-index="11" data-categories="Reading" data-listing-file-modified-sort="1728855626785" data-listing-reading-time-sort="1" data-listing-word-count-sort="193">
 <a href="./posts/interesting_paper_week2/interesting_paperweek2.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -506,7 +537,7 @@ Thermal performance curves are radical!
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="11" data-categories="List" data-listing-file-modified-sort="1728855297683" data-listing-reading-time-sort="1" data-listing-word-count-sort="75">
+<div class="g-col-1" data-index="12" data-categories="List" data-listing-file-modified-sort="1728855297683" data-listing-reading-time-sort="1" data-listing-word-count-sort="75">
 <a href="./posts/interesting_stuff_I_learned_part2/interestingstuffilearned2.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -533,7 +564,7 @@ Stochasticity in models - why not!
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="12" data-categories="Code,Tutorial" data-listing-file-modified-sort="1728855172140" data-listing-reading-time-sort="6" data-listing-word-count-sort="1001">
+<div class="g-col-1" data-index="13" data-categories="Code,Tutorial" data-listing-file-modified-sort="1728855172140" data-listing-reading-time-sort="6" data-listing-word-count-sort="1001">
 <a href="./posts/simulate_scale_free_network/simulatenetwork.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -563,7 +594,7 @@ One possible (possibly bad) way of modeling a spatial network that is also scale
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="13" data-categories="Tutorial" data-listing-file-modified-sort="1728854741306" data-listing-reading-time-sort="3" data-listing-word-count-sort="443">
+<div class="g-col-1" data-index="14" data-categories="Tutorial" data-listing-file-modified-sort="1728854741306" data-listing-reading-time-sort="3" data-listing-word-count-sort="443">
 <a href="./posts/waiting_time/waitingqmd.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -590,7 +621,7 @@ Why do we assume that the waiting time in a compartmental model is exponentially
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="14" data-categories="Code,Tutorial" data-listing-file-modified-sort="1728855468505" data-listing-reading-time-sort="7" data-listing-word-count-sort="1288">
+<div class="g-col-1" data-index="15" data-categories="Code,Tutorial" data-listing-file-modified-sort="1728855468505" data-listing-reading-time-sort="7" data-listing-word-count-sort="1288">
 <a href="./posts/diff_eq1/diff_eq_1.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -620,7 +651,7 @@ How to model a single-species population the first time
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="15" data-categories="Code" data-listing-file-modified-sort="1728855420203" data-listing-reading-time-sort="8" data-listing-word-count-sort="1541">
+<div class="g-col-1" data-index="16" data-categories="Code" data-listing-file-modified-sort="1728855420203" data-listing-reading-time-sort="8" data-listing-word-count-sort="1541">
 <a href="./posts/coin_flipping/coin_flip.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -647,7 +678,7 @@ What I thought was a clever analogy of insects at hotter temperatures
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="16" data-categories="Tutorial,Code" data-listing-file-modified-sort="1728855108507" data-listing-reading-time-sort="9" data-listing-word-count-sort="1730">
+<div class="g-col-1" data-index="17" data-categories="Tutorial,Code" data-listing-file-modified-sort="1728855108507" data-listing-reading-time-sort="9" data-listing-word-count-sort="1730">
 <a href="./posts/spatial_network/spatialnetwork.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -677,11 +708,11 @@ Damie Pak
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="17" data-categories="Material" data-listing-file-modified-sort="1728841707027" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
+<div class="g-col-1" data-index="18" data-categories="Material" data-listing-file-modified-sort="1728841707027" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
 <a href="./posts/abouheif_mean_C/abouheifqmd.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./posts/abouheif_mean_C/tree.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" data-src="./posts/abouheif_mean_C/tree.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -708,6 +739,9 @@ Abouheif Mean C is one way to check if there is a phylogenetic signal: how does 
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

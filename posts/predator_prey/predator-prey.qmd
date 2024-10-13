@@ -1,0 +1,14 @@
+---
+title: "Guest lecture slides for teaching the Lotka-Volterra Predator/Prey
+dynamics"
+description: "Guest lecture slides for teaching"
+image: "lynx.jpeg"
+categories: ["Slides","Material"]
+toc: true
+draft: false
+cache: true
+freeze: auto
+title-block-banner: true
+---
+
+<object data="Lotkavolterra-1.pdf" width="1000" height="1000" type='application/pdf'/>
