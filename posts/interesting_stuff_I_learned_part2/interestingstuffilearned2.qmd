@@ -7,6 +7,7 @@ categories: ["List"]
 toc: true
 draft: false
 cache: true
+title-block-banner: true
 ---
 
 This is a list of things I learned. Generally involves my research, but you might see a weird aside.
@@ -23,7 +24,7 @@ I mean intuitive, but never thought of it that way before.
 
 Except for this guy: <https://www.youtube.com/watch?v=sr-DdOnkpro>
 
-## Inverse **Transform Sampling** 
+## Inverse Transform Sampling
 
 You put your random uniform number in, you get an exponential distribution out
 

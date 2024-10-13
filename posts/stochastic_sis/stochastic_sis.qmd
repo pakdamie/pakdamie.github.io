@@ -10,6 +10,7 @@ cache: true
 editor_options: 
   chunk_output_type: console
 ---
+
 WORK IN PROGRESS
 
 ```{r}
@@ -19,7 +20,6 @@ library(ggnetwork)
 library(dplyr)
 library(gganimate)
 ```
-
 
 This is for my sake of actually learning how to make a stochastic SIS model.
 
@@ -43,12 +43,11 @@ where infected individuals recover at rate $\gamma$.
 
 For stochastic modeling, we use something called a master equation that can tell us how the state distribution varies over time (how individuals "jump" from one state to another).
 
-If we're interested in 
-
+If we're interested in
 
 Assuming, we are interested in looking the probability where $n$ individuals are infected and we are interested what the next time step could be. We call this $p_n (t)$.
 
-Well, it could be that in a state where $n-1$ individuals are infected, the infected individual infected one of the susceptible. This means that 
+Well, it could be that in a state where $n-1$ individuals are infected, the infected individual infected one of the susceptible. This means that
 
 $$
 p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
@@ -58,62 +57,51 @@ in English, the probability of being in the state where there are $n-1$ infectio
 
 Now it could be possible that there is the probability that susceptible individuals do not get infected and the infectious individuals have not recovered yet.
 
-This means that the probability of no individual being infected is $ 1- P(an individual being infected)$, such that:
+This means that the probability of no individual being infected is \$ 1- P(an individual being infected)\$, such that:
 
-$$
- p_n(1- (\beta n(N-n)))
+\$\$ p_n(1- (\beta n(N-n)))
 
-$$
-And individuals that do not recover is:
+\$\$ And individuals that do not recover is:
 
 $$
 p_n(1-(\beta n(N-n)+\gamma n)) \Delta t
-$$
-Then we can have an individual recover:
+$$ Then we can have an individual recover:
 
 $$
 p_{n+1} = \gamma (n+1) \Delta t
-$$
-Putting this all together:
+$$ Putting this all together:
 
 $$
 p_n(t + \Delta t) = p_{n-1} \beta(n-1)(N-(n-1)) \Delta t+
 p_n(1-(\beta n(N-n)-\gamma n)) \Delta t + 
 \gamma (n+1) \Delta t
-$$
-We notice that we can convert this into a continous form by noting the $p_n$ in the middle term.
-
+$$ We notice that we can convert this into a continous form by noting the $p_n$ in the middle term.
 
 $$
 p_n(t + \Delta t) - p_n(t)= p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
 -p_n(\beta n(N-n)+\gamma n)) \Delta t + 
 \gamma (n+1) \Delta t
-$$
-We can then divide everything by the time step $\Delta t$:
+$$ We can then divide everything by the time step $\Delta t$:
 
 $$
 \frac{p_n(t + \Delta t) - p_n(t)}{\Delta t}= p_{n-1} \beta(n-1)(N-(n-1)) 
 -p_n(\beta n(N-n)+\gamma n)) + 
 \gamma (n+1) 
-$$
-And as $\Delta t$ approaches infinity, we then have
+$$ And as $\Delta t$ approaches infinity, we then have
 
 $$
 \frac{dP_n(t)}{dt} =  p_{n-1} \beta(n-1)(N-(n-1)) 
 -p_n(\beta n(N-n)+\gamma n)) + 
 \gamma (n+1) 
-$$
-With this master equation, we can simulate the model.
+$$ With this master equation, we can simulate the model.
 
 ## Code
 
-The  Gillepsie method takes that master equation. Where we first simulate the time to the next
-event and figure out which event has occcured (infection or recovery). We use something called a Poisson process where we say there is a rate at which events happen but we want it to be random AND independent. The rate at which something happens in the system is what we described with the master equation. The poisson process is also useful because we also know the time to events.
+The Gillepsie method takes that master equation. Where we first simulate the time to the next event and figure out which event has occcured (infection or recovery). We use something called a Poisson process where we say there is a rate at which events happen but we want it to be random AND independent. The rate at which something happens in the system is what we described with the master equation. The poisson process is also useful because we also know the time to events.
 
 Poisson (P_n) then the exponential waiting time is (1- exp(P_n)t).
 
-We can use a uniform distribution through something called:Inverse Transform Sampling. 
-
+We can use a uniform distribution through something called:Inverse Transform Sampling.
 
 ```{r}
 # We create a susceptible and infectious vector and we will simulate for a 100 time steps
@@ -121,8 +109,8 @@ S = matrix(c(10,rep(0,100-1)), nrow = 100, ncol = 1 ) #susceptible individuals
 I = matrix(c(2,rep(0,100-1)), nrow = 100,ncol = 1) #infectious individuals
 ```
 
-
 Here are the parameters:
+
 ```{r}
 beta = 0.1
 gamma = 1/3
