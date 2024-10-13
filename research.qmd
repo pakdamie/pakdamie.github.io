@@ -3,14 +3,24 @@ title: "Research"
 lang: "en"
 ---
 
-> <q>**In the particular is contained the universal.**</q> - James Joyce
+> <q style="font-size: 20px;color:#f07375">**In the particular is contained the universal.**</q> - James Joyce
 
-Being more on the theory side of ecology allows me to explore different systems. While there are shared commonalities between all ecology systems, I love to dive deep into each system and learn their idiosyncrasies. My favorite stomping grounds, however, are in agricultural pests and infectious disease (especially vectorborne!) . Here are the very general questions I am interested in:
+:::::: columns
+::: {.column width="2%"}
+:::
+
+::: {.column width="1%"}
+:::
+
+::: {.column width="97%"}
+Being more on the theory side of ecology allows me to explore different systems. While there are shared commonalities between all ecological systems, I love to dive deep into each system to learn of their idiosyncrasies. My main research interests are in insects and infectious disease dynamics. I've been trying to slowly merge my entomological background with my growing interest in vectorborne diseases. Here are some of the very general questions I have:
 
 1.  How does the interaction between individuals and the environment determine the species' population dynamics as well as its "timing"?
 2.  How do the interactions between species influence disease dynamics?
-3.  What are the ecological insights we could gather from taking a more holistic community approach instead of focusing on a single species?
+3.  What are the ecological insights we could gather from taking a more holistic community approach instead of focusing on a single species? 
 4.  How can we use theoretical ecology to inform the management of outbreaks, both pest and disease?
+:::
+::::::
 
 Below are some projects I have pursued:
 
@@ -18,7 +28,7 @@ Below are some projects I have pursued:
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/moth_pic.jpg)
+![](media/moth_pic.png)
 :::
 
 ::: {.column width="2%"}
@@ -33,7 +43,7 @@ For my doctoral work with Dr. Ottar Bjornstad, I investigated how the environmen
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/plant_pic.jpg)
+![](media/plant_pic.png)
 :::
 
 ::: {.column width="2%"}
@@ -48,7 +58,7 @@ In my collaboration with Dr. Jesse Lasky (**Multiscale phenological niches of se
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/tick_pic.jpg)
+![](media/tick_pic.png)
 :::
 
 ::: {.column width="2%"}
@@ -61,7 +71,7 @@ I'm fascinated by communities of vector species! When investigating vector-borne
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/triatomine_pic.jpg)
+![](media/triatomine_pic.png)
 :::
 
 ::: {.column width="2%"}
@@ -76,7 +86,7 @@ Currently with my postdoctoral work with Tad Dallas, a project I'm working on is
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/malaria_pic.jpg)
+![](media/malaria_pic.png)
 :::
 
 ::: {.column width="2%"}
@@ -91,7 +101,7 @@ In my postdoctoral work with Dr. Megan Greischar, I investigated an understudied
 
 :::::: columns
 ::: {.column width="18%"}
-![](media/syringe_pic.jpg)
+![](media/syringe_pic.png)
 :::
 
 ::: {.column width="2%"}

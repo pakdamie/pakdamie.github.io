@@ -8,7 +8,6 @@ toc: true
 draft: false
 cache: true
 freeze: auto
-title-block-banner: true
 ---
 
 ## A case

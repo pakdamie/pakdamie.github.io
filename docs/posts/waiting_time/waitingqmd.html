@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Damie Pak">
+<meta name="description" content="Why do we assume that the waiting time in a compartmental model is exponentially distributed?">
 
 <title>Exponential waiting time – Damie Pak</title>
 <style>
@@ -67,6 +68,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #3f0af0;
+      }
+</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -98,7 +105,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.scss">
 </head>
 
 <body class="nav-fixed">
@@ -146,8 +153,12 @@ window.Quarto = {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
       <h1 class="title">Exponential waiting time</h1>
-            <p class="subtitle lead">What does it mean?</p>
-                                <div class="quarto-categories">
+                  <div>
+        <div class="description">
+          Why do we assume that the waiting time in a compartmental model is exponentially distributed?
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Tutorial</div>
               </div>
                   </div>
@@ -181,7 +192,7 @@ window.Quarto = {
 
 
 
-<p>When you read some modeling papers, they may talk about the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn’t really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let’s figure this out together and let’s imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate <span class="math inline">\(k\)</span> and the amount of individuals in A. So the easiest way to write this is:</p>
+<p>When you’re diving in and read some modeling papers, they may talk about the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn’t really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let’s figure this out together and let’s imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate <span class="math inline">\(k\)</span> and the amount of individuals in A. So the easiest way to write this is:</p>
 <p><span class="math display">\[\frac{dA}{dt} = -kA \]</span></p>
 <p>Which means that that the change in A over time is equal to k times A. This differential equation, we can solve analytically!</p>
 <p>This is fairly simple to solve and let me show you the steps (honestly, I really recommend doing this yourself as practice!)</p>

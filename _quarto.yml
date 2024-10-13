@@ -18,8 +18,8 @@ website:
 
 format:
   html:
-    theme: listera
-    css: styles.css
+    theme: styles.scss
+    css: styles.scss
     toc: true
     page-layout: full
     mainfont: Jost

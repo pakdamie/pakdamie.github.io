@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+
+// Import fonts (define mainfont in _quarto.yml)
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+// Colors
+$white: #f2f7f5;
+$green: #56adb3;
+$black: #3c3f49;
+$red: #fa5246;
+$cream: #FDFBF7;
+$infrared: #f07375;
+$purple: #300350;
+$darkgreen: #027E56;
+
+// Base document colors
+$navbar-bg: $darkgreen;
+$navbar-fg: $cream; 
+$navbar-hl: $cream;//$orange;//$purple; 
+$body-bg: $cream;
+$body-color: $black;
+$footer-bg: $cream; 
+$link-color: $red;// $orange;//$purple;
+
+// Inline code
+$code-bg: $white;
+$code-color: $red;//$burnt-orange; 
+
+// Code blocks
+$code-block-bg: $white;
+
+
