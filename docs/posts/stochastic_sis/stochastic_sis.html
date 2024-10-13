@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Damie Pak">
+<meta name="description" content="A short tutorial on how to model stochastic SIS model on a network.">
 
 <title>Stochastic SIS model – Damie Pak</title>
 <style>
@@ -181,7 +181,12 @@ window.Quarto = {
     <div class="quarto-title column-page-left">
       <h1 class="title">Stochastic SIS model</h1>
             <p class="subtitle lead">Learning for me</p>
-                                <div class="quarto-categories">
+                  <div>
+        <div class="description">
+          A short tutorial on how to model stochastic SIS model on a network.
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Tutorial</div>
               </div>
                   </div>
@@ -190,12 +195,6 @@ window.Quarto = {
   
   <div class="quarto-title-meta column-page-left">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Damie Pak </p>
-            </div>
-    </div>
       
     
       
@@ -210,9 +209,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-math" id="toc-the-math" class="nav-link active" data-scroll-target="#the-math">The Math</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  <li><a href="#doing-this-in-a-network" id="toc-doing-this-in-a-network" class="nav-link" data-scroll-target="#doing-this-in-a-network">Doing this in a network</a></li>
+  <li><a href="#the-packages-that-you-need" id="toc-the-packages-that-you-need" class="nav-link active" data-scroll-target="#the-packages-that-you-need">The packages that you need</a></li>
+  <li><a href="#the-math" id="toc-the-math" class="nav-link" data-scroll-target="#the-math">The math</a></li>
+  <li><a href="#the-code" id="toc-the-code" class="nav-link" data-scroll-target="#the-code">The Code</a></li>
+  <li><a href="#doing-this-on-a-network" id="toc-doing-this-on-a-network" class="nav-link" data-scroll-target="#doing-this-on-a-network">Doing this on a network</a></li>
+  <li><a href="#animating-it" id="toc-animating-it" class="nav-link" data-scroll-target="#animating-it">Animating it</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +224,8 @@ window.Quarto = {
 
 
 
-<p>WORK IN PROGRESS</p>
+<section id="the-packages-that-you-need" class="level2">
+<h2 class="anchored" data-anchor-id="the-packages-that-you-need">The packages that you need</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -232,8 +234,9 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is for my sake of actually learning how to make a stochastic SIS model.</p>
+</section>
 <section id="the-math" class="level2">
-<h2 class="anchored" data-anchor-id="the-math">The Math</h2>
+<h2 class="anchored" data-anchor-id="the-math">The math</h2>
 <p>Assume we have an SIS model (Susceptible to Infected to Susceptible). Assuming we have constant <span class="math inline">\(N\)</span> individuals in the population (no demography), there can be <span class="math inline">\(n\)</span> number of infectious individuals. Therefore, for the susceptible population, <span class="math inline">\(S = N- n\)</span> and for the infectious population <span class="math inline">\(I = n\)</span> .</p>
 <p>In a stochastic, markovian model. We can have individuals of both state transition like so:</p>
 <p><span class="math display">\[
@@ -283,10 +286,10 @@ p_n(t + \Delta t) - p_n(t)= p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
 \gamma (n+1)
 \]</span> With this master equation, we can simulate the model.</p>
 </section>
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
+<section id="the-code" class="level2">
+<h2 class="anchored" data-anchor-id="the-code">The Code</h2>
 <p>The Gillepsie method takes that master equation. Where we first simulate the time to the next event and figure out which event has occcured (infection or recovery). We use something called a Poisson process where we say there is a rate at which events happen but we want it to be random AND independent. The rate at which something happens in the system is what we described with the master equation. The poisson process is also useful because we also know the time to events.</p>
-<p>Poisson (P_n) then the exponential waiting time is (1- exp(P_n)t).</p>
+<p>Poisson (P_n) then the exponential waiting time is <span class="math inline">\((1- exp(P_n)t)\)</span>.</p>
 <p>We can use a uniform distribution through something called:Inverse Transform Sampling.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We create a susceptible and infectious vector and we will simulate for a 100 time steps</span></span>
@@ -342,8 +345,8 @@ p_n(t + \Delta t) - p_n(t)= p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
 </div>
 </div>
 </section>
-<section id="doing-this-in-a-network" class="level2">
-<h2 class="anchored" data-anchor-id="doing-this-in-a-network">Doing this in a network</h2>
+<section id="doing-this-on-a-network" class="level2">
+<h2 class="anchored" data-anchor-id="doing-this-on-a-network">Doing this on a network</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#let's say there are 10 individuals </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -416,6 +419,9 @@ p_n(t + \Delta t) - p_n(t)= p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
 <span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a> full_time_list <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, </span>
 <span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a> time_list )  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="animating-it" class="level2">
+<h2 class="anchored" data-anchor-id="animating-it">Animating it</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>full_graph<span class="ot">&lt;-</span> <span class="fu">fortify</span>(graph)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>full_spatial <span class="ot">&lt;-</span>full_graph[,<span class="fu">c</span>(<span class="st">'x'</span>,<span class="st">'y'</span>,<span class="st">'label'</span>)]</span>
@@ -432,210 +438,6 @@ p_n(t + \Delta t) - p_n(t)= p_{n-1} \beta(n-1)(N-(n-1)) \Delta t
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ease_aes</span>(<span class="st">'sine-in-out'</span>,<span class="at">interval =</span> <span class="fl">0.001</span>)<span class="sc">+</span><span class="fu">theme_void</span>()</span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">animate</span>(gg_anim, <span class="at">fps=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).
-Removed 75 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -643,7 +445,7 @@ Removed 75 rows containing missing values or values outside the scale range
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">anim_save</span> (<span class="st">'gganim.gif'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">anim_save</span> (<span class="st">'gganim.gif'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

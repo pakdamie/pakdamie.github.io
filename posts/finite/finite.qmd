@@ -1,38 +1,38 @@
 ---
 title: "Finite versus instantaneous rate"
 subtitle: "Why you gotta convert"
-author: "Damie Pak"
 image: "hourglass.jpg"
+description: "Finite and instanteous rates can be confusing especially when we talk about mortality rates."
 categories: ["Tutorial"]
 draft: false
 cache: true
 freeze: auto
 title-block-banner: true
+toc: true
 ---
 
-REFormating in progress
+## Introduction
 
-Okay this is embarrassing, but I was always confused about finite and instantaneous rate (to be fair it's not overly intuitive!)
-
-So, let's say you're writing a model (let's say insects because it gets really depressing talking about people) and you gotta parameterize the daily mortality rate. You scour through some literature and voila, you find one from an experiment that says they found 10% of the individuals died in a day. Haha, the key parameterization!
+Okay this is embarrassing, but I was always confused about finite and instantaneous rate when I was a young grad student. So, let's say you're writing a model (let's say of insects because it gets really depressing talking about people) and you gotta parameterize the daily mortality rate. You scour through some literature and find an experiment that says they found 10% of the individuals died in a day.
 
 For simplicity sake, the daily mortality parameter is called $\mu$ and the insect population is $N(t)$ and we're going to use differential equations show below:
 
-$$\frac{dN(t)}{dt} = -\mu N(t) $$
+$$\frac{dN(t)}{dt} = -\mu N(t).$$
 
-And aha we're like okay let's plug in 0.10 for $\mu$ but the problem is that this is a finite rate, we have to convert it first!
+Without thinking, let's plug in 0.10 for $\mu$. But the problem is that this is a finite rate, we have to convert it first!\
 
-Huh.
+## Continuous versus discrete death
 
-Let's think about it, when we talk about differential equations we have to realize that they're continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (like, it's10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.
+Let's think about it, when we talk about differential equations we have to realize that they're continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (i.e 10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.
 
-Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You're not assuming insects are dying continuously throughout that one day. In fact, it's like they're waiting to die at the end of each day! Aka this figure below.
+Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You're not assuming insects are dying continuously throughout that one day. In fact, it's like they're waiting to die at the end of each day!
 
-![](https://damiepak.com/wp-content/uploads/2021/01/Capture.png)
 
-So what does that mean? 
+![](https://damiepak.com/wp-content/uploads/2021/01/Capture.png){fig-align="center"}
 
-It means you have to take your finite rate and convert it to an instantaneous rate. How do you do that?
+## How to convert
+
+So what does that mean?  It means you have to take your finite rate and convert it to an instantaneous rate. How do you do that?
 
 Well let's look at the differential equation here again:
 
@@ -40,26 +40,14 @@ $$ \frac{dN}{dt} = -\mu N(t)$$
 
 If we solve it then it becomes
 
-$$N(t) = N_0 * exp(-\mu t)$$
+$$N(t) = N_0 * \exp(-\mu t).$$
 
-Okay so let's say we have an initial conditions of 100, so \$N_0 = 100\$. I want to solve for $\mu$. So let's divide both parts of the equation with $N_0$ and that means it would $\frac{N(t)}{N_0}$. Okay so if we see that 10% have died in one day that means $N(1) = 90$ $(100- (100 * 0.10) = 90)$
+Okay so let's say we have an initial conditions of 100, so $N_0 = 100$. I want to solve for $\mu$. So let's divide both parts of the equation with $N_0$ and that means it would $\frac{N(t)}{N_0}$. Okay so if we see that 10% have died in one day that means $N(1) = 90$ $(100- (100 * 0.10) = 90)$. Substituting the new numbers in and setting $t = 1$ since we're looking at one day only,we get:
 
-So substitute the new numbers in, also t = 1 since we're looking at one day only, and we get: \
+$$\frac{90}{100} = \exp(-\mu t) = \exp(-\mu).$$
 
-$$frac{90}{100} = exp(-\mu t) = exp(- \mu)$$
+We can take the natural log to get: $log(\frac{90}{100}) = -\mu$. When we calculate it we get $\mu = 0.105$. Aha, close to 0.10 but not exactly 0.10? What was the entire point of this exercise? Well, the finite and instantaneous rates actually diverge as the finite mortality rate increases. Say that 70% of individuals die in a day. So okay, rerun the above. $\mu = -ln(\frac{30}{100}) = 1.20.$ That's a lot bigger than 0.70! Remember that RATES allow for a value greater than 1.
 
-We can take the natural log to get: $$ ln frac{90}{100} = -\mu $$
+If you want more information check:
 
-When we calculate it we get \$ \mu = 0.10536051565 \$
-
-Aha, close to 0.10 but not exactly .10?
-
-You might be sitting there, being like 'what's the point of all that?"
-
-Well try it when you have a data that says 70% of individuals die in a day. So okay, rerun the above. \$\mu = -ln(30/100) = 1.20 \$
-
-That's a lot bigger than 0.70.
-
-Aha remember that RATES allow for a value greater than 1. So remember the general equation for instantaneous mortality is using the above- remember that $\frac{N(t)}{N_0}$ is also another way of expressing survivorship. 
-
-If you want more information check: https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm
+https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm

@@ -1,7 +1,7 @@
 ---
 title: "Simulating ecology models: A series of tutorial (Part 2)"
 subtitle: "Numerically solving differential equations"
-author: "Damie Pak"
+description: "How to use Euler method to solve differential equation"
 image: "euler.png"
 categories: ["Code","Tutorial"]
 toc: true

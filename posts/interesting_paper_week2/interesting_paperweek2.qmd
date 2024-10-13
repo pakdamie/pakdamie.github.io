@@ -1,7 +1,7 @@
 ---
 title: "Interesting stuff I read (August 19th)"
 subtitle: "Literacy is still hard"
-author: "Damie Pak"
+description: "Thermal performance curves are radical!"
 image: "lady.jpg"
 categories: ["Reading"]
 toc: true

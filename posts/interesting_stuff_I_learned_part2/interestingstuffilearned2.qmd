@@ -1,7 +1,7 @@
 ---
 title: "Interesting things I learned this week (August 26th)"
 subtitle: "Learning and learning"
-author: "Damie Pak"
+description: "Stochasticity in models - why not!"
 image: "apprentice.jpg"
 categories: ["List"]
 toc: true

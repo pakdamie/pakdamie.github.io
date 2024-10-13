@@ -1,13 +1,13 @@
 ---
 title: "Abouheif Mean C"
 subtitle: "Quick pic to understand"
-author: "Damie Pak"
+description: "Abouheif Mean C is one way to check if there is a phylogenetic signal: how does it work?"
 image: "tree.jpeg"
 categories: ["Material"]
 freeze: auto
 title-block-banner: true
 ---
 
-A very silly thing I made to understand Abouheif Mean C (a non-complicated way to see if there is a phylogenetic signal)
+A very silly thing I made to understand Abouheif Mean C (a non-complicated way to see if there is a phylogenetic signal). Sometimes to fully learn something, I need to do it tediously.
 
-{{< pdf abouheif_mean_c.pdf >}}
+<object data="abouheif_mean_c.pdf" width="1000" height="1000" type='application/pdf'/>

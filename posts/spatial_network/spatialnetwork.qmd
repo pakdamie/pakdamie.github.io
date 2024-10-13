@@ -1,6 +1,7 @@
 ---
 title: "Simulating spatial network (Part 2)"
 ubtitle: "Ok the better version"
+description: "How to simulate a semi-realistic spatial network, maybe in kind of a hackey way"
 author: "Damie Pak"
 image: "pilgrim.jpg"
 categories: ["Tutorial", "Code"]

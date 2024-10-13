@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Damie Pak">
+<meta name="description" content="Malthus is associated with exponential growth… and bad famine policies that led to the death of millions. Why don’t we ever talk about it in Intro to Ecology classes?">
 
 <title>It’s weird we don’t talk about Malthus – Damie Pak</title>
 <style>
@@ -70,10 +70,39 @@ ul.task-list li input[type="checkbox"] {
 <style>
 
       .quarto-title-block .quarto-title-banner {
-        background: #3f0af0;
+        background: #027E56;
       }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.scss">
 </head>
@@ -123,8 +152,13 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title">It’s weird we don’t talk about Malthus</h1>
-            <p class="subtitle lead">No seriously</p>
-                                <div class="quarto-categories">
+            <p class="subtitle lead">No but seriously.</p>
+                  <div>
+        <div class="description">
+          Malthus is associated with exponential growth… and bad famine policies that led to the death of millions. Why don’t we ever talk about it in Intro to Ecology classes?
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Essay</div>
               </div>
                   </div>
@@ -133,12 +167,6 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta column-page-left">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Damie Pak </p>
-            </div>
-    </div>
       
     
       
@@ -153,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-case" id="toc-a-case" class="nav-link active" data-scroll-target="#a-case">A case</a></li>
+  <li><a href="#my-case" id="toc-my-case" class="nav-link active" data-scroll-target="#my-case">My case</a></li>
   <li><a href="#a-quick-background-to-thomas-malthus" id="toc-a-quick-background-to-thomas-malthus" class="nav-link" data-scroll-target="#a-quick-background-to-thomas-malthus">A quick background to Thomas Malthus</a></li>
   <li><a href="#ireland-and-india" id="toc-ireland-and-india" class="nav-link" data-scroll-target="#ireland-and-india">Ireland and India</a></li>
   <li><a href="#so-we-talked-about-malthus" id="toc-so-we-talked-about-malthus" class="nav-link" data-scroll-target="#so-we-talked-about-malthus">So we talked about Malthus…</a></li>
@@ -167,30 +195,34 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="a-case" class="level2">
-<h2 class="anchored" data-anchor-id="a-case">A case</h2>
-<p>Most Introduction to Ecology classes begin by introducing the exponential growth in a single-species population. Generally, in the required textbooks or readings there is probably a reference or quote by Thomas Malthus that accompanies the equation. It is highly likely that the quote comes from his most famous treatise:&nbsp;<strong>An essay on the principle of population (1798).</strong></p>
-<p>Most likely, the students will not give much passing thoughts about the accompanying quote. Honestly, when I first noticed it in my textbook, I just thought,</p>
-<p>“Huh some dead guy”</p>
-<p>A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous and involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ’It’s a privilege to pee”- it’s wild, highly recommend). I won’t spoil the ending, but it’s a major downer ending and the last line of the musical is “Hail Malthus”. Hey it’s the dead guy from my textbook appearing in a musical. I decided to do more research about this Thomas Malthus fellow.</p>
-<p>So after some research, I realized it’s weird we don’t talk about Malthus more.</p>
+<section id="my-case" class="level2">
+<h2 class="anchored" data-anchor-id="my-case">My case</h2>
+<p>Most Introduction to Ecology classes begin by introducing the exponential growth in a single-species population: <span class="math inline">\(N(t) = N_0\exp(rt).\)</span> In the required textbooks or readings, there is generally a reference or quote by Thomas Malthus that accompanies the equation. Most likely, the students will not give much passing thought about the accompanying quote. Honestly, when I first noticed it in my textbook, I just thought,</p>
+<p><strong>“Huh some dead guy”</strong></p>
+<p>A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous as it involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ’It’s a privilege to pee”). I won’t spoil the ending, but it’s a major downer ending. The last line of the musical is “Hail Malthus”. I remember thinking,</p>
+<p><strong>“It’s the dead guy from my textbook appearing in a musical!”</strong></p>
+<p>I then decided to do more research about Thomas Malthus. So after some research, I realized it’s weird we don’t talk about Malthus more.</p>
 </section>
 <section id="a-quick-background-to-thomas-malthus" class="level2">
 <h2 class="anchored" data-anchor-id="a-quick-background-to-thomas-malthus">A quick background to Thomas Malthus</h2>
-<p>Thomas Malthus (born 1766) was an English economist and demographer. Malthus believed that people (especially the poor) just generally sucked. The idea of providing any welfare to the poor was preposterous as he believed that aid would make the poor unwilling to work. Malthus also believed that the poor would ultimately produce more children and continue the cycle of impoverishment. His huge dislike of the impoverished probably led to his most important work, “An essay on the principle of population”. The main thesis was that human population growth would ultimately outpace the food supply. As the population increases beyond what is sustainable, the poor would then ultimately suffer more. Therefore, the growth rate can only be countered by “positive checks” like famine and war. Yes, famines and war were good in Malthus’ point of view.</p>
-<p>To the untrained eye, that sounds like conventional wisdom. If there was finite resources, unrestrained growth would lead to increased suffering as people would devour each other for food. However, this essay became the basis of horrific policies that led to immeasurable human suffering.</p>
+<p>Thomas Malthus (born 1766) was an English economist and demographer. Malthus believed that people (especially the poor) just generally sucked. The idea of providing any welfare to the poor was preposterous as he believed that aid would make the poor unwilling to work. Malthus also believed that the poor would ultimately produce more children and continue the cycle of impoverishment. His huge dislike of the impoverished probably led to his most important work, “An essay on the principle of population”. The main thesis was that human population growth would ultimately outpace the food supply. As the population increases beyond what is sustainable, the poor would then ultimately suffer more. Therefore, the growth rate can only be countered by “positive checks” like famine and war.</p>
+<p>To the untrained eye, that sounds like conventional wisdom (especially if you’re an asshole). If there was finite resources, unrestrained growth would lead to increased suffering as people would devour each other for food. However, this essay became the basis of horrific policies that led to immeasurable human suffering.</p>
 <p>So it’s like… super weird to me we have this quote like in our ecology textbooks.</p>
 </section>
 <section id="ireland-and-india" class="level2">
 <h2 class="anchored" data-anchor-id="ireland-and-india">Ireland and India</h2>
-<p>We know that the potato famine of Ireland was devastating and led to the mass exodus of its citizens. While the potato blight played a major role, we know aware that British policies imposed on the Irish also contributed to the mass starvation. It comes as a shock to modern audiences to learn that during the height of the famine, Ireland was exporting food at the time. While the people starved, grains were exported leading to massive food riots.</p>
+<p>We know that the potato famine of Ireland was devastating and led to the mass exodus of its citizens. While the potato blight played a major role, we now know that that it was the British policies imposed on the Irish that mainly contributed to the mass starvation. It comes as a shock to modern audiences to learn that during the height of the famine, Ireland was exporting food at the time. While the people starved, grains were exported leading to massive food riots.</p>
 <p>So where does Malthus fall in?</p>
 <p>His student, Charles Trevalyn, was in charge of the Irish famine and he believed that no relief should be given to the people. In fact, he and many of the politicians in the British government believed the famine to be of great providence to teach the Irish the deadly sin of being… colonized and impoverished .</p>
 <p>Reading academic literature on the economic policies of the Irish famine is honestly harrowing:</p>
+<blockquote class="blockquote">
 <p><em>“Those with the power to relieve famine convinced themselves that overly heroic exertions against implacable natural laws, whether of market prices or population growth, were worse than no effort at all” (Davis 2001: 32).</em></p>
+</blockquote>
 <p>Basically, Malthusian philosophy believed the famine to be a boon to the Irish people. Famine was the positive check on the growth rate of the people that the British found to be inferior.</p>
 <p>This same thought appeared again in India, where again the economic policies of the British government were responsible for horrific suffering. I highly recommend the book ’Late Victorian Holocausts” by Mike Davis that show while famines are natural, economic policies of the ruling class greatly exacerbated the consequences. It’s harrowing to read how the colonists believed that this again was good for the poor. Railroads that were built through India were used to basically ship food out of the country. The poor were put in work camps that were inhumanely cruel.</p>
-<p><em>’I am profoundly persuaded that every rupee superfluously spent on famine relief only aggravates the evil effects of famine, and that in all such cases waste of money involves waste of life”</em> stated Lytton, the viceroy at the time.</p>
+<blockquote class="blockquote">
+<p><em>’I am profoundly persuaded that every rupee superfluously spent on famine relief only aggravates the evil effects of famine, and that in all such cases waste of money involves waste of life”</em> - Lytton ( the viceroy at the time).</p>
+</blockquote>
 <p>The Malthusian philosophy still haunts us to this day (Continued in a next article). I’m gonna just point out the stupid plan by Thanos in the Marvel movies.</p>
 </section>
 <section id="so-we-talked-about-malthus" class="level2">

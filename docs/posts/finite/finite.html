@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Damie Pak">
+<meta name="description" content="Finite and instanteous rates can be confusing especially when we talk about mortality rates.">
 
 <title>Finite versus instantaneous rate – Damie Pak</title>
 <style>
@@ -98,7 +98,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.scss">
 </head>
 
 <body class="nav-fixed">
@@ -144,24 +144,23 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
+    <div class="quarto-title column-page-left">
       <h1 class="title">Finite versus instantaneous rate</h1>
             <p class="subtitle lead">Why you gotta convert</p>
-                                <div class="quarto-categories">
+                  <div>
+        <div class="description">
+          Finite and instanteous rates can be confusing especially when we talk about mortality rates.
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">Tutorial</div>
               </div>
                   </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Damie Pak </p>
-            </div>
-    </div>
       
     
       
@@ -171,46 +170,57 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#continuous-versus-discrete-death" id="toc-continuous-versus-discrete-death" class="nav-link" data-scroll-target="#continuous-versus-discrete-death">Continuous versus discrete death</a></li>
+  <li><a href="#how-to-convert" id="toc-how-to-convert" class="nav-link" data-scroll-target="#how-to-convert">How to convert</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
-<p>REFormating in progress</p>
-<p>Okay this is embarrassing, but I was always confused about finite and instantaneous rate (to be fair it’s not overly intuitive!)</p>
-<p>So, let’s say you’re writing a model (let’s say insects because it gets really depressing talking about people) and you gotta parameterize the daily mortality rate. You scour through some literature and voila, you find one from an experiment that says they found 10% of the individuals died in a day. Haha, the key parameterization!</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Okay this is embarrassing, but I was always confused about finite and instantaneous rate when I was a young grad student. So, let’s say you’re writing a model (let’s say of insects because it gets really depressing talking about people) and you gotta parameterize the daily mortality rate. You scour through some literature and find an experiment that says they found 10% of the individuals died in a day.</p>
 <p>For simplicity sake, the daily mortality parameter is called <span class="math inline">\(\mu\)</span> and the insect population is <span class="math inline">\(N(t)\)</span> and we’re going to use differential equations show below:</p>
-<p><span class="math display">\[\frac{dN(t)}{dt} = -\mu N(t) \]</span></p>
-<p>And aha we’re like okay let’s plug in 0.10 for <span class="math inline">\(\mu\)</span> but the problem is that this is a finite rate, we have to convert it first!</p>
-<p>Huh.</p>
-<p>Let’s think about it, when we talk about differential equations we have to realize that they’re continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (like, it’s10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.</p>
-<p>Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You’re not assuming insects are dying continuously throughout that one day. In fact, it’s like they’re waiting to die at the end of each day! Aka this figure below.</p>
-<p><img src="https://damiepak.com/wp-content/uploads/2021/01/Capture.png" class="img-fluid"></p>
-<p>So what does that mean?&nbsp;</p>
-<p>It means you have to take your finite rate and convert it to an instantaneous rate. How do you do that?</p>
+<p><span class="math display">\[\frac{dN(t)}{dt} = -\mu N(t).\]</span></p>
+<p>Without thinking, let’s plug in 0.10 for <span class="math inline">\(\mu\)</span>. But the problem is that this is a finite rate, we have to convert it first!<br>
+</p>
+</section>
+<section id="continuous-versus-discrete-death" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-versus-discrete-death">Continuous versus discrete death</h2>
+<p>Let’s think about it, when we talk about differential equations we have to realize that they’re continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (i.e 10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.</p>
+<p>Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You’re not assuming insects are dying continuously throughout that one day. In fact, it’s like they’re waiting to die at the end of each day!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://damiepak.com/wp-content/uploads/2021/01/Capture.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="how-to-convert" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-convert">How to convert</h2>
+<p>So what does that mean?&nbsp; It means you have to take your finite rate and convert it to an instantaneous rate. How do you do that?</p>
 <p>Well let’s look at the differential equation here again:</p>
 <p><span class="math display">\[ \frac{dN}{dt} = -\mu N(t)\]</span></p>
 <p>If we solve it then it becomes</p>
-<p><span class="math display">\[N(t) = N_0 * exp(-\mu t)\]</span></p>
-<p>Okay so let’s say we have an initial conditions of 100, so $N_0 = 100$. I want to solve for <span class="math inline">\(\mu\)</span>. So let’s divide both parts of the equation with <span class="math inline">\(N_0\)</span> and that means it would <span class="math inline">\(\frac{N(t)}{N_0}\)</span>. Okay so if we see that 10% have died in one day that means <span class="math inline">\(N(1) = 90\)</span> <span class="math inline">\((100- (100 * 0.10) = 90)\)</span></p>
-<p>So substitute the new numbers in, also t = 1 since we’re looking at one day only, and we get:&nbsp;<br>
-</p>
-<p><span class="math display">\[frac{90}{100} = exp(-\mu t) = exp(- \mu)\]</span></p>
-<p>We can take the natural log to get: <span class="math display">\[ ln frac{90}{100} = -\mu \]</span></p>
-<p>When we calculate it we get $ = 0.10536051565 $</p>
-<p>Aha, close to 0.10 but not exactly .10?</p>
-<p>You might be sitting there, being like ’what’s the point of all that?”</p>
-<p>Well try it when you have a data that says 70% of individuals die in a day. So okay, rerun the above. $= -ln(30/100) = 1.20 $</p>
-<p>That’s a lot bigger than 0.70.</p>
-<p>Aha remember that RATES allow for a value greater than 1. So remember the general equation for instantaneous mortality is using the above- remember that <span class="math inline">\(\frac{N(t)}{N_0}\)</span> is also another way of expressing survivorship.&nbsp;</p>
-<p>If you want more information check: https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm</p>
+<p><span class="math display">\[N(t) = N_0 * \exp(-\mu t).\]</span></p>
+<p>Okay so let’s say we have an initial conditions of 100, so <span class="math inline">\(N_0 = 100\)</span>. I want to solve for <span class="math inline">\(\mu\)</span>. So let’s divide both parts of the equation with <span class="math inline">\(N_0\)</span> and that means it would <span class="math inline">\(\frac{N(t)}{N_0}\)</span>. Okay so if we see that 10% have died in one day that means <span class="math inline">\(N(1) = 90\)</span> <span class="math inline">\((100- (100 * 0.10) = 90)\)</span>. Substituting the new numbers in and setting <span class="math inline">\(t = 1\)</span> since we’re looking at one day only,we get:</p>
+<p><span class="math display">\[\frac{90}{100} = \exp(-\mu t) = \exp(-\mu).\]</span></p>
+<p>We can take the natural log to get: <span class="math inline">\(log(\frac{90}{100}) = -\mu\)</span>. When we calculate it we get <span class="math inline">\(\mu = 0.105\)</span>. Aha, close to 0.10 but not exactly 0.10? What was the entire point of this exercise? Well, the finite and instantaneous rates actually diverge as the finite mortality rate increases. Say that 70% of individuals die in a day. So okay, rerun the above. <span class="math inline">\(\mu = -ln(\frac{30}{100}) = 1.20.\)</span> That’s a lot bigger than 0.70! Remember that RATES allow for a value greater than 1.</p>
+<p>If you want more information check:</p>
+<p>https://influentialpoints.com/Training/finite-and-instantaneous_rates.htm</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

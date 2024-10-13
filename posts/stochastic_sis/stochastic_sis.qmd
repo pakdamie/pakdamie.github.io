@@ -1,7 +1,7 @@
 ---
 title: "Stochastic SIS model"
 subtitle: "Learning for me"
-author: "Damie Pak"
+description: "A short tutorial on how to model stochastic SIS model on a network."
 image: "death.jpg"
 categories: ["Tutorial"]
 toc: true
@@ -13,7 +13,7 @@ freeze: auto
 title-block-banner: true
 ---
 
-WORK IN PROGRESS
+## The packages that you need
 
 ```{r}
 library(igraph)
@@ -25,7 +25,7 @@ library(gganimate)
 
 This is for my sake of actually learning how to make a stochastic SIS model.
 
-## The Math
+## The math
 
 Assume we have an SIS model (Susceptible to Infected to Susceptible). Assuming we have constant $N$ individuals in the population (no demography), there can be $n$ number of infectious individuals. Therefore, for the susceptible population, $S = N- n$ and for the infectious population $I = n$ .
 
@@ -97,11 +97,11 @@ $$
 \gamma (n+1) 
 $$ With this master equation, we can simulate the model.
 
-## Code
+## The Code
 
 The Gillepsie method takes that master equation. Where we first simulate the time to the next event and figure out which event has occcured (infection or recovery). We use something called a Poisson process where we say there is a rate at which events happen but we want it to be random AND independent. The rate at which something happens in the system is what we described with the master equation. The poisson process is also useful because we also know the time to events.
 
-Poisson (P_n) then the exponential waiting time is (1- exp(P_n)t).
+Poisson (P_n) then the exponential waiting time is $(1- exp(P_n)t)$.
 
 We can use a uniform distribution through something called:Inverse Transform Sampling.
 
@@ -159,7 +159,7 @@ ggplot(full_model, aes(x = time, y = S))+ geom_line(color = 'red') +
 
 ```
 
-## Doing this in a network
+## Doing this on a network
 
 ```{r}
 #let's say there are 10 individuals 
@@ -234,7 +234,11 @@ for (i in seq(1,100)){
  time_list )  
 ```
 
+## Animating it
+
 ```{r}
+#| warning: false
+#| 
 full_graph<- fortify(graph)
 full_spatial <-full_graph[,c('x','y','label')]
 full_spatial<- full_spatial[!(duplicated(full_spatial)), ]

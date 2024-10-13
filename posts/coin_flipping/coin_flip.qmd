@@ -1,7 +1,7 @@
 ---
 title: "A proof of concept: a coin-toss game"
 subtitle: "The most toy model"
-author: "Damie Pak"
+description: "What I thought was a clever analogy of insects at hotter temperatures"
 image: "coin.jpg"
 categories: ["Code"]
 toc: true

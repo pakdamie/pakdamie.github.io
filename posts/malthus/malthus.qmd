@@ -1,7 +1,7 @@
 ---
 title: "It's weird we don't talk about Malthus"
-subtitle: "No seriously"
-author: "Damie Pak"
+subtitle: "No but seriously."
+description: "Malthus is associated with exponential growth... and bad famine policies that led to the death of millions. Why don't we ever talk about it in Intro to Ecology classes?"
 image: "famine.jpg"
 categories: ["Essay"]
 toc: true
@@ -10,29 +10,29 @@ cache: true
 freeze: auto
 ---
 
-## A case
+## My case
 
-Most Introduction to Ecology classes begin by introducing the exponential growth in a single-species population. Generally, in the required textbooks or readings there is probably a reference or quote by Thomas Malthus that accompanies the equation. It is highly likely that the quote comes from his most famous treatise: **An essay on the principle of population (1798).**
+Most Introduction to Ecology classes begin by introducing the exponential growth in a single-species population: $N(t) = N_0\exp(rt).$ In the required textbooks or readings, there is generally a reference or quote by Thomas Malthus that accompanies the equation. Most likely, the students will not give much passing thought about the accompanying quote. Honestly, when I first noticed it in my textbook, I just thought,
 
-Most likely, the students will not give much passing thoughts about the accompanying quote. Honestly, when I first noticed it in my textbook, I just thought,
+**“Huh some dead guy”**
 
-“Huh some dead guy”
+A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous as it involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ‘It’s a privilege to pee”). I won’t spoil the ending, but it’s a major downer ending. The last line of the musical is “Hail Malthus”. I remember thinking, 
 
-A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous and involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ‘It’s a privilege to pee”- it’s wild, highly recommend). I won’t spoil the ending, but it’s a major downer ending and the last line of the musical is “Hail Malthus”. Hey it’s the dead guy from my textbook appearing in a musical. I decided to do more research about this Thomas Malthus fellow.
+**"It’s the dead guy from my textbook appearing in a musical!"**
 
-So after some research, I realized it’s weird we don’t talk about Malthus more.
+I then decided to do more research about Thomas Malthus. So after some research, I realized it’s weird we don’t talk about Malthus more.
 
 ## A quick background to Thomas Malthus
 
-Thomas Malthus (born 1766) was an English economist and demographer. Malthus believed that people (especially the poor) just generally sucked. The idea of providing any welfare to the poor was preposterous as he believed that aid would make the poor unwilling to work. Malthus also believed that the poor would ultimately produce more children and continue the cycle of impoverishment. His huge dislike of the impoverished probably led to his most important work, “An essay on the principle of population”. The main thesis was that human population growth would ultimately outpace the food supply. As the population increases beyond what is sustainable, the poor would then ultimately suffer more. Therefore, the growth rate can only be countered by “positive checks” like famine and war. Yes, famines and war were good in Malthus’ point of view.
+Thomas Malthus (born 1766) was an English economist and demographer. Malthus believed that people (especially the poor) just generally sucked. The idea of providing any welfare to the poor was preposterous as he believed that aid would make the poor unwilling to work. Malthus also believed that the poor would ultimately produce more children and continue the cycle of impoverishment. His huge dislike of the impoverished probably led to his most important work, “An essay on the principle of population”. The main thesis was that human population growth would ultimately outpace the food supply. As the population increases beyond what is sustainable, the poor would then ultimately suffer more. Therefore, the growth rate can only be countered by “positive checks” like famine and war.
 
-To the untrained eye, that sounds like conventional wisdom. If there was finite resources, unrestrained growth would lead to increased suffering as people would devour each other for food. However, this essay became the basis of horrific policies that led to immeasurable human suffering.
+To the untrained eye, that sounds like conventional wisdom (especially if you're an asshole). If there was finite resources, unrestrained growth would lead to increased suffering as people would devour each other for food. However, this essay became the basis of horrific policies that led to immeasurable human suffering.
 
 So it’s like… super weird to me we have this quote like in our ecology textbooks.
 
 ## Ireland and India
 
-We know that the potato famine of Ireland was devastating and led to the mass exodus of its citizens. While the potato blight played a major role, we know aware that British policies imposed on the Irish also contributed to the mass starvation. It comes as a shock to modern audiences to learn that during the height of the famine, Ireland was exporting food at the time. While the people starved, grains were exported leading to massive food riots.
+We know that the potato famine of Ireland was devastating and led to the mass exodus of its citizens. While the potato blight played a major role, we now know that that it was the British policies imposed on the Irish that mainly contributed to the mass starvation. It comes as a shock to modern audiences to learn that during the height of the famine, Ireland was exporting food at the time. While the people starved, grains were exported leading to massive food riots.
 
 So where does Malthus fall in?
 
@@ -40,13 +40,13 @@ His student, Charles Trevalyn, was in charge of the Irish famine and he believed
 
 Reading academic literature on the economic policies of the Irish famine is honestly harrowing:
 
-*“Those with the power to relieve famine convinced themselves that overly heroic exertions against implacable natural laws, whether of market prices or population growth, were worse than no effort at all” (Davis 2001: 32).*
+> *“Those with the power to relieve famine convinced themselves that overly heroic exertions against implacable natural laws, whether of market prices or population growth, were worse than no effort at all” (Davis 2001: 32).*
 
 Basically, Malthusian philosophy believed the famine to be a boon to the Irish people. Famine was the positive check on the growth rate of the people that the British found to be inferior.
 
 This same thought appeared again in India, where again the economic policies of the British government were responsible for horrific suffering. I highly recommend the book ‘Late Victorian Holocausts” by Mike Davis that show while famines are natural, economic policies of the ruling class greatly exacerbated the consequences. It’s harrowing to read how the colonists believed that this again was good for the poor. Railroads that were built through India were used to basically ship food out of the country. The poor were put in work camps that were inhumanely cruel.
 
-*‘I am profoundly persuaded that every rupee superfluously spent on famine relief only aggravates the evil effects of famine, and that in all such cases waste of money involves waste of life”* stated Lytton, the viceroy at the time.
+> *‘I am profoundly persuaded that every rupee superfluously spent on famine relief only aggravates the evil effects of famine, and that in all such cases waste of money involves waste of life”* - Lytton ( the viceroy at the time).
 
 The Malthusian philosophy still haunts us to this day (Continued in a next article). I’m gonna just point out the stupid plan by Thanos in the Marvel movies.
 
