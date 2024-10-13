@@ -5,6 +5,8 @@ author: "Damie Pak"
 image: "book.jpg"
 categories: ["Material"]
 toc: TRUE
+freeze: auto
+title-block-banner: true
 ---
 
 These are my GRFP material for 2015-2016.

@@ -4,9 +4,10 @@ subtitle: "What does it mean?"
 author: "Damie Pak"
 image: "waiting.jpg"
 categories: ["Tutorial"]
-toc: true
 draft: false
 cache: true
+freeze: auto
+title-block-banner: true
 ---
 
 When you read some modeling papers, they may talk about the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn't really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let's figure this out together and let's imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate $k$ and the amount of individuals in A. So the easiest way to write this is:

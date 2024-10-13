@@ -9,6 +9,8 @@ draft: false
 cache: true
 editor_options: 
   chunk_output_type: console
+freeze: auto
+title-block-banner: true
 ---
 
 WIP

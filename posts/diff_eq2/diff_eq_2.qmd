@@ -7,6 +7,8 @@ categories: ["Code","Tutorial"]
 toc: true
 draft: false
 cache: true
+freeze: auto
+title-block-banner: true
 ---
 
 WORK IN PROGRESS

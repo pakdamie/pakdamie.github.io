@@ -7,6 +7,8 @@ categories: ["Code"]
 toc: true
 draft: false
 cache: true
+freeze: auto
+title-block-banner: true
 ---
 
 ```{r}

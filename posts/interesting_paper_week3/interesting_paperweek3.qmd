@@ -7,6 +7,8 @@ categories: ["Reading"]
 toc: true
 draft: false
 cache: true
+freeze: auto
+title-block-banner: true
 ---
 
 ## HOW VIRULENT SHOULD A PARASITE BE TO ITS VECTOR?

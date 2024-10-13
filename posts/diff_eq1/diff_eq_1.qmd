@@ -7,11 +7,13 @@ categories: ["Code","Tutorial"]
 toc: true
 draft: false
 cache: true
+freeze: auto
+title-block-banner: true
 ---
 
 WORK In PROGRESS
 
-## Introduction 
+## Introduction
 
 ```{r echo = FALSE}
 library(ggplot2)
@@ -70,7 +72,6 @@ That's interesting! We basically just need to know the initial starting value ($
 
 But to predict the number of rabbits at time $t$, we simply need to know the initial abundance ($N_0$) and the birth rate ($b$): $N_t = N_0(1+b)^t$
 
-
 ## Coding it up
 
 Let's write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.
@@ -94,7 +95,6 @@ timesteps = seq(0,20)
 print(timesteps)
 ```
 
-
 ```{r}
 print(paste("Single number:", 5 * (1+5))) # single numeric number #vector
 ```
@@ -103,8 +103,8 @@ print(paste("Single number:", 5 * (1+5))) # single numeric number #vector
 5 * (1+5)^(timesteps) # a vector
 ```
 
-
 Putting it all together, here is the completed functino.
+
 ```{r}
 rabbit_growth <- function(time, initial, b){
 
@@ -161,25 +161,18 @@ Congratulations, you made your first simulation using one of the oldest model of
 
 ## Discrete to Continuous
 
-Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Nothing about this model is  stopping me from thinking of growth every... hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust $b$ by multiplying it by $\frac{1}{2}$. If it's every hour, we need to adjust $b$ by multiplying it by $\frac{1}{24}$. So ultimately, we multiply $b$ by some time step which we call: $\Delta T$.
+Now how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we're making the time step smaller and smaller. Here's a thought experiment, here I'm assuming that the rabbit is expanding day by day. Nothing about this model is stopping me from thinking of growth every... hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust $b$ by multiplying it by $\frac{1}{2}$. If it's every hour, we need to adjust $b$ by multiplying it by $\frac{1}{24}$. So ultimately, we multiply $b$ by some time step which we call: $\Delta T$.
 
-Now how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 
-$$
+Now how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 $$
 N_{t+1} = N_{t} + bN_{t} \Delta t.
-$$
-$$
+$$ $$
 N_{t+1} - N_t =  b N_t \Delta t
-$$
-$$
+$$ $$
 \frac{N_{t+1} - N_t}{\Delta t} = {bN_t} 
-$$
-As you let $\delta T$ approach infinity, this discrete equation can then be described as a differential. 
+$$ As you let $\delta T$ approach infinity, this discrete equation can then be described as a differential.
 
-$$ \frac{dN}{dt} = {bN_t} $$
-Solving it, we get:
+$$ \frac{dN}{dt} = {bN_t} $$ Solving it, we get:
 
 $$
 N(t) = N_0exp(b(t))
 $$
-
-

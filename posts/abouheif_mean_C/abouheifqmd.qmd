@@ -4,6 +4,8 @@ subtitle: "Quick pic to understand"
 author: "Damie Pak"
 image: "tree.jpeg"
 categories: ["Material"]
+freeze: auto
+title-block-banner: true
 ---
 
 A very silly thing I made to understand Abouheif Mean C (a non-complicated way to see if there is a phylogenetic signal)
