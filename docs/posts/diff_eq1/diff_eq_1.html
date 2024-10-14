@@ -224,7 +224,6 @@ window.Quarto = {
 
 
 
-<p>WORK In PROGRESS</p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.</p>
@@ -379,11 +378,12 @@ N_{t+1} = N_{t} + bN_{t} \Delta t.
 N_{t+1} - N_t =  b N_t \Delta t
 \]</span> <span class="math display">\[
 \frac{N_{t+1} - N_t}{\Delta t} = {bN_t}
-\]</span> As you let <span class="math inline">\(\delta T\)</span> approach infinity, this discrete equation can then be described as a differential.</p>
+\]</span> As you let <span class="math inline">\(\delta T\)</span> approach infinity, the discrete equation can then be described as a differential equation.</p>
 <p><span class="math display">\[ \frac{dN}{dt} = {bN_t} \]</span> Solving it, we get:</p>
 <p><span class="math display">\[
 N(t) = N_0exp(b(t))
 \]</span></p>
+<p>Next step! How do you numerically solve a differential equation.</p>
 
 
 </section>

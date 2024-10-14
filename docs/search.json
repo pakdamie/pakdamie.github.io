@@ -228,14 +228,14 @@
     "href": "posts/diff_eq1/diff_eq_1.html",
     "title": "Simulating ecology models: A series of tutorial",
     "section": "",
-    "text": "WORK In PROGRESS"
+    "text": "This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation."
   },
   {
     "objectID": "posts/diff_eq1/diff_eq_1.html#introduction",
     "href": "posts/diff_eq1/diff_eq_1.html#introduction",
     "title": "Simulating ecology models: A series of tutorial",
-    "section": "Introduction",
-    "text": "Introduction\nThis is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation."
+    "section": "",
+    "text": "This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation."
   },
   {
     "objectID": "posts/diff_eq1/diff_eq_1.html#lets-start-at-the-very-beginning",
@@ -249,7 +249,7 @@
     "href": "posts/diff_eq1/diff_eq_1.html#discrete-to-continuous",
     "title": "Simulating ecology models: A series of tutorial",
     "section": "Discrete to Continuous",
-    "text": "Discrete to Continuous\nNow how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Nothing about this model is stopping me from thinking of growth every… hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{2}\\). If it’s every hour, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{24}\\). So ultimately, we multiply \\(b\\) by some time step which we call: \\(\\Delta T\\).\nNow how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 \\[\nN_{t+1} = N_{t} + bN_{t} \\Delta t.\n\\] \\[\nN_{t+1} - N_t =  b N_t \\Delta t\n\\] \\[\n\\frac{N_{t+1} - N_t}{\\Delta t} = {bN_t}\n\\] As you let \\(\\delta T\\) approach infinity, this discrete equation can then be described as a differential.\n\\[ \\frac{dN}{dt} = {bN_t} \\] Solving it, we get:\n\\[\nN(t) = N_0exp(b(t))\n\\]"
+    "text": "Discrete to Continuous\nNow how does this relate to the continuous model? The secret is that the continuous model is just the discrete model but we’re making the time step smaller and smaller. Here’s a thought experiment, here I’m assuming that the rabbit is expanding day by day. Nothing about this model is stopping me from thinking of growth every… hour, minute, second, or nanosecond. However, if we want to have a model that is growth every 12 hours instead of 24 hours, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{2}\\). If it’s every hour, we need to adjust \\(b\\) by multiplying it by \\(\\frac{1}{24}\\). So ultimately, we multiply \\(b\\) by some time step which we call: \\(\\Delta T\\).\nNow how does the step from discrete to continuous happen? Starting from this, we can move one of the N_0 \\[\nN_{t+1} = N_{t} + bN_{t} \\Delta t.\n\\] \\[\nN_{t+1} - N_t =  b N_t \\Delta t\n\\] \\[\n\\frac{N_{t+1} - N_t}{\\Delta t} = {bN_t}\n\\] As you let \\(\\delta T\\) approach infinity, the discrete equation can then be described as a differential equation.\n\\[ \\frac{dN}{dt} = {bN_t} \\] Solving it, we get:\n\\[\nN(t) = N_0exp(b(t))\n\\]\nNext step! How do you numerically solve a differential equation."
   },
   {
     "objectID": "posts/diff_eq1/diff_eq_1.html#the-exponential-model",
