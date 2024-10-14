@@ -1,0 +1,29 @@
+---
+title: "Secondary vectors: when David becomes Goliath"
+description: "Secondary vectors should be a concern for climate change"
+image: "trito.jpeg"
+categories: ["Essay"]
+toc: true
+draft: false
+cache: true
+freeze: auto
+title-block-banner: true
+---
+
+## Introduction
+
+With climate change, a major concern is about an increase of vector borne diseases. There's been a lot of research that explores how increasing temperatures could increase transmission thus increasing the number of secondary cases. However, many of these papers focus on a single primary vector species. In certain disease systems, the pathogens can be transmitted by multiple vector species. For example, while the primary vector speceis of human malaria cases is *Anopheles gambiae*, there are secondary vectors that may contribute less to transmission but have significant epidemiological importance.
+
+One thing that I think is really missing in getting prepared for the changing future is how "secondary vectors" can become bigger problems. Specifically, I'm interested in scenarios where human interventions can inadvertently change the vector community. 
+
+## Chagas disease 
+
+So my current postdoctoral work with Tad Dallas at the University of South Carolina emerged from a tiny workshop with South American scholars. I was watching some talks of Chagas disease and I was really fascinated with the system. All triatomine species can vector the parasite (*Trypansoma cruzi*) but their importance in transmission is based on their ecological traits. For example, an important vector species is *Triatoma infestans* and is known to reside in buildings. What I thought was really cool, is they competitively displace other species.
+
+In the late 20th century, South American countries all allied together to rid the scourge of Chagas disease (The Southern Cone Initiative). Large-scale insecticidal spraying across the continent drove down *T. infestans* number. It was a successful campaign. However, post-campaign, there was a resurgence in secondary pest because the dominant competitor was eliminated. Additionally, the less important secondary pests are also less affected by the indoor insecticidal spraying because they were in the peridomestic or sylvatic ecotypes. Therefore, the new open niches were ripe for invasion by the secondary vectors.
+
+And the cool thing with Chagas disease is that the shift in the dominant vectors have happened multiple times. When the scientist Carlos Chagas was the one to discover the parasite, the dominant vector at the time was *Panstrongylus megistus*. Soon, it would be displaced by *T. infestans*.
+
+## Thoughts
+
+One thing that I really want to pursue for my research program is on how the vector composition can change over time and what that means for disease. It's something that I really like thinking about when I was doing my tick paper. It'll be cool if I type this up as a review paper on secondary vectors. What are the different mechanisms that can lead to a shift. I can imagine changes to the environment (urbanization) as well as control efforts. 
