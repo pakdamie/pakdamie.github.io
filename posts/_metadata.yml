@@ -5,3 +5,11 @@
 
 # Enable banner style title blocks
 title-block-banner: '#027E56'
+
+toc: true
+toc-title: Contents
+toc-location: left
+
+date-format: "dddd, MMMM D, YYYY"
+
+freeze: true

@@ -2,7 +2,7 @@
 title: "Exponential waiting time"
 description: 'Why do we assume that the waiting time in a compartmental model is exponentially distributed?'
 image: "waiting.jpg"
-categories: ["Tutorial"]
+categories: ["Tutorial", "Modeling", "Beginner"]
 draft: false
 cache: true
 freeze: auto
@@ -12,11 +12,11 @@ date: 7/1/2024
 
 ## Introduction
 
-When you're diving in to some ecological modeling papers, the authors may talk about how how the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn't really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let's figure this out together and let's imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate $k$ and the amount of individuals in A. So the easiest way to write this is:
+When you are diving in to a mathematical modeling paper with compartmental modeling, the authors may state that the waiting time within a compartment is **exponentially distributed**. This only comes up when the paper is pointing out how biologically unrealistic it is (another blog post). When I was an undergraduate, I was always puzzled by this! This concept of exponentially distributed dwelling-time is not intuitive without understanding some ordinary differential equation! Imagine a single compartment which we simply call A. The outflow out of the compartment is dependent on a constant rate $k$ and the amount of individuals in A. So the easiest way to write this is:
 
 $$\frac{dA}{dt} = -kA. $$
 
-Which means that that the change in $A$ over time is equal to $kA$. This differential equation, we can solve analytically!
+This equation means that the change in $A$ over time is equal to $kA$. This is a differential equation that we can actually solve analytically!
 
 This is fairly simple to solve and let me show you the steps (honestly, I really recommend doing this yourself as practice!)
 
@@ -30,7 +30,7 @@ So now okay let's look closer at the solution $A= A_0 exp(-kt)$. First, we're in
 
 $$\frac{A}{A_0} = exp(-kt). $$
 
-This means that the proportion of individuals who are still in stage $A$ can be represented by this exponential decay. Okay, what about the proportion leaving stage A? If 30 percent of the individuals are in stage A that means 70%have left so the proportion leaving so $1 - \frac{A}{A_0}$ thus we get:
+This means that the proportion of individuals who are still in stage $A$ can be represented by this exponential decay. Okay, what about the proportion leaving stage A? If 30 percent of the individuals are in stage A that means 70% left so the proportion leaving so $1 - \frac{A}{A_0}$ thus we get:
 
 $$ 1- \frac{A}{A0} = 1 -exp(-kt).$$
 
@@ -46,4 +46,4 @@ That means that the mean time that individuals dwell in A is $\frac{1}{k}$.
 
 Therefore, for example if $k = \frac{1}{2}$ per day, then the mean time that an individual stay in $A$ is $\frac{1}{(1/2)}$ is 2 days.
 
-Hopefully, I hope this makes it clear using differential equations that there is an exponential distribution. The exponentially distributed waiting time is an assumption! It can be biologically unrealistic because it says that most individuals leave the compartment in a very short time almost instantaneously .
+Hopefully, I hope this makes it clear using differential equations that there is an exponential distribution. The exponentially distributed waiting time is an assumption! It can be biologically unrealistic because it assumes that that most individuals leave the compartment almost instantly.

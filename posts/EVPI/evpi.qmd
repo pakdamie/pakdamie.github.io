@@ -14,4 +14,12 @@ title-block-banner: true
 date: 10/15/2024
 ---
 
+## Introduction
+
+This is a simple schematic I made to teach people the Value of Information. This
+concept emerges from decision theory and asks the question: "What is the benefits
+of resolving uncertainty?"
+
+## Figure
+
 ![](EVPI.jpg){fig-align="center"}

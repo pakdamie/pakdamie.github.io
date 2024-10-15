@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-01">
 <meta name="description" content="Why do we assume that the waiting time in a compartmental model is exponentially distributed?">
 
 <title>Exponential waiting time – Damie Pak</title>
@@ -108,7 +107,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.scss">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -149,9 +148,9 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-page-right">
       <h1 class="title">Exponential waiting time</h1>
                   <div>
         <div class="description">
@@ -160,18 +159,20 @@ window.Quarto = {
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">Tutorial</div>
+                <div class="quarto-category">Modeling</div>
+                <div class="quarto-category">Beginner</div>
               </div>
                   </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page-right">
 
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 1, 2024</p>
+        <p class="date">Monday, July 1, 2024</p>
       </div>
     </div>
     
@@ -181,18 +182,21 @@ window.Quarto = {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
 
 
 
@@ -200,16 +204,16 @@ window.Quarto = {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>When you’re diving in to some ecological modeling papers, the authors may talk about how how the duration within a compartment is exponentially distributed. I was always puzzled by this when I first read it and it doesn’t really show up unless the paper is pointing out how biologically unrealistic it is. This concept of exponentially distributed dwelling-time is not intuitive without some ordinary differential equation classes! Let’s figure this out together and let’s imagine a single compartment which we simply call A. And the outflow out of the compartment is dependent on a constant rate <span class="math inline">\(k\)</span> and the amount of individuals in A. So the easiest way to write this is:</p>
+<p>When you are diving in to a mathematical modeling paper with compartmental modeling, the authors may state that the waiting time within a compartment is <strong>exponentially distributed</strong>. This only comes up when the paper is pointing out how biologically unrealistic it is (another blog post). When I was an undergraduate, I was always puzzled by this! This concept of exponentially distributed dwelling-time is not intuitive without understanding some ordinary differential equation! Imagine a single compartment which we simply call A. The outflow out of the compartment is dependent on a constant rate <span class="math inline">\(k\)</span> and the amount of individuals in A. So the easiest way to write this is:</p>
 <p><span class="math display">\[\frac{dA}{dt} = -kA. \]</span></p>
-<p>Which means that that the change in <span class="math inline">\(A\)</span> over time is equal to <span class="math inline">\(kA\)</span>. This differential equation, we can solve analytically!</p>
+<p>This equation means that the change in <span class="math inline">\(A\)</span> over time is equal to <span class="math inline">\(kA\)</span>. This is a differential equation that we can actually solve analytically!</p>
 <p>This is fairly simple to solve and let me show you the steps (honestly, I really recommend doing this yourself as practice!)</p>
 <p><img src="http://damiepak.com/wp-content/uploads/2020/12/Equations-1024x492.png" class="img-fluid" alt=""></p>
 <p><img src="http://damiepak.com/wp-content/uploads/2020/12/Exponential-1024x500.png" class="img-fluid" alt=""></p>
 <p>Imagine you have a stage A and there are individuals leaving it (note the hats and briefcases) and on the left, that is the solution of our differential equations. This is an exponential decay!</p>
 <p>So now okay let’s look closer at the solution <span class="math inline">\(A= A_0 exp(-kt)\)</span>. First, we’re interested in how the proportion of individuals that stay in stage A change over time. To do this, we can divide the equation by A0 and get this:</p>
 <p><span class="math display">\[\frac{A}{A_0} = exp(-kt). \]</span></p>
-<p>This means that the proportion of individuals who are still in stage <span class="math inline">\(A\)</span> can be represented by this exponential decay. Okay, what about the proportion leaving stage A? If 30 percent of the individuals are in stage A that means 70%have left so the proportion leaving so <span class="math inline">\(1 - \frac{A}{A_0}\)</span> thus we get:</p>
+<p>This means that the proportion of individuals who are still in stage <span class="math inline">\(A\)</span> can be represented by this exponential decay. Okay, what about the proportion leaving stage A? If 30 percent of the individuals are in stage A that means 70% left so the proportion leaving so <span class="math inline">\(1 - \frac{A}{A_0}\)</span> thus we get:</p>
 <p><span class="math display">\[ 1- \frac{A}{A0} = 1 -exp(-kt).\]</span></p>
 <p>Hm, that’s interesting! That looks exactly like the cumulative distribution function (CDF) of the exponential distribution! Remember that to get the probability distribution function (PDF), we just have find the derivative of the CDF:</p>
 <p><span class="math display">\[\frac{d}{dt} (1- \frac{A}{A0}) = \frac{d}{dt}(1 -exp(-kt)). \]</span></p>
@@ -217,7 +221,7 @@ window.Quarto = {
 <p>And if you remembered the mean of the exponential PDF is <span class="math inline">\(\frac{1}{k}\)</span> (We could have found the mean of the CDF, but I just thought it was easier).</p>
 <p>That means that the mean time that individuals dwell in A is <span class="math inline">\(\frac{1}{k}\)</span>.</p>
 <p>Therefore, for example if <span class="math inline">\(k = \frac{1}{2}\)</span> per day, then the mean time that an individual stay in <span class="math inline">\(A\)</span> is <span class="math inline">\(\frac{1}{(1/2)}\)</span> is 2 days.</p>
-<p>Hopefully, I hope this makes it clear using differential equations that there is an exponential distribution. The exponentially distributed waiting time is an assumption! It can be biologically unrealistic because it says that most individuals leave the compartment in a very short time almost instantaneously .</p>
+<p>Hopefully, I hope this makes it clear using differential equations that there is an exponential distribution. The exponentially distributed waiting time is an assumption! It can be biologically unrealistic because it assumes that that most individuals leave the compartment almost instantly.</p>
 
 
 </section>
