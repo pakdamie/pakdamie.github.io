@@ -11,6 +11,7 @@ editor_options:
   chunk_output_type: console
 freeze: auto
 title-block-banner: true
+date: 9/1/2024
 ---
 
 ## The packages that you need

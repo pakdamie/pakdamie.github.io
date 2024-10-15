@@ -9,6 +9,7 @@ cache: true
 freeze: auto
 title-block-banner: true
 toc: true
+date: 7/1/2024
 ---
 
 ## Introduction
@@ -26,7 +27,6 @@ Without thinking, let's plug in 0.10 for $\mu$. But the problem is that this is 
 Let's think about it, when we talk about differential equations we have to realize that they're continuous! Meaning that while we like to think about like modeling population dynamics in the manner of days (i.e 10 insects die every day), we have to realize that there are time units smaller than days: hours, minutes, seconds. And at these tiny time steps, there is still death! As differential equations are continuous, that means that death is a continuous process.
 
 Okay, you found that the experiment found that 10% of the insects die in a day. But that is a finite rate! You're not assuming insects are dying continuously throughout that one day. In fact, it's like they're waiting to die at the end of each day!
-
 
 ![](https://damiepak.com/wp-content/uploads/2021/01/Capture.png){fig-align="center"}
 

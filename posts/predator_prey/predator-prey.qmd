@@ -9,6 +9,7 @@ draft: false
 cache: true
 freeze: auto
 title-block-banner: true
+date: 7/1/2024
 ---
 
 <object data="Lotkavolterra-1.pdf" width="1000" height="1000" type='application/pdf'/>

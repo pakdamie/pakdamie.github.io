@@ -8,6 +8,7 @@ toc: true
 draft: false
 cache: true
 freeze: auto
+date: 7/1/2024
 ---
 
 ## My case
@@ -16,7 +17,7 @@ Most Introduction to Ecology classes begin by introducing the exponential growth
 
 **“Huh some dead guy”**
 
-A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous as it involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ‘It’s a privilege to pee”). I won’t spoil the ending, but it’s a major downer ending. The last line of the musical is “Hail Malthus”. I remember thinking, 
+A few months ago, I was listening to the musical called “Urinetown”. The premise is ridiculous as it involves people having to pay the local government to use the bathroom due to a severe water shortage (There’s a musical number called ‘It’s a privilege to pee”). I won’t spoil the ending, but it’s a major downer ending. The last line of the musical is “Hail Malthus”. I remember thinking,
 
 **"It’s the dead guy from my textbook appearing in a musical!"**
 
