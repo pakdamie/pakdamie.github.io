@@ -4,7 +4,6 @@ subtitle: "Quick pic to understand"
 description: "Abouheif Mean C is one way to check if there is a phylogenetic signal: how does it work?"
 image: "tree.jpeg"
 categories: ["Material"]
-freeze: auto
 title-block-banner: true
 date: 7/1/2024
 ---
