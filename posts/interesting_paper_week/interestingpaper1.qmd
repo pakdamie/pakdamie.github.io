@@ -9,6 +9,7 @@ draft: false
 cache: true
 freeze: auto
 title-block-banner: true
+date: 8/12/2024
 ---
 
 Here is stuff that I read around this week and last week. Most of the readings are related to science and my job (ew), but some are just related to more of my hobbies and interests.

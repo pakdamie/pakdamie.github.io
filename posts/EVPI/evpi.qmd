@@ -1,0 +1,17 @@
+---
+title: "Expected value of perfect information"
+subtitle: "What is it"
+description: "A simple vizualization"
+image: "cloud.jpeg"
+categories: ["Material"]
+toc: true
+draft: false
+cache: true
+editor_options: 
+  chunk_output_type: console
+freeze: auto
+title-block-banner: true
+date: 10/15/2024
+---
+
+![](EVPI.jpg){fig-align="center"}

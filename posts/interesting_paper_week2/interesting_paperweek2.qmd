@@ -7,6 +7,7 @@ categories: ["Reading"]
 toc: true
 draft: false
 cache: true
+date: 8/19/2024
 ---
 
 ### **Thermal performance curves** reveal variation in the seasonal niche of a short-lived annual

@@ -226,45 +226,44 @@ window.Quarto = {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This is a simple blog post series for those new to R and modeling ecological models. This series go through the mathematics and the R codes necessary for simulations. This is catered towards someone with experience with ecology but would like a casual introduction to simulation.</p>
+<p>This is a simple blog post series for those new to R and ecological models. This series go through the mathematics and the R codes necessary for simulation. This is catered towards people with experience with ecology but would like a casual introduction to mathematical modeling.</p>
 </section>
 <section id="lets-start-at-the-very-beginning" class="level2">
 <h2 class="anchored" data-anchor-id="lets-start-at-the-very-beginning">Let’s start at the very beginning</h2>
 <p>A very good place to start is with population growth. Ecologists are fascinated by the rise and fall in the organism’s numbers. The simplest question an ecologist may start with: <em>“If I have these initial number of organisms, and each produce this number of offspring, what should the total population be some time later?”</em></p>
-<p>Differential equation models are in continuous time which means that the change in the population happens in the small time units. Think of a second, now think of a nanosecond, and think the smallest proportion of that time- the population is changing even within that tiny little time-frame. That may seem far-fetched and for species that reproduce once per season, we should be resorting to discrete time. Generally, people are better about thinking of population growth in discrete time where with each discrete time-step (a day, a week, a month) there is an increase in the population.</p>
+<p>We use differential equations to model the change in the population size. Think of a second, now think of a nanosecond, and now think of the smallest slice of that nanosecond- the population is changing even within that tiny little time-frame. That may seem far-fetched. Generally, people are better about thinking of population growth in discrete time where with each discrete time-step (a day, a week, a month), there is an increase in the population.</p>
 <p>Let us say that our organisms of interest are female rabbits and we describe their population size at time <span class="math inline">\(t\)</span> as <span class="math inline">\(N_t\)</span>. Assume that every with each time step, each rabbit births the same number of new rabbits! This parameter is the birth rate <span class="math inline">\(b\)</span>. If we have the initial founding number as <span class="math inline">\(N_0\)</span> then we can write that the next time step as:</p>
 <p><span class="math display">\[
 N_{1} = N_0 + bN_0.
 \]</span></p>
-<p>For example, if there was originally 5 adults (<span class="math inline">\(N_0 = 5\)</span>) and each produces 5 rabbits (<span class="math inline">\(b = 5\)</span>), then we will have 25 new adults. Adding both parents and children, we have <span class="math inline">\(N_1 = 5 + (25) = 30\)</span> Here, we assume that the offspring are adults pretty much instantly. What does this look like for <span class="math inline">\(t = 2\)</span>?</p>
+<p>For example, if there was originally 5 adults (<span class="math inline">\(N_0 = 5\)</span>) and each produces 5 rabbits (<span class="math inline">\(b = 5\)</span>), then we will have 25 new adults. Adding both parents and children, we have <span class="math inline">\(N_1 = 5 + (25) = 30\)</span> Here, we assume that the offsprings are adults pretty much instantly. What does this look like for <span class="math inline">\(t = 2\)</span>? It would look like:</p>
 <p><span class="math display">\[
-N_{2} = N(1) + 5N(1)
-\]</span> If we substitute <span class="math inline">\(N(1) = 30\)</span>, then we have <span class="math inline">\(N_2 = 30 + 150 = 180\)</span>. It is extremely tedious of having to write each time-step seperately (imagine having to do this for a 100 timesteps!)</p>
+N_{2} = N(1) + 5N(1).
+\]</span>If we substitute <span class="math inline">\(N(1) = 30\)</span>, then we have <span class="math inline">\(N_2 = 30 + 150 = 180\)</span>. It is extremely tedious of having to write each time-step separately (imagine having to do this for a 100 timesteps!)</p>
 <p>By rearranging the equation, we can see (try it out first!)</p>
 <p><span class="math display">\[
 N_{1} = N_0(1 + b)
 \]</span></p>
 <p><span class="math display">\[
-N_{2} = N_{1}(1 + b)
+N_{2} = N_{1}(1 + b).
 \]</span></p>
 <p>This suggests that:</p>
 <p><span class="math display">\[
-N_{2} = N_0(1+b)(1+b)
+N_{2} = N_0(1+b)(1+b).
 \]</span></p>
-<p>So how about <span class="math inline">\(N_{3}\)</span> ?</p>
+<p>So how about <span class="math inline">\(N_{3}\)</span>? It would then be:</p>
 <p><span class="math display">\[
-N_{3} = N_{2} (1+b)
+N_{3} = N_{2} (1+b),
 \]</span></p>
-<p>Which is equivalent to:</p>
+<p>which is equivalent to:</p>
 <p><span class="math display">\[
 N_{3} = N_0(1+b)(1+b)(1+b).
 \]</span></p>
-<p>That’s interesting! We basically just need to know the initial starting value (<span class="math inline">\(N_0\)</span>) and we can raise the (1+b) to the power of the time! Here’s a visual cue if you need a bit more help:</p>
-<p>But to predict the number of rabbits at time <span class="math inline">\(t\)</span>, we simply need to know the initial abundance (<span class="math inline">\(N_0\)</span>) and the birth rate (<span class="math inline">\(b\)</span>): <span class="math inline">\(N_t = N_0(1+b)^t\)</span></p>
+<p>That’s interesting! We basically just need to know the initial starting value (<span class="math inline">\(N_0\)</span>) and we can raise the <span class="math inline">\((1+b)\)</span> to the power of the time! But to predict the number of rabbits at time <span class="math inline">\(t\)</span>, we simply need to know the initial abundance (<span class="math inline">\(N_0\)</span>) and the birth rate (<span class="math inline">\(b\)</span>): <span class="math inline">\(N_t = N_0(1+b)^t\)</span></p>
 </section>
 <section id="coding-it-up" class="level2">
 <h2 class="anchored" data-anchor-id="coding-it-up">Coding it up</h2>
-<p>Let’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using desolve. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.</p>
+<p>Let’s write a simple code. Please skip to the next section if you are comfortable with creating R functions. Hopefully, my little code will help transition readers into using <code>desolve</code>. Lets go step by step. Personally, I think beginners should start with learning functions as quickly as possible.</p>
 <p>So how do you design a function for doing mathematical simulations? First, what do you want for your inputs? What are the parts of the model you want to vary? Well, time seems to make the most sense. Maybe I’m interested in seeing what happens in a week… or a thousand years later. The initial rabbit population (<span class="math inline">\(N_0\)</span>) can also vary as well as the birth rate <span class="math inline">\(b\)</span>! So for the input of the function, you should include the parameters that you’re interested in varying.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rabbit_growth <span class="ot">&lt;-</span> <span class="cf">function</span>(time, initial, b){</span>
@@ -272,8 +271,8 @@ N_{3} = N_0(1+b)(1+b)(1+b).
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">###Insert model here</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So I have a function called “rabbit_growth” and for input, it takes that time, initial value, and the birth rate. By feeding different values in, we should be getting different values out!</p>
-<p>Now what do we want for the output? For simulation outputs, we want both the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting the model out to. Let’s say we want 20 days. We can then create a vector called timesteps that goes from 0 to 20, in an increment of a day. Now we have the equation with the initial value and the birth rate (<span class="math inline">\(b\)</span>). We can raise it to the power of the timesteps. So <span class="math inline">\(N_0 * (1+b)^t\)</span> will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply <span class="math inline">\(N_0 *(1+b)\)</span> to each element of the vector. For example:</p>
+<p>So I have a function called <code>rabbit_growth</code> and it takes as inputs: time, initial value, and the birth rate. By feeding different values in, we should be getting different values out!</p>
+<p>Now what do we want for the output? For simulation outputs, we want both the time and the abundance at that time. So ‘time’ is the number of days we are interested in projecting the model out to. Let’s say we want 20 days. We can then create a vector called <code>timesteps</code> that goes from 0 to 20, in an increment of a day. Now we have the equation with the initial value and the birth rate (<span class="math inline">\(b\)</span>). We can raise it to the power of the timesteps. So <span class="math inline">\(N_0 * (1+b)^t\)</span> will you give a single numeric value. But multiplying it by a vector, R is smart to know that you want to multiply <span class="math inline">\(N_0 *(1+b)\)</span> to each element of the vector. For example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>timesteps <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(timesteps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -313,7 +312,7 @@ N_{3} = N_0(1+b)(1+b)(1+b).
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>My output is now a data.frame with the time, abundance, initial value, and birth rate.</p>
-<p>There are many, many ways to solve this. Some people do for-loops! IF you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it.</p>
+<p>There are many, many ways to solve this. Some people do for-loops! If you want to do it using for-loop, this is a perfect exercise for it! Now let’s plot it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>standard_rabbit <span class="ot">&lt;-</span> <span class="fu">rabbit_growth</span>(<span class="dv">10</span>,<span class="dv">5</span>, <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(standard_rabbit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -332,7 +331,7 @@ N_{3} = N_0(1+b)(1+b)(1+b).
 11   10      5120       5 1</code></pre>
 </div>
 </div>
-<p>I’m a ggplot lover, so we’re going to use ggplot2:</p>
+<p>I’m a ggplot lover, so we’re going to use <code>ggplot2</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(standard_rabbit, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> abundance))<span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Abundance"</span>) <span class="sc">+</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

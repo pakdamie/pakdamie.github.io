@@ -1,0 +1,16 @@
+---
+title: "Compound probability and demographic stochasticity"
+subtitle: "What is it"
+description: "Compound probability appearing in a Ricker Poisson model"
+image: "dice.jpeg"
+categories: ["Tutorial", "Code"]
+toc: true
+draft: true
+cache: true
+editor_options: 
+  chunk_output_type: console
+freeze: auto
+title-block-banner: true
+---
+
+I am working on a lab project where I have to make a Hassell model stochastic. I haven't really worked with stochasticity, so a lot of my work is following Elderd et al. 2008, where in the supplementary material

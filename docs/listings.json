@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/EVPI/evpi.html",
       "/posts/interesting_stuff_I_learned/stuffilearnedpart1.html",
       "/posts/agent_based_model/malaria.html",
       "/posts/stochastic_sis/stochastic_sis.html",
@@ -20,6 +21,7 @@
       "/posts/waiting_time/waitingqmd.html",
       "/posts/diff_eq1/diff_eq_1.html",
       "/posts/coin_flipping/coin_flip.html",
+      "/posts/compound_probability/compound_probability.html",
       "/posts/spatial_network/spatialnetwork.html",
       "/posts/abouheif_mean_C/abouheifqmd.html"
     ]

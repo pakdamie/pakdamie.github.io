@@ -1,8 +1,8 @@
 ---
 title: "GRFP Statements"
 subtitle: "An example"
-author: "Damie Pak"
 image: "book.jpg"
+description: "GRFP material for a theoretical ecology project"
 categories: ["Material"]
 toc: TRUE
 freeze: auto

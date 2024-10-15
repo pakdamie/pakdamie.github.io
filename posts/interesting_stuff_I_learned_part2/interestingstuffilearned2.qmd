@@ -9,6 +9,7 @@ draft: false
 cache: true
 title-block-banner: true
 freeze: auto
+date: 8/26/2024
 ---
 
 This is a list of things I learned. Generally involves my research, but you might see a weird aside.
