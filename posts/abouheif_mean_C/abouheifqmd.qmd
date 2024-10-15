@@ -9,6 +9,30 @@ title-block-banner: true
 date: 7/1/2024
 ---
 
+## Introduction
+
 A very silly thing I made to understand Abouheif Mean C (a non-complicated way to see if there is a phylogenetic signal). Sometimes to fully learn something, I need to do it tediously.
+
+## A rambling
+
+So when we are doing some good ol’ linear regression, a critical assumption is that that the observations are independent of each other. However, what if we are doing a regression of Trait A and Trait B with each observation being a unique species? The problem is that species aren’t really independent from each other. Specifically, we can rightfully assume that species that are more genetically related to each other to be more similar. Therefore, there is no independence! Violation!\
+\
+One way to test if there is a phylogenetic signal than in a trait before doing more complicated statistics that account for the correlation between species is by using the value Abouheif C. I’m following it from the original 1999 paper which I recommend a good read if you are a beginner of phylogenetic comparison like me. He gives a very clear flowchart of how to approach this phylogenetic correlation conundrum. Specifically, use a test statistics to see if there is a phylogenetic signal. If not! Then just use regular statistics. However, if there is a phylogenetic signal then do your more complicated method. 
+
+So in Abouheif’s original 1999 paper, he calls the test-statistic the test for serial-independence (TSI) which originated from famed mathematician von Neumann in his 1941 paper. As an aside, this is a very convoluted math paper and all I got from it is that it test for non-randomness in a series of continuous variates (cool, I guess). So we can kinda see the inkling of how this would help test for phylogenetic autocorrelation as we’re trying to figure out if there is (non)randomness in a series of observation that is structured by the phylogenetic tree.
+
+So if the test-statistic is positive, it means evidence of phylogenetic descent (cannot find a good definition, but I’m assuming that the observed trait is due to similarity of descent?) while a negative statistic means evidence of convergent evolution (trait that evolved independently).\
+\
+So to calculate the TSI you don’t have to know the branch length, but you have to understand the topology (aka the order in the sense of the von Neumann’s paper). 
+
+The equation is that it is the sum of the successive squared differences in between observations:
+
+$\sum d^2 = \sum(Y_{I+1} - Y_{I})$ where $Y$ is the observation of some trait we're interested. If the observation are independent, then $d^2$ will be twice the sum of squares: $\sum y^2 = \sum(Y_{I} - \overline{Y})^2$. Then for some weird magic, I guess the ratio $n = \sum d^2/\sum y^2$ will aprproximate 2. Positive correlation would be that n is less than 2 and the variance of the successive difference will be less than if the observations were ordered randomly. Negative correlation is that the n is greater than 2 and the variance of the successive difference will be greater than if the observations were ordered randomly.
+
+OK than god that he includes an example of how to do this.
+
+The example that he sets out is to discover if there is a phylogenetic signal with the body mass across eight species distributed across the phylogenetic tree. The hull hypothesis ($H_0$) is that there is serial independence and there is no correlation among species for body size. The alternative hypothesis ($H_a$) is that there is serial autocorrelation in body size. We then calculate the sequence of the observed trait (the body mass that is ordered on the phylogenetic tree). I made my messy sketch version.
+
+## The Sketch
 
 <object data="abouheif_mean_c.pdf" width="1000" height="1000" type='application/pdf'/>
