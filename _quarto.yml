@@ -6,12 +6,12 @@ website:
   title: "Damie Pak"
   navbar:
     right:
-      - href: index.qmd
-        text: Home
       - about.qmd
       - research.qmd
       - text: Blog
         href: posts.qmd
+      - text: "{{< iconify academicons:google-scholar-square size=32px >}}"
+        href: "https://scholar.google.com/citations?user=oyKiTqgAAAAJ&hl=en"
   page-footer: 
      background: dark
      right: Copyright 2024, Damie Pak
