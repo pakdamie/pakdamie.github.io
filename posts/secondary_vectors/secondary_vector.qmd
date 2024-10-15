@@ -8,15 +8,16 @@ draft: false
 cache: true
 freeze: auto
 title-block-banner: true
+date: 10/14/2024
 ---
 
 ## Introduction
 
-With climate change, a major concern is about an increase of vector borne diseases. There's been a lot of research that explores how increasing temperatures could increase transmission thus increasing the number of secondary cases. However, many of these papers focus on a single primary vector species. In certain disease systems, the pathogens can be transmitted by multiple vector species. For example, while the primary vector speceis of human malaria cases is *Anopheles gambiae*, there are secondary vectors that may contribute less to transmission but have significant epidemiological importance.
+With climate change, a major concern is about an increase of vector borne diseases. There's been a lot of research that explores how increasing temperatures could increase transmission thus increasing the number of secondary cases. However, many of these papers focus on a single primary vector species. In certain disease systems, the pathogens can be transmitted by multiple vector species. For example, while the primary vector species of human malaria cases is *Anopheles gambiae*, there are secondary vectors that may contribute less to transmission but have significant epidemiological importance.
 
-One thing that I think is really missing in getting prepared for the changing future is how "secondary vectors" can become bigger problems. Specifically, I'm interested in scenarios where human interventions can inadvertently change the vector community. 
+One thing that I think is really missing in getting prepared for the changing future is how "secondary vectors" can become bigger problems. Specifically, I'm interested in scenarios where human interventions can inadvertently change the vector community.
 
-## Chagas disease 
+## Chagas disease
 
 So my current postdoctoral work with Tad Dallas at the University of South Carolina emerged from a tiny workshop with South American scholars. I was watching some talks of Chagas disease and I was really fascinated with the system. All triatomine species can vector the parasite (*Trypansoma cruzi*) but their importance in transmission is based on their ecological traits. For example, an important vector species is *Triatoma infestans* and is known to reside in buildings. What I thought was really cool, is they competitively displace other species.
 
@@ -26,4 +27,4 @@ And the cool thing with Chagas disease is that the shift in the dominant vectors
 
 ## Thoughts
 
-One thing that I really want to pursue for my research program is on how the vector composition can change over time and what that means for disease. It's something that I really like thinking about when I was doing my tick paper. It'll be cool if I type this up as a review paper on secondary vectors. What are the different mechanisms that can lead to a shift. I can imagine changes to the environment (urbanization) as well as control efforts. 
+One thing that I really want to pursue for my research program is on how the vector composition can change over time and what that means for disease. It's something that I really like thinking about when I was doing my tick paper. It'll be cool if I type this up as a review paper on secondary vectors. What are the different mechanisms that can lead to a shift. I can imagine changes to the environment (urbanization) as well as control efforts.
