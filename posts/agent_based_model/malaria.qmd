@@ -6,7 +6,7 @@ image: "malara.jpg"
 categories: ["Material"]
 freeze: auto
 title-block-banner: true
-date: 11/15/2024
+date: 10/15/2024
 ---
 
 This is a simple introduction to an agent based model that I made out of boredom. So imagine you're a malaria parasite inside the bloodstream of your host. You must invade a red blood cell or you must perish! I think this shows how much daughter parasites you make is dependent on how long you can live.
