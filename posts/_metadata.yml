@@ -13,3 +13,7 @@ toc-location: left
 date-format: "dddd, MMMM D, YYYY"
 
 freeze: true
+
+format: 
+  html:
+    page-layout: article
