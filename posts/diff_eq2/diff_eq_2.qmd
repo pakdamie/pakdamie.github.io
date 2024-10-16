@@ -5,7 +5,7 @@ description: "How to use Euler method to solve differential equation"
 image: "euler.png"
 categories: ["Code","Tutorial"]
 toc: true
-draft: false
+draft: true
 cache: true
 freeze: auto
 title-block-banner: true

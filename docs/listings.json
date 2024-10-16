@@ -3,7 +3,6 @@
     "listing": "/posts.html",
     "items": [
       "/posts/agent_based_model/malaria.html",
-      "/posts/diff_eq2/diff_eq_2.html",
       "/posts/compound_probability/compound_probability.html",
       "/posts/EVPI/evpi.html",
       "/posts/secondary_vectors/secondary_vector.html",
