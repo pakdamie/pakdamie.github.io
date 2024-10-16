@@ -24,7 +24,7 @@ set.seed(24601)
 
 ## Introduction
 
-I am currently working on a group lab project where I have to include demographic stochasticity in the Hassell population growth model. I haven't really worked with stochasticity, so a lot of my "work" is following Melbourne and Hastings 2008^[1]^ [[1] Melbourne, Brett A., and Alan Hastings. "Extinction risk depends strongly on factors contributing to stochasticity." Nature 454.7200 (2008): 100-103.]{.aside}, where in the supplementary material, they  explain how stochasticity is incorporated. The first model, the Ricker Poisson model, only includes demographic stochasticty.
+I am currently working on a group lab project and my role is adding demographic stochasticity to the Hassell population growth model. I haven't really worked with stochasticity before, so a lot of my work is following Melbourne and Hastings 2008^[1]^ [[1] Melbourne, Brett A., and Alan Hastings. "Extinction risk depends strongly on factors contributing to stochasticity." Nature 454.7200 (2008): 100-103.]{.aside}. In their supplementary material, they explain how stochasticity is incorporated. The first model, the Ricker Poisson model, only includes demographic stochasticty.
 
 ## The number of eggs is a Poisson process
 Like Melbourne and Hastings, we are modeling flour beetles. For an adult $i$, we can express the number of eggs ($B$) laid in its lifetime at time $t$ as:
@@ -138,17 +138,17 @@ $$
 $$
 
 
-The average number of successes or survival for a binomial distribution is simply $np$ where $n$ is the number of trials and $p$ is the probability of success.
+The average number of successes or survival for a binomial distribution is simply $np$ where $n$ is the number of trials and $p$ is the probability of success. In other words $n = \beta$ and $p = (1- \mu)$
 
-Therefore, $\mathbb{E}[S] = \beta (1- \mu)$. This is saying the average number of eggs that will survive to lay the next generation is $\beta (1 - \mu)$. Because this is the average, we can then use the Poisson distribution (Rember, the expectation of the Poisson distribution is its parameter). We can then say that 
+Therefore, $\mathbb{E}[S] = \beta (1- \mu)$. This is saying the average number of eggs that will survive to lay their own eggs in the next generation is $\beta (1 - \mu)$. Because this is the average, we can then use the Poisson distribution (Remember, the expectation of the Poisson distribution is its parameter). Specifically:
 
 $$
-S_{i,t+1}  \sim Poisson(\beta(1- \mu))
+S_{i,t+1}  \sim Poisson(\beta(1- \mu)).
 $$
 The total number of adults in the next generation is then:
 
 $$
-N_{t+1} = \sum_{i=1}^{N_t} S_{i,t+1}
+N_{t+1} = \sum_{i=1}^{N_t} S_{i,t+1}.
 $$
 
 We can then make it simpler because of the rule that states: 

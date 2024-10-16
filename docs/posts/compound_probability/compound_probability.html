@@ -236,7 +236,7 @@ window.Quarto = {
 
 <section id="introduction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<div class="page-columns page-full"><p>I am currently working on a group lab project where I have to include demographic stochasticity in the Hassell population growth model. I haven’t really worked with stochasticity, so a lot of my “work” is following Melbourne and Hastings 2008<sup>[1]</sup> , where in the supplementary material, they explain how stochasticity is incorporated. The first model, the Ricker Poisson model, only includes demographic stochasticty.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">[1] Melbourne, Brett A., and Alan Hastings. “Extinction risk depends strongly on factors contributing to stochasticity.” Nature 454.7200 (2008): 100-103.</span></div></div>
+<div class="page-columns page-full"><p>I am currently working on a group lab project and my role is adding demographic stochasticity to the Hassell population growth model. I haven’t really worked with stochasticity before, so a lot of my work is following Melbourne and Hastings 2008<sup>[1]</sup> . In their supplementary material, they explain how stochasticity is incorporated. The first model, the Ricker Poisson model, only includes demographic stochasticty.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">[1] Melbourne, Brett A., and Alan Hastings. “Extinction risk depends strongly on factors contributing to stochasticity.” Nature 454.7200 (2008): 100-103.</span></div></div>
 </section>
 <section id="the-number-of-eggs-is-a-poisson-process" class="level2">
 <h2 class="anchored" data-anchor-id="the-number-of-eggs-is-a-poisson-process">The number of eggs is a Poisson process</h2>
@@ -311,13 +311,13 @@ S_{i,t+1} \sim Binomial(Poisson(\beta), (1- \mu)),
 <p><span class="math display">\[
 \mathbb{E} [S_{i,t+1}] \sim Binomial(\beta, (1- \mu)),
 \]</span></p>
-<p>The average number of successes or survival for a binomial distribution is simply <span class="math inline">\(np\)</span> where <span class="math inline">\(n\)</span> is the number of trials and <span class="math inline">\(p\)</span> is the probability of success.</p>
-<p>Therefore, <span class="math inline">\(\mathbb{E}[S] = \beta (1- \mu)\)</span>. This is saying the average number of eggs that will survive to lay the next generation is <span class="math inline">\(\beta (1 - \mu)\)</span>. Because this is the average, we can then use the Poisson distribution (Rember, the expectation of the Poisson distribution is its parameter). We can then say that</p>
+<p>The average number of successes or survival for a binomial distribution is simply <span class="math inline">\(np\)</span> where <span class="math inline">\(n\)</span> is the number of trials and <span class="math inline">\(p\)</span> is the probability of success. In other words <span class="math inline">\(n = \beta\)</span> and <span class="math inline">\(p = (1- \mu)\)</span></p>
+<p>Therefore, <span class="math inline">\(\mathbb{E}[S] = \beta (1- \mu)\)</span>. This is saying the average number of eggs that will survive to lay their own eggs in the next generation is <span class="math inline">\(\beta (1 - \mu)\)</span>. Because this is the average, we can then use the Poisson distribution (Remember, the expectation of the Poisson distribution is its parameter). Specifically:</p>
 <p><span class="math display">\[
-S_{i,t+1}  \sim Poisson(\beta(1- \mu))
+S_{i,t+1}  \sim Poisson(\beta(1- \mu)).
 \]</span> The total number of adults in the next generation is then:</p>
 <p><span class="math display">\[
-N_{t+1} = \sum_{i=1}^{N_t} S_{i,t+1}
+N_{t+1} = \sum_{i=1}^{N_t} S_{i,t+1}.
 \]</span></p>
 <p>We can then make it simpler because of the rule that states:</p>
 <blockquote class="blockquote">
