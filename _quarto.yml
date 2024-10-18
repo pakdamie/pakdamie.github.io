@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+  google-analytics: "G-MHG2CQ3TR2"
   title: "Damie Pak"
   navbar:
     right:
