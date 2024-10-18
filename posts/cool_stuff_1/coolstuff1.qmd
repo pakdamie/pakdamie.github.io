@@ -20,7 +20,7 @@ I decided it's easier to make the papers I read or cool things I learned into on
 A [beautiful video essay](https://www.youtube.com/watch?v=cGzBaSBdikA "The infinite weight of mediocrity") that I watched about being an artist. It hits close to being an academic though. The author concludes that self-doubt and disappointment is perhaps the norm if you're creating something.
 
 ## *Theory and models in ecology: A different perspective* 
-(Caswell 1988 in Ecologicla Modeling)
+(Caswell 1988 in Ecological Modeling)
 
 I'm thinking more about myself and my field lately. As grad students, we were never forced to think broadly about our field because we're supposed to be focused on technical details. I think most PI's care about their student something specific to the grand. I really enjoyed this paper because it's a simple explanation of what the point of theory and models are. My favorite quote and maybe how I will always frame my project: What is the simplest model which can predict the observed phenomenon?
 

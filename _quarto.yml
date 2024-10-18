@@ -21,6 +21,10 @@ format:
   html:
     theme: styles.scss
     css: styles.scss
+    include-in-header: 
+      - text: |
+          <script data-goatcounter="https://damiepak.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
     toc: true
     page-layout: full
     mainfont: Jost
