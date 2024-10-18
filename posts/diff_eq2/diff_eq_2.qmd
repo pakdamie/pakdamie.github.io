@@ -1,7 +1,7 @@
 ---
 title: "Simulating ecology models: A series of tutorial (Part 2)"
-subtitle: "Numerically solving differential equations"
-description: "How to use Euler method to solve differential equation"
+subtitle: "Growth can't be unlimited!"
+description: "An introduction to the logistic equation"
 image: "euler.png"
 categories: ["Code","Tutorial"]
 toc: true
@@ -11,8 +11,10 @@ freeze: auto
 title-block-banner: true
 ---
 
-WORK IN PROGRESS
+## Introduction
 
-So in the previous section, we talked about the simplest differential equation which is population growth: both continuous and discrete. We found the analytically solutions but unfortunately most equations are not easy to solve by hand! We need to use numerical methods.
+So in the previous post, we simulated our first population growth model. We
 
-The easiest method is by our favorite mathematician man: Leonard Euler. His method of calculating the
+## Forward Euler Method
+
+So this simplest method was first proposed by Euler in his *Institutiones calculi integralis.*

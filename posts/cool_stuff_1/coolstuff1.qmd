@@ -1,0 +1,25 @@
+---
+title: "Cool things (Week of October 15)"
+description: "All the cool things I read or watched; work or not"
+image: "monk.jpeg"
+categories: ["List"]
+toc: true
+draft: false
+cache: true
+freeze: auto
+title-block-banner: true
+date: 10/18/2024
+---
+
+## Preamble
+
+I decided it's easier to make the papers I read or cool things I learned into one big list. Most if it is work stuff, but there are lot of personal things.
+
+## *The Infinite Weight of Mediocrity*
+A [beautiful video essay](https://www.youtube.com/watch?v=cGzBaSBdikA "The infinite weight of mediocrity") that I watched about being an artist. It hits close to being an academic though. The author concludes that self-doubt and disappointment is perhaps the norm if you're creating something.
+
+## *Theory and models in ecology: A different perspective *
+(Caswell 1988 in Ecologicla Modeling)
+
+I'm thinking more about myself and my field lately. As grad students, we were never forced to think broadly about our field because we're supposed to be focused on technical details. I think most PI's care about their student something specific to the grand. I really enjoyed this paper because it's a simple explanation of what the point of theory and models are. My favorite quote and maybe how I will always frame my project: What is the simplest model which can predict the observed phenomenon?
+

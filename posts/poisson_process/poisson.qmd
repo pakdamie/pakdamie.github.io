@@ -5,7 +5,7 @@ description: "A short tutorial on understanding the poisson process"
 image: "fish.jpg"
 categories: ["Tutorial"]
 toc: true
-draft: false
+draft: true
 cache: true
 editor_options: 
   chunk_output_type: console
