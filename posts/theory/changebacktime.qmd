@@ -1,0 +1,49 @@
+---
+title: "What is the point of journal club?"
+subtitle: "How to make academic journal clubs... better"
+description: "Some journal clubs good, some journal clubs bad"
+image: "group.jpeg"
+categories: ["List"]
+toc: true
+draft: false
+cache: true
+editor_options: 
+  chunk_output_type: console
+freeze: auto
+title-block-banner: true
+date: 10/18/2024
+---
+
+## Preamble
+
+I am very notorious for disliking journal clubs. I had both my peers and superiors try to guilt me into me into it. I complain! People point out about how I met my wife at journal club. It does not matter! Here are some rambling thoughts about journal clubs I liked and loathed.
+
+## 1. Don't guilt me into it!
+
+Don't use guilt to 'persuade' people into your journal club. Especially if you're guilting a postdoc. It makes us feel like we're not doctorate holding individuals but some graduate student who doesn't know better. N
+
+## 2. No morning journal club!
+
+One thing I love about my current journal club is that it's at about 3:00 PM. That's the nadir of my productivity in any working day. Mornings are actually when I work! I had a 9 AM journal club that I skipped for good reason!
+
+## 3. Only have one faculty member
+
+I like the idea of a grad student lead journal club in theory. In practice, they rarely last. Having one faculty lead it is great. Maybe a PI that is more laidback and chill. The journal club that I met my wife in had a very chill math professor.
+
+I went to a journal club with like 3 professors and that was pushing it. It felt like journal club was their conversations, and the postdocs and grad students were their audience.
+
+## 4. Allow for non-technical science papers
+
+I've been really into these very broad science papers that doesn't have much technical details. I think once every 4 weeks, these types of papers should be discussed.
+
+## 5. Don't choose a programming book
+
+I was at a journal club where we had to read a programming book. I don't know. It didn't go well. Especially because doing the meeting, most people didn't have their laptops out.
+
+## 6. Don't have those introductory presentations
+
+I was at a journal club where everyone had to make slides on their papers before discussing it. I didn't like it. Like journal club is supposed to be this casual thing where we discuss.
+
+## 7. Choose a specific theme or topic
+
+I think journal club would be better if there is a specific theme. For example, I always wanted to host a journal club for the original series of paper that introduced the SIR model. It has some gnarly math (do you know that it was originally derived with partial differential equations) and it would be a cool trip back to the past.
