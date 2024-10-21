@@ -1,6 +1,7 @@
 ---
-title: "CV"
+title: "Curriculum Vitae"
 toc: false
+title-block-banner: true
 ---
 
 ![](pak_CV.pdf){width=80% height=1000}
