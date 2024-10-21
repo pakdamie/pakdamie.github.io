@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "CV",
     "section": "",
-    "text": "Copyright 2024, Damie Pak"
+    "text": "&lt;object data= “pak_CV.pdf”, width=“1000” height=“1000” type=‘application/pdf’/&gt;"
   },
   {
     "objectID": "posts.html",
