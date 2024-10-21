@@ -14,7 +14,7 @@ about:
     - text: Email
       href: mailto:dpak@mailbox.sc.edu
 page-layout: full
-fontsize: 24pt
+fontsize: 21pt
 ---
 
 Hello, I am Damie (Dah-mie) Pak. I am a quantitative/theoretical ecologist with a special interest in population dynamics—both pest and infectious disease. **I consider myself a generalist, interested in applying ecology theory and applying it to diverse systems.** I believe the most interesting questions in ecology lie at the intersection of theory and application. My main tools are mathematical models and data analysis; with each project, I strive to learn a new analytical tool (wavelet analysis, phylogenetic regression, network analysis, etc.) Check out the research tab to see more of my work!
