@@ -42,15 +42,18 @@ For my doctoral work with Dr. Ottar Bjornstad, I investigated how the environmen
 ## Reproductive phenology of neotropical trees
 
 :::::: columns
-::: {.column width="18%"}
-![](media/plant_pic.png)
+
+
+
+::: {.column width="80%"}
+In my collaboration with Dr. Jesse Lasky (**Multiscale phenological niches of seed fall in diverse Amazonian plant communities**), we applied wavelet analysis to long-term time series data from two hyperdiverse plant communities in Peru and Ecuador. We analyzed the temporal patterns of synchrony and compensatory dynamics in seed dispersal. Our findings show that there is community-wide reproductive synchrony due to shared environmental responses and positive interactions. Additionally, there is evidence of temporal niche partitioning!
 :::
 
 ::: {.column width="2%"}
 :::
 
-::: {.column width="80%"}
-In my collaboration with Dr. Jesse Lasky (**Multiscale phenological niches of seed fall in diverse Amazonian plant communities**), we applied wavelet analysis to long-term time series data from two hyperdiverse plant communities in Peru and Ecuador. We analyzed the temporal patterns of synchrony and compensatory dynamics in seed dispersal. Our findings show that there is community-wide reproductive synchrony due to shared environmental responses and positive interactions. Additionally, there is evidence of temporal niche partitioning!
+::: {.column width="18%"}
+![](media/plant_pic.png)
 :::
 ::::::
 
@@ -70,16 +73,22 @@ I'm fascinated by communities of vector species! When investigating vector-borne
 ::::::
 
 :::::: columns
+
+
 ::: {.column width="18%"}
 ![](media/triatomine_pic.png)
 :::
 
+
+
 ::: {.column width="2%"}
 :::
-
 ::: {.column width="80%"}
 Currently with my postdoctoral work with Tad Dallas, a project I'm working on is how disturbance can structure the relative abundance of different vectors.
 :::
+
+
+
 ::::::
 
 ## Within-host modeling of malaria
@@ -100,14 +109,19 @@ In my postdoctoral work with Dr. Megan Greischar, I investigated an understudied
 ## Ecological management
 
 :::::: columns
-::: {.column width="18%"}
-![](media/syringe_pic.png)
+
+::: {.column width="80%"}
+For my short six-month postdoc with Dr. Katriona Shea (because moving doing COVID times is difficult), I learned about decision theory and how to apply it for vaccine allocation. Specifically, under significant uncertainty- what is the best course of action? Is there always going to be an optimal choice?
 :::
 
 ::: {.column width="2%"}
 :::
 
-::: {.column width="80%"}
-For my short six-month postdoc with Dr. Katriona Shea (because moving doing COVID times is difficult), I learned about decision theory and how to apply it for vaccine allocation. Specifically, under significant uncertainty- what is the best course of action? Is there always going to be an optimal choice?
+
+
+::: {.column width="18%"}
+![](media/syringe_pic.png)
 :::
+
+
 ::::::
