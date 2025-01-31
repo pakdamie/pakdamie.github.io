@@ -17,7 +17,7 @@ Being more on the theory side of ecology allows me to explore different systems.
 
 1.  How does the interaction between individuals and the environment determine the species' population dynamics as well as its "timing"?
 2.  How do the interactions between species influence disease dynamics?
-3.  What are the ecological insights we could gather from taking a more holistic community approach instead of focusing on a single species? 
+3.  What are the ecological insights we could gather from taking a more holistic community approach instead of focusing on a single species?
 4.  How can we use theoretical ecology to inform the management of outbreaks, both pest and disease?
 :::
 ::::::

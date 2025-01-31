@@ -7,8 +7,8 @@ about:
   image-shape: round
   image-width: 20em
   links:
-    - text: Twitter
-      href: https://www.twitter.com/pakdamie
+    - text: Blue sky
+      href: https://bsky.app/profile/damiepak.bsky.social
     - text: GitHub
       href: https://github.com/pakdamie
     - text: Email

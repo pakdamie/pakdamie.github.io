@@ -13,6 +13,9 @@ website:
         href: posts.qmd
       - text: "{{< iconify academicons:google-scholar-square size=32px >}}"
         href: "https://scholar.google.com/citations?user=oyKiTqgAAAAJ&hl=en"
+      - text: "{{< iconify simple-icons:substack size=32px >}}"        
+        href: "https://damiepak.substack.com/publish/home?utm_source=menu"
+  
   page-footer: 
      background: dark
      right: Copyright 2024, Damie Pak
