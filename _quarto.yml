@@ -11,10 +11,11 @@ website:
       - research.qmd
       - text: Blog
         href: posts.qmd
+      - text: Substack       
+        href: "https://damiepak.substack.com/publish/home?utm_source=menu"
       - text: "{{< iconify academicons:google-scholar-square size=32px >}}"
         href: "https://scholar.google.com/citations?user=oyKiTqgAAAAJ&hl=en"
-      - text: "{{< iconify simple-icons:substack size=32px >}}"        
-        href: "https://damiepak.substack.com/publish/home?utm_source=menu"
+      
   
   page-footer: 
      background: dark
