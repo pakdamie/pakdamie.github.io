@@ -1,0 +1,126 @@
+---
+title: "An introduction to Lotka-Volterra Competition Model"
+description: "A modern revisit"
+image: "lynx.jpeg"
+categories: ["Slides","Material"]
+toc: true
+draft: true
+cache: true
+freeze: auto
+title-block-banner: true
+date: 7/1/2024
+---
+
+## Introduction
+
+I'm always astounded going back to the foundations of my field. I saw the Lotka-Volterra competition model in my Introduction to Ecology class. Didn't think about it that much, and now it emerges as part of my vector control project. I wanted to brush-up my foundations, and why not make some figures!
+
+## The Lotka-Volterra Competition model
+
+The Lotka-Volterra (LV) competition model is the seminal work that describes the dynamics of competing species. For non-ecologists, let me tell you that this is a key equation. Assume that we have two species: $N_1$ and $N_2$, let us assume they have the same growth rate: The equations are:
+
+$$
+\frac{dN_1}{dt} = rN_1(1- (c_{11} N_1 + c_{21}N_2))
+$$
+
+$$
+\frac{dN_2}{dt} = rN_2(1- (c_{22} N_2 + c_{12}N_1)).
+$$
+
+Here, the $c$ is the competition coefficient that describes how much members of it's own species ($c_{11} and c_{22}$) regulate its growth rate as well as that of the other species: $c_{12}$ and $c_{21}$). You can read the last two terms as: the competitive effect of species 1 on species 2 and vice-versa. You have have seen different formulations, especially with an explicit carrying capacity ($K$)[$rN_1(1-\frac{(N_1 - c_{21}N_2)}{K}))$]{.aside} but I just absorbed it in the competition coefficients.
+
+So remember:
+
+1.  $c_11$ is the competition between species 1
+2.  $c_22$ is the competition between species 2
+1.  $c_12$ is the competition of species 1 on species 2
+2.  $c_21$ is the competition  of species 2 on species 1
+
+Why don't we make a simulation function for it:
+
+```{r}
+LV_func <- function(c_df, timestep){
+  
+  ###Competition coefficient
+  c_11 <- c_df["c_11"] 
+  c_12 <- c_df["c_12"] 
+  c_22 <- c_df["c_22"] 
+  c_21 <- c_df["c_21"] 
+
+  r = 0.01
+  
+
+  
+  
+  
+}
+
+
+```
+
+
+
+So instead of just telling you all the cool things - let's walk through it.
+
+## The math grind of finding the equilibrium:
+
+Remember to find the equilbirum, we want to set both $\frac{dN_1}{dt}$ and $\frac{dN_2}{dt}$ to 0. The first equilibrium is when $N_1$ is 0 and when $N_2$ is 0. Not surprising, if you have nothing present, than nothing can happen. 
+
+We can also set $N_1$ to 0 which then gives $N_2^* = \frac{r}{c_{22}}$ and when we set $N_2$ to 0, this gives us $N_1^2 = \frac{r}{c_{11}}$. This means that in the absence of the other competitor, these species will reach their equilibrium that is dependent on the birth rate divided by the competition coefficient.
+
+The last condition is then the coexistence 
+
+$$
+N_1^* = \frac{c_{22} - c_{21}}{c_{22} c_{11} - c_{12}c_{21}}
+$$
+and
+$$
+N_2^* = \frac{c_{11} - c_{12}}{c_{22} c_{11} - c_{12}c_{21}}
+$$
+
+If you want the full derivation, unfold this section:
+
+::: {.callout-note collapse="true"}
+
+:::
+
+## Checking the stability
+
+So, how should we find the stability? We create a Jacobian matrix and then calculate it at these equilibirum point
+
+$$
+\begin{bmatrix}
+r - 2rc_{11} N_1 - rc_{12}N_2 & -rc_{12}N_1\\
+-rc_{21}N_2 & r - 2rc_{22} N_2 - rc_{21}N_1
+\end{bmatrix}
+
+$$
+
+### 1. When $N_1$ = 0 and $N_2$ = 0 
+
+Substituting it in, this is the characteristic equations
+$$
+\begin{bmatrix}
+r - \lambda  & 0\\
+0 & r - \lambda
+\end{bmatrix}
+
+$$
+
+Therefore, $r = \lambda$, because it's positive and real: it's unstable. So when you perturb a system at this equilibrium point, say goodbye to it, it's going to leave!
+
+### 2. When $N_1 = 0$, and $N_2^* = \frac{r}{c_{22}}$
+I'm not gonna write this all out here, but the $\lambda$ is negative and therefore, the equilibirum is stable.
+
+
+### 3. When $N_2 = 0$, and $N_1^* = \frac{r}{c_{11}}$
+Likewise: I'm not gonna write this all out here, but the $\lambda$ is negative and therefore, the equilibirum is stable.
+
+### 4. When $N_1$ and $N_2$ coexist
+
+So interestingly when we look at the $N_1^*$ and $N_2^*$, the numerators $c_{11} - c{12}$ and $c_{22} - c_{21}$ show that for the equilibirum to be positive that means $c_11$ and $c_22$ (intraspecific competition) has to be greater than the interspecific competiton.
+
+So what is the stability?
+
+Well, doing the nitty-gritty math of it. 
+
