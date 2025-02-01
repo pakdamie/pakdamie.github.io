@@ -2,7 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/diff_eq2/diff_eq_2.html",
+      "/posts/competition/competitio.html",
       "/posts/compound_probability/compound_probability.html",
       "/posts/agent_based_model/malaria.html",
       "/posts/EVPI/evpi.html",
@@ -15,7 +15,6 @@
       "/posts/malthus/malthus.html",
       "/posts/finite/finite.html",
       "/posts/grfp/grfp.html",
-      "/posts/poisson_process/poisson.html",
       "/posts/predator_prey/predator-prey.html",
       "/posts/waiting_time/waitingqmd.html",
       "/posts/abouheif_mean_C/abouheifqmd.html"
