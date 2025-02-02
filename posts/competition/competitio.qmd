@@ -28,7 +28,6 @@ library(reshape2)
 library(viridis)
 ```
 
-
 ## Reminder: The Lotka-Volterra Competition model
 
 The Lotka-Volterra (LV) competition model is a seminal work that describes the dynamics of two competing species. By varying the strength of competition—both within a species and between species—we can observe competitive exclusion (where one species wins) or coexistence.
@@ -42,15 +41,14 @@ $$
 \end{aligned}
 $$
 
-Here, $r$ represents the intrinsic growth rate, and the 
-$c$ values are the competition coefficients, which describe how much members of a species regulate their own growth rate $c$ are the competition coefficients that describe how much members of it's own species ($c_{11} and c_{22}$) as well as the impact of the other species  ($c_{12}$ and $c_{21}$). You can interpret the last two terms as the competitive effect of species 1 on species 2 and the competitive effect of species 2 on species 1. As an aside, you may have seen different formulations, especially with an explicit carrying capacity ($K$)[A common formulation: $rN_1(1-\frac{(N_1 - c_{21}N_2)}{K}))$]{.aside} but I just absorbed it in the competition coefficients.
+Here, $r$ represents the intrinsic growth rate, and the $c$ values are the competition coefficients, which describe how much members of a species regulate their own growth rate $c$ are the competition coefficients that describe how much members of it's own species ($c_{11} and c_{22}$) as well as the impact of the other species ($c_{12}$ and $c_{21}$). You can interpret the last two terms as the competitive effect of species 1 on species 2 and the competitive effect of species 2 on species 1. As an aside, you may have seen different formulations, especially with an explicit carrying capacity ($K$)[A common formulation: $rN_1(1-\frac{(N_1 - c_{21}N_2)}{K}))$]{.aside} but I just absorbed it in the competition coefficients.
 
 So remember:
 
 1.  $c_{11}$ is the competition between members of species 1
 2.  $c_{22}$ is the competition between members of species 2
 3.  $c_{12}$ is the competition of species 1 on species 2
-4.  $c_{21}$ is the competition  of species 2 on species 1
+4.  $c_{21}$ is the competition of species 2 on species 1
 
 Let's make a super simple function for simulating it- I'm just going to discretize the continuous model (honestly, should add a $\delta_T$)
 
@@ -135,26 +133,21 @@ Let's plot it out:
 plot_LV(LV_df)
 ```
 
-Cool! The parameters that we chose show that the two competing species are at equilibrium, with $N_1$ being at a higher equilibrium than $N_2$. Play around with the code! What parameters do you have to change to get competitive exclusion (one species winning it all?)
-A fun coding exercise is trying to figure out how to simulate a bunch of different competition coefficients and see what the ending equilibrium abundances are!
+Cool! The parameters that we chose show that the two competing species are at equilibrium, with $N_1$ being at a higher equilibrium than $N_2$. Play around with the code! What parameters do you have to change to get competitive exclusion (one species winning it all?) A fun coding exercise is trying to figure out how to simulate a bunch of different competition coefficients and see what the ending equilibrium abundances are!
 
-##  Finding the equilibrium
+## Finding the equilibrium
 
 I always recommend finding the equilibrium once just to humble yourself. Remember to find the equilibrium, we want to set both $\frac{dN_1}{dt}$ and $\frac{dN_2}{dt}$ to 0. The first equilibrium is when $N_1$ is 0 and when $N_2$ is 0. Not surprising, if there are no species... nothing happens.
 
 We can also set $N_1$ to 0 which then gives $N_2^* = \frac{r}{c_{22}}$ and when we set $N_2$ to 0, this gives us $N_1^* = \frac{r}{c_{11}}$. This means that in the absence of the other competitor, these species will reach their equilibrium that is dependent on the intrinsic growth divided by the intraspecific competition coefficient.
 
-The last condition is then coexistence 
+The last condition is then coexistence
 
 $$
 N_1^* = \frac{c_{22} - c_{21}}{c_{22} c_{11} - c_{12}c_{21}}
-$$
-and
-$$
+$$ and $$
 N_2^* = \frac{c_{11} - c_{12}}{c_{22} c_{11} - c_{12}c_{21}}
-$$
-This is interesting, basically. For the equilibrium abundances of both species $N_1^*$ and $N_2^*$ to be positive, the intrinsic growth rate of 
-
+$$ This is interesting, basically. For the equilibrium abundances of both species $N_1^*$ and $N_2^*$ to be positive, the intrinsic growth rate of
 
 ::: {.callout-note collapse="true"}
 Simple equations, but don't let it fool you! It did take some time to calculate the equilibrium $N_1*$ and $N_2^*$. Good exercise in good organization- though I think it would have been easier if I made new variables. Ah, but you can brute-force it as I did.
@@ -182,8 +175,7 @@ To find the isocline, set $\frac{dN}{dt} = 0$ and we get:
 
 $$
 \frac{1 -  c_{21} N_2}{c_{11}} =  N_1 
-$$
-By generating different abundances for $N_2$, we can see what the $N_1$ has to be for its isocline to be 0!
+$$ By generating different abundances for $N_2$, we can see what the $N_1$ has to be for its isocline to be 0!
 
 ```{r}
 isocline_N1 <- function(c_df) {
@@ -232,7 +224,7 @@ isocline_GG <-  slate +
 isocline_GG
 ```
 
-Where the isoclines cross is when $\frac{dN_1}{dt}$ and $\frac{dN_2}{dt}$ are 0 - that's coexistence! Let's check if our calculation of the coexistence equilibirum point is right? If it's right, our point should be directly on where the isoclines cross. 
+Where the isoclines cross is when $\frac{dN_1}{dt}$ and $\frac{dN_2}{dt}$ are 0 - that's coexistence! Let's check if our calculation of the coexistence equilibirum point is right? If it's right, our point should be directly on where the isoclines cross.
 
 ```{r}
 calculate_coexistence <- function(c_df){
@@ -293,7 +285,6 @@ N12_full$id <- rep(seq(1, nrow(N12_0)), each = 700)
 colnames(N12_full) <- c("time", "N1", "N2", "id")
 
 ```
-
 
 ```{r}
 #| message: false
