@@ -1,6 +1,6 @@
 ---
 title: "Damie Pak, PhD"
-image: media/profile_pic2.jpg
+image: media/profile_pic3.jpg
 toc: false
 about: 
   template: trestles
