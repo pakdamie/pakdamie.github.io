@@ -12,11 +12,11 @@ about:
     - text: GitHub
       href: https://github.com/pakdamie
     - text: Email
-      href: mailto:dpak@mailbox.sc.edu
+      href: mailto:damiedpak@gmail.com
 page-layout: full
 fontsize: 18pt
 ---
 
-Hello, I am Damie (Dah-mie) Pak. I am a quantitative/theoretical ecologist with a special interest in population dynamics—both pest and infectious disease. **I consider myself a generalist, interested in applying ecology theory and applying it to diverse systems.** I believe the most interesting questions in ecology lie at the intersection of theory and application. My main tools are mathematical models and data analysis; with each project, I strive to learn a new analytical tool (wavelet analysis, phylogenetic regression, network analysis, etc.) Check out the research tab to see more of my work!
+Hello, I am Damie (Dah-mie) Pak! I'm a data enthusiast who likes working in R (and Python) on some interesting (and weird) questions!
 
-I received my doctorate from The Pennsylvania State University, where I worked with Dr. Ottar Bjornstad to investigate **how climate drives phenology of insect pests**. As a postdoc, I became interested in infectious diseases. After graduating, I worked with Dr. Kat Shea to **model vaccine prioritization under uncertainty**. I then moved to Cornell to collaborate with Dr. Megan Greischar on **within-host modeling of malaria**. Currently, I am a postdoctoral fellow at the University of South Carolina, working with Dr. Tad Dallas on various disease-related projects. Check out the research tab to see more of my work!
+The past decade I was a quantitative/theoretical ecologist with a special interest in population dynamics—both pest and infectious disease. I received my doctorate from The Pennsylvania State University and spent some time as a postdoctoral scholar (working on COVID vaccinations, malaria, and Chagas disease). I'm transitioning out of academia and into a new future!
