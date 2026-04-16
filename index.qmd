@@ -19,4 +19,6 @@ fontsize: 18pt
 
 Hello, I am Damie (Dah-mie) Pak! I'm a data enthusiast who likes working in R (and Python) on some interesting (and weird) questions!
 
-The past decade I was a quantitative/theoretical ecologist with a special interest in population dynamics—both pest and infectious disease. I received my doctorate from The Pennsylvania State University and spent some time as a postdoctoral scholar (working on COVID vaccinations, malaria, and Chagas disease). I'm transitioning out of academia and into a new future!
+The past decade I was a quantitative/theoretical ecologist with a special interest in population dynamics—both pest and infectious disease. I received my doctorate from The Pennsylvania State University and spent some time as a postdoctoral scholar (working on COVID vaccinations, malaria, and Chagas disease).
+
+Now I'm working in mathematical modeling for vaccines! You may spot me online doing whatever. Email me: damiedpak\@gmail.com

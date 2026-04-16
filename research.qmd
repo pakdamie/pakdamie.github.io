@@ -3,6 +3,8 @@ title: "Research"
 lang: "en"
 ---
 
+What I did in academia:
+
 > <q style="font-size: 20px;color:#f07375">**In the particular is contained the universal.**</q> - James Joyce
 
 :::::: columns
